@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-potion-bg: #FFFFFF;
+  --color-potion-gray: #F8FAFC;
+  --color-potion-border: #E2E8F0;
+  --color-potion-text: #0F172A;
+  --color-potion-muted: #64748B;
+  --color-potion-accent: #0052CC; /* Corporate Blue */
+  --color-potion-dynamic: #38BDF8; /* Light Blue Accent */
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-blob: blob 20s infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+  }
+}
+
+@theme inline {
+  --color-destructive-foreground: var(--destructive-foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+  --radius: 0.5rem;
+  --font-sans: "Inter", sans-serif;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: rgb(28, 25, 23);
+  --foreground: rgb(245, 245, 244);
+  --card: rgb(41, 37, 36);
+  --card-foreground: rgb(245, 245, 244);
+  --popover: rgb(41, 37, 36);
+  --popover-foreground: rgb(245, 245, 244);
+  --primary: rgb(249, 115, 22);
+  --primary-foreground: rgb(255, 255, 255);
+  --secondary: rgb(87, 83, 78);
+  --secondary-foreground: rgb(231, 229, 228);
+  --muted: rgb(32, 29, 26);
+  --muted-foreground: rgb(168, 162, 158);
+  --accent: rgb(30, 66, 82);
+  --accent-foreground: rgb(231, 229, 228);
+  --destructive: rgb(220, 38, 38);
+  --destructive-foreground: rgb(255, 255, 255);
+  --border: rgb(68, 64, 60);
+  --input: rgb(68, 64, 60);
+  --ring: rgb(249, 115, 22);
+  --chart-1: rgb(249, 115, 22);
+  --chart-2: rgb(14, 165, 233);
+  --chart-3: rgb(234, 179, 8);
+  --chart-4: rgb(168, 162, 158);
+  --chart-5: rgb(120, 113, 108);
+  --sidebar: rgb(41, 37, 36);
+  --sidebar-foreground: rgb(245, 245, 244);
+  --sidebar-primary: rgb(249, 115, 22);
+  --sidebar-primary-foreground: rgb(255, 255, 255);
+  --sidebar-accent: rgb(14, 165, 233);
+  --sidebar-accent-foreground: rgb(12, 42, 77);
+  --sidebar-border: rgb(68, 64, 60);
+  --sidebar-ring: rgb(249, 115, 22);
+  --font-sans: Oxanium, sans-serif;
+  --font-serif: Merriweather, serif;
+  --font-mono: Fira Code, monospace;
+  --radius: 0.3rem;
+  --shadow-x: 0px;
+  --shadow-y: 2px;
+  --shadow-blur: 3px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.18;
+  --shadow-color: hsl(0 0% 5%);
+  --shadow-2xs: 0px 2px 3px 0px hsl(0 0% 5% / 0.09);
+  --shadow-xs: 0px 2px 3px 0px hsl(0 0% 5% / 0.09);
+  --shadow-sm: 0px 2px 3px 0px hsl(0 0% 5% / 0.18), 0px 1px 2px -1px hsl(0 0% 5% / 0.18);
+  --shadow: 0px 2px 3px 0px hsl(0 0% 5% / 0.18), 0px 1px 2px -1px hsl(0 0% 5% / 0.18);
+  --shadow-md: 0px 2px 3px 0px hsl(0 0% 5% / 0.18), 0px 2px 4px -1px hsl(0 0% 5% / 0.18);
+  --shadow-lg: 0px 2px 3px 0px hsl(0 0% 5% / 0.18), 0px 4px 6px -1px hsl(0 0% 5% / 0.18);
+  --shadow-xl: 0px 2px 3px 0px hsl(0 0% 5% / 0.18), 0px 8px 10px -1px hsl(0 0% 5% / 0.18);
+  --shadow-2xl: 0px 2px 3px 0px hsl(0 0% 5% / 0.45);
+}
+
+@layer base {
+  body {
+    @apply font-sans text-potion-text bg-potion-bg antialiased selection:bg-potion-accent/10 selection:text-potion-accent overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply tracking-tight font-semibold;
+  }
+}
+
+/* SendPotion Style Components */
+.potion-section {
+  @apply py-24 md:py-48 px-6;
+}
+
+.potion-container {
+  @apply max-w-5xl mx-auto;
+}
+
+.potion-card {
+  @apply bg-white border border-potion-border rounded-[2.5rem] p-12 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.04)] hover:-translate-y-2;
+}
+
+.potion-button-primary {
+  @apply bg-potion-text text-white px-10 py-5 rounded-full font-bold text-lg transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-potion-accent hover:shadow-[0_20px_40px_rgba(0,102,255,0.2)] active:scale-95 text-center;
+}
+
+.potion-button-secondary {
+  @apply bg-white text-potion-text border border-potion-border px-10 py-5 rounded-full font-bold text-lg transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-potion-gray active:scale-95 text-center;
+}
+
+.potion-badge {
+  @apply inline-flex items-center px-5 py-2 rounded-full bg-potion-gray border border-potion-border text-potion-muted text-xs font-bold uppercase tracking-widest mb-10;
+}
+
+/* Mockup Effects - SendPotion Depth */
+.potion-mockup {
+  @apply bg-white rounded-[2rem] border border-potion-border shadow-[0_50px_100px_rgba(0,0,0,0.06)] overflow-hidden;
+}
+
+.potion-mockup-floating {
+  @apply shadow-[0_60px_120px_rgba(0,0,0,0.08)];
+}
+
+/* Spacing & Typography */
+.potion-h1 {
+  @apply text-3xl md:text-5xl leading-[1.1] mb-6 font-bold tracking-tighter;
+}
+
+.potion-h2 {
+  @apply text-2xl md:text-4xl leading-[1.2] mb-8 font-bold tracking-tight;
+}
+
+.potion-p {
+  @apply text-base md:text-lg text-potion-muted leading-relaxed mb-10 max-w-3xl;
+}
+
+.potion-highlight {
+  @apply text-potion-accent font-extrabold;
+}
+
+/* Background Gradients */
+.potion-gradient-bg {
+  @apply bg-transparent;
+}
+
+.bg-mesh {
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(210,100%,98%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(200,100%,96%,1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(190,100%,94%,1) 0, transparent 50%), 
+    radial-gradient(at 0% 50%, hsla(215,100%,99%,1) 0, transparent 50%), 
+    radial-gradient(at 100% 50%, hsla(185,100%,95%,1) 0, transparent 50%), 
+    radial-gradient(at 0% 100%, hsla(210,100%,97%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 100%, hsla(200,100%,96%,1) 0, transparent 50%), 
+    radial-gradient(at 100% 100%, hsla(190,100%,94%,1) 0, transparent 50%);
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.01;
+}
+
+.bg-grid {
+  background-image: radial-gradient(circle, #0047AB 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.015;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 20px;
+  border: 3px solid #ffffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
