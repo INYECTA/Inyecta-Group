@@ -2,6 +2,8 @@ import React from 'react';
 import { Footer7 } from "../ui/footer-7";
 import { CALENDAR_LINK, SUPPORT_EMAIL } from '../../constants';
 
+import { Logo } from '../ui/Logo';
+
 export const FooterSection = () => {
   const sections = [
     {
@@ -37,9 +39,7 @@ export const FooterSection = () => {
     <Footer7
       logo={{
         url: "/",
-        src: "https://www.shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
-        alt: "Inyecta Group Logo",
-        title: "Inyecta Group",
+        component: <Logo />,
       }}
       description="Automatización premium para clínicas estéticas de alto nivel. Transformamos centros médicos en máquinas de resultados."
       sections={sections}

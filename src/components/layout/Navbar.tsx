@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { CALENDAR_LINK } from '../../constants';
 
+import { Logo } from '../ui/Logo';
+
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -24,10 +26,7 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-4 group cursor-pointer">
-          <div className="relative">
-            <span className="font-bold text-2xl text-potion-text tracking-tighter">Inyecta Group</span>
-            <div className="absolute -top-1 -right-4 w-4 h-4 border-t-2 border-r-2 border-potion-text"></div>
-          </div>
+          <Logo />
         </Link>
         
         <div className="hidden md:flex items-center gap-12 text-sm font-bold text-potion-muted tracking-tight">

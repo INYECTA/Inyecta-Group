@@ -4,9 +4,10 @@ import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 interface Footer7Props {
   logo?: {
     url: string;
-    src: string;
-    alt: string;
-    title: string;
+    src?: string;
+    alt?: string;
+    title?: string;
+    component?: React.ReactNode;
   };
   sections?: Array<{
     title: string;
@@ -69,10 +70,8 @@ const defaultLegalLinks = [
 
 export const Footer7 = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
-    src: "https://www.shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
-    alt: "logo",
-    title: "Shadcnblocks.com",
+    url: "/",
+    title: "Inyecta Group",
   },
   sections = defaultSections,
   description = "A collection of components for your startup business or side project.",
@@ -88,14 +87,22 @@ export const Footer7 = ({
             {/* Logo */}
             <div className="flex items-center gap-2 lg:justify-start">
               <a href={logo.url}>
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  title={logo.title}
-                  className="h-8"
-                />
+                {logo.component ? (
+                  logo.component
+                ) : (
+                  <>
+                    {logo.src && (
+                      <img
+                        src={logo.src}
+                        alt={logo.alt}
+                        title={logo.title}
+                        className="h-8"
+                      />
+                    )}
+                    {logo.title && <h2 className="text-xl font-semibold">{logo.title}</h2>}
+                  </>
+                )}
               </a>
-              <h2 className="text-xl font-semibold">{logo.title}</h2>
             </div>
             <p className="max-w-[70%] text-sm text-muted-foreground">
               {description}

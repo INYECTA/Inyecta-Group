@@ -10,8 +10,8 @@
   --color-potion-border: #E2E8F0;
   --color-potion-text: #0F172A;
   --color-potion-muted: #64748B;
-  --color-potion-accent: #0052CC; /* Corporate Blue */
-  --color-potion-dynamic: #38BDF8; /* Light Blue Accent */
+  --color-potion-accent: #0047BB; /* Logo Blue */
+  --color-potion-dynamic: #60A5FA; /* Brighter Blue */
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
@@ -56,7 +56,7 @@
   --card-foreground: 222.2 84% 4.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
-  --primary: 221.2 83.2% 53.3%;
+  --primary: 221.2 100% 36.7%; /* #0047BB equivalent in HSL roughly */
   --primary-foreground: 210 40% 98%;
   --secondary: 210 40% 96.1%;
   --secondary-foreground: 222.2 47.4% 11.2%;
@@ -212,7 +212,7 @@
 }
 
 .bg-grid {
-  background-image: radial-gradient(circle, #0047AB 1px, transparent 1px);
+  background-image: radial-gradient(circle, #0047BB 1px, transparent 1px);
   background-size: 60px 60px;
   opacity: 0.015;
 }

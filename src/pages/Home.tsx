@@ -253,6 +253,8 @@ const About = () => {
   );
 };
 
+import { Logo } from '../components/ui/Logo';
+
 const FinalCTA = () => {
   return (
     <section className="py-32 px-6">
@@ -263,7 +265,8 @@ const FinalCTA = () => {
           viewport={{ once: true }}
           className="bg-blue-600 rounded-[4rem] p-16 md:p-32 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-600/30"
         >
-          <div className="relative z-10">
+          <div className="relative z-10 flex flex-col items-center">
+            <Logo variant="light" className="mb-8 scale-125" />
             <h2 className="potion-h2 text-white">
               Transforma tu clínica estética en una marca deseada.
             </h2>
