@@ -19,6 +19,8 @@ import Testimonials from "../components/ui/testimonials";
 import { Pricing } from "../components/blocks/pricing";
 import { CALENDAR_LINK } from '../constants';
 import { SERVICES } from '../servicesData';
+import { VerticalImageStack } from '../components/ui/vertical-image-stack';
+import { FeatureSteps } from '../components/ui/feature-section';
 
 const TrustBadges = () => {
   const badges = [
@@ -242,55 +244,35 @@ const Services = () => {
 };
 
 const Benefits = () => {
-  const benefits = [
-    "Captación automática de pacientes de alto valor",
-    "Eliminación del 90% de tus tareas manuales",
-    "Atención 24/7: Nunca más pierdas un lead",
-    "Agenda llena con sistemas que no duermen",
-    "Resultados escalables, predecibles y medibles"
+  const features = [
+    {
+      step: 'Paso 1',
+      title: 'Captación Automática',
+      content: 'Atraemos pacientes de alto valor mediante segmentación ultra-precisa con IA, asegurando que cada lead tenga el perfil ideal para tu clínica.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+      step: 'Paso 2',
+      title: 'Atención 24/7',
+      content: 'Nuestros asistentes inteligentes responden al instante, califican a los interesados y agendan citas directamente en tu calendario, sin errores humanos.',
+      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+      step: 'Paso 3',
+      title: 'Escalamiento Predecible',
+      content: 'Eliminamos el 90% de las tareas manuales, permitiéndote centrarte en tus pacientes mientras tu facturación crece de forma medible y constante.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop'
+    }
   ];
 
   return (
-    <section id="beneficios" className="py-32 px-6 bg-blue-50/30">
-      <div className="potion-container">
-        <div className="grid lg:grid-cols-2 gap-24 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="potion-badge">Beneficios</div>
-            <h2 className="potion-h2">Por qué elegir Inyecta Group</h2>
-            <p className="potion-p">
-              No somos una agencia de marketing más. Somos el socio tecnológico que tu clínica necesita para dar el siguiente paso.
-            </p>
-            <ul className="space-y-6">
-              {benefits.map((b, i) => (
-                <li key={i} className="flex items-center gap-4 text-xl font-bold text-slate-900">
-                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg shadow-blue-600/20">
-                    <Check className="w-5 h-5" />
-                  </div>
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="aspect-square bg-gradient-to-br from-blue-600 to-blue-400 rounded-[4rem] flex items-center justify-center p-12 shadow-2xl shadow-blue-600/20">
-              <div className="w-full h-full bg-white/10 backdrop-blur-md rounded-[3rem] border border-white/20 flex flex-col items-center justify-center text-white text-center p-12">
-                <TrendingUp className="w-24 h-24 mb-8" />
-                <p className="text-5xl font-bold mb-4">+150%</p>
-                <p className="text-xl opacity-80">Incremento promedio en agendamientos automáticos</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
+    <section id="beneficios" className="py-32 px-6 bg-slate-50/50">
+      <FeatureSteps 
+        features={features}
+        title="Por qué elegir Inyecta Group"
+        autoPlayInterval={5000}
+        imageHeight="h-[500px]"
+      />
     </section>
   );
 };
@@ -459,6 +441,19 @@ const MissionSection = () => {
   );
 };
 
+const PortfolioSection = () => {
+  return (
+    <section id="portfolio" className="py-32 bg-white overflow-hidden">
+      <div className="potion-container px-6 mb-20 text-center">
+        <div className="potion-badge">Visualiza el futuro</div>
+        <h2 className="potion-h2">Tu clínica, <span className="potion-highlight">reimaginada</span></h2>
+        <p className="potion-p mx-auto">Desliza para ver cómo transformamos la identidad y los procesos de nuestros clientes.</p>
+      </div>
+      <VerticalImageStack />
+    </section>
+  );
+};
+
 const About = () => {
   const points = [
     "IA Aplicada",
@@ -533,6 +528,7 @@ export const Home = () => {
       <Hero />
       <ProblemSection />
       <MissionSection />
+      <PortfolioSection />
       <Services />
       <Benefits />
       <PricingSection />
