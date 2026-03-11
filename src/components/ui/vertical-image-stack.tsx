@@ -27,14 +27,14 @@ const images = [
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1559839734-2b71f1e3c770?q=80&w=1000&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=1000&auto=format&fit=crop",
     alt: "Profesional médico",
     title: "Enfoque Médico",
     desc: "Especializados en el sector salud y estética."
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1000&auto=format&fit=crop",
     alt: "Crecimiento y analítica",
     title: "Crecimiento Real",
     desc: "Escalamos tu facturación con datos."

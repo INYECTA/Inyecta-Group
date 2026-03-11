@@ -151,11 +151,11 @@
 }
 
 .potion-button-primary {
-  @apply bg-potion-text text-white px-10 py-5 rounded-full font-bold text-lg transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-potion-accent hover:shadow-[0_20px_40px_rgba(0,102,255,0.2)] active:scale-95 text-center;
+  @apply bg-potion-text text-white px-10 py-5 rounded-full font-bold text-lg transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-potion-accent hover:shadow-[0_20px_40px_rgba(0,102,255,0.2)] active:scale-95 text-center flex items-center justify-center;
 }
 
 .potion-button-secondary {
-  @apply bg-white text-potion-text border border-potion-border px-10 py-5 rounded-full font-bold text-lg transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-potion-gray active:scale-95 text-center;
+  @apply bg-white text-potion-text border border-potion-border px-10 py-5 rounded-full font-bold text-lg transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-potion-gray active:scale-95 text-center flex items-center justify-center;
 }
 
 .potion-badge {

@@ -76,39 +76,51 @@ const StickyCTA = () => {
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden min-h-screen flex flex-col items-center justify-center">
+    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden min-h-[80vh] flex flex-col items-center justify-center">
       <div className="potion-container px-6 text-center flex flex-col items-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
-          className="flex flex-col items-center mb-12 md:mb-16"
+          className="flex flex-col items-center mb-12"
         >
           <div className="potion-badge">
             <Zap className="w-4 h-4 mr-2" />
-            IA & Automatización de Negocios
+            Automatización de Negocios
           </div>
           <h1 className="text-4xl md:text-7xl leading-[1.1] mb-8 font-bold tracking-tighter max-w-4xl">
-            Cómo <span className="potion-highlight">Escalar</span> tu Clínica con <span className="potion-highlight">IA</span> sin agencias tradicionales
+            <span className="potion-highlight">Automatiza</span> tu clínica estética y <span className="potion-highlight">deja de perder citas</span>
           </h1>
-          <p className="text-lg md:text-2xl text-potion-muted leading-relaxed mb-10 max-w-2xl">
-            Elimina el trabajo manual y genera leads calificados en piloto automático usando <span className="potion-highlight font-bold">Sistemas de IA Propios</span>.
+          <p className="text-lg md:text-2xl text-potion-muted leading-relaxed mb-10 max-w-3xl">
+            Creamos sistemas que <span className="font-semibold text-slate-900">organizan tu agenda</span>, responden pacientes y hacen <span className="font-semibold text-slate-900">seguimiento automáticamente</span>, para que tu clínica tenga más reservas y menos caos.
           </p>
+
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-12">
+            {[
+              "Menos citas perdidas",
+              "Más pacientes que reservan",
+              "Menos tiempo respondiendo mensajes"
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2 text-slate-700 font-semibold">
+                <span className="text-blue-600 text-xl">✔</span>
+                {item}
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col items-center gap-8 w-full max-w-md mx-auto"
+          className="flex flex-col md:flex-row items-center gap-4 w-full max-w-2xl mx-auto"
         >
-          <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="potion-button-primary w-full py-6 text-xl md:text-2xl shadow-2xl shadow-blue-600/30">
-            Reservar mi Auditoría Gratis
+          <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="potion-button-primary w-full md:w-auto md:flex-1 py-6 text-xl shadow-2xl shadow-blue-600/30">
+            Reservar auditoría gratuita
           </a>
-          <p className="text-xs md:text-sm text-potion-muted font-bold uppercase tracking-widest flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-green-500" />
-            Solo 3 plazas disponibles este mes
-          </p>
+          <Link to="/como-funciona" className="potion-button-secondary w-full md:w-auto md:flex-1 py-6 text-xl">
+            Ver cómo funciona
+          </Link>
         </motion.div>
 
         <TrustBadges />
@@ -126,150 +138,121 @@ const Hero = () => {
 };
 
 const ProblemSection = () => {
-  const problems = [
-    {
-      icon: <CalendarOff className="w-8 h-8" />,
-      title: "Agendas con huecos vacíos",
-      desc: "Cada hora sin paciente es dinero que nunca vuelve. La incertidumbre de no saber si mañana estará lleno es el mayor freno de tu crecimiento."
-    },
-    {
-      icon: <Clock className="w-8 h-8" />,
-      title: "Esclavo de las tareas manuales",
-      desc: "Pasas más tiempo respondiendo WhatsApps y confirmando citas que tratando a tus pacientes. Tu tiempo vale demasiado para perderlo en gestión básica."
-    },
-    {
-      icon: <TrendingDown className="w-8 h-8" />,
-      title: "Leads que se enfrían y mueren",
-      desc: "Si no respondes en menos de 5 minutos, el potencial cliente se va a la competencia. Sin IA, es imposible estar disponible 24/7."
-    },
-    {
-      icon: <AlertCircle className="w-8 h-8" />,
-      title: "Dependencia de referidos",
-      desc: "El 'boca a boca' es excelente, pero no es escalable ni predecible. Si no tienes un sistema de captación constante, tu negocio está en riesgo."
-    }
+  const identifyList = [
+    "Pacientes reservan y no se presentan",
+    "WhatsApp lleno de preguntas repetitivas",
+    "Leads que preguntan pero nunca reservan",
+    "Tu equipo pierde horas gestionando agenda",
+    "Nadie hace seguimiento después del tratamiento"
+  ];
+
+  const agitateList = [
+    "Pacientes olvidan sus citas",
+    "Leads se enfrían y reservan en otra clínica",
+    "Tu equipo se satura respondiendo mensajes",
+    "Se pierden oportunidades de reventa de tratamientos"
   ];
 
   return (
-    <section className="py-20 md:py-32 px-6 bg-slate-900 text-white overflow-hidden relative">
-      <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-grid pointer-events-none"></div>
+    <section id="problema" className="py-16 md:py-20 px-6 bg-slate-900 text-white overflow-hidden relative">
+      <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-grid pointer-events-none"></div>
+      
       <div className="potion-container relative z-10">
-        <div className="max-w-3xl mb-16 md:mb-24">
+        <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-start">
+          
+          {/* IDENTIFICAR EL PROBLEMA */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="space-y-8"
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold uppercase tracking-widest mb-8">
-              El coste de la inacción
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold uppercase tracking-widest">
+              PROBLEMA
             </div>
-            <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]">
-              Tu negocio está perdiendo <span className="text-red-500">dinero y tiempo</span> cada día que pasa sin un sistema inteligente.
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
+              Si tienes una clínica estética, <span className="text-red-500">probablemente te pasa esto</span>
             </h2>
-            <p className="text-lg md:text-xl text-slate-400 leading-relaxed">
-              La mayoría de las clínicas pierden hasta un <span className="text-red-500 font-bold">30% de sus ingresos potenciales</span> por falta de seguimiento inmediato y procesos manuales ineficientes. El mercado ha cambiado, y la suerte ya no es una estrategia.
+            
+            <div className="space-y-4">
+              {identifyList.map((item, i) => (
+                <div key={i} className="flex items-start gap-3 text-lg text-slate-300">
+                  <span className="text-red-500 mt-1 font-bold">•</span>
+                  {item}
+                </div>
+              ))}
+            </div>
+            
+            <p className="text-xl font-semibold text-white pt-4 border-t border-white/10">
+              Esto hace que pierdas <span className="text-red-500">tiempo, pacientes y dinero</span> cada semana.
             </p>
           </motion.div>
-        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {problems.map((p, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-6 md:p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
-            >
-              <div className="text-red-500 mb-6">{p.icon}</div>
-              <h3 className="text-xl font-bold mb-4">{p.title}</h3>
-              <p className="text-slate-400 leading-relaxed text-sm md:text-base">{p.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+          {/* AGITAR EL PROBLEMA */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8 bg-white/5 p-8 md:p-12 rounded-[3rem] border border-white/10"
+          >
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
+              EL IMPACTO REAL
+            </div>
+            <h3 className="text-2xl md:text-4xl font-bold tracking-tight leading-[1.2]">
+              El problema <span className="text-blue-400">no es solo la agenda</span>
+            </h3>
+            
+            <p className="text-lg text-slate-400">
+              Cuando una clínica no tiene sistemas automáticos pasa esto:
+            </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 md:mt-24 p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] bg-gradient-to-r from-blue-600 to-indigo-600 text-center"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold mb-6">¿Te sientes identificado?</h3>
-          <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            No es tu culpa. Nadie te enseñó a ser ingeniero de IA, te enseñaron a ser el mejor en tu especialidad. Nosotros nos encargamos de la tecnología para que tú te encargues de lo que amas.
-          </p>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <a href="#servicios" className="bg-white text-blue-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-blue-50 transition-all active:scale-95 w-full md:w-auto">
-              Ver la Solución Perfecta
-            </a>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
+            <div className="space-y-4">
+              {agitateList.map((item, i) => (
+                <div key={i} className="flex items-start gap-3 text-lg text-slate-300">
+                  <span className="text-blue-400 mt-1 font-bold">•</span>
+                  {item}
+                </div>
+              ))}
+            </div>
+            
+            <p className="text-lg italic text-slate-400 pt-6 border-t border-white/5">
+              Mientras tanto, otras clínicas <span className="text-white font-bold">automatizan todo y crecen más rápido</span>.
+            </p>
+          </motion.div>
 
-const Services = () => {
-  return (
-    <section id="servicios" className="py-32 px-6">
-      <div className="potion-container">
-        <div className="text-center mb-24">
-          <div className="potion-badge">Lo que hacemos</div>
-          <h2 className="potion-h2">Soluciones diseñadas para escalar</h2>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {SERVICES.map((s, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-12 rounded-[2.5rem] bg-white/40 backdrop-blur-xl border border-white/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group"
-            >
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
-                {s.icon}
-              </div>
-              <h3 className="text-2xl font-bold mb-4">{s.title}</h3>
-              <p className="text-lg text-slate-500 leading-relaxed mb-8">{s.desc}</p>
-              <Link to={`/servicios/${s.id}`} className="inline-flex items-center gap-2 font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
-                Ver detalles <ChevronRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
-          ))}
         </div>
       </div>
     </section>
   );
 };
 
-const Benefits = () => {
-  const features = [
+const HowItWorks = () => {
+  const steps = [
     {
-      step: 'Paso 1',
-      title: 'Captación Automática',
-      content: 'Atraemos pacientes de alto valor mediante segmentación ultra-precisa con IA, asegurando que cada lead tenga el perfil ideal para tu clínica.',
+      step: '1',
+      title: 'Auditoría gratuita',
+      content: 'Analizamos tu sistema de citas y detectamos dónde estás perdiendo pacientes.',
+      image: 'https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+      step: '2',
+      title: 'Implementación',
+      content: 'Configuramos el sistema de automatización adaptado a tu clínica.',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+      step: '3',
+      title: 'Automatización completa',
+      content: 'Tu clínica empieza a tener recordatorios, respuestas automáticas y seguimiento de pacientes.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop'
-    },
-    {
-      step: 'Paso 2',
-      title: 'Atención 24/7',
-      content: 'Nuestros asistentes inteligentes responden al instante, califican a los interesados y agendan citas directamente en tu calendario, sin errores humanos.',
-      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop'
-    },
-    {
-      step: 'Paso 3',
-      title: 'Escalamiento Predecible',
-      content: 'Eliminamos el 90% de las tareas manuales, permitiéndote centrarte en tus pacientes mientras tu facturación crece de forma medible y constante.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop'
     }
   ];
 
   return (
-    <section id="beneficios" className="py-32 px-6 bg-slate-50/50">
+    <section id="como-funciona" className="py-16 md:py-20 px-6 bg-slate-50/50">
       <FeatureSteps 
-        features={features}
-        title="Por qué elegir Inyecta Group"
+        features={steps}
+        title="Cómo funciona"
         autoPlayInterval={5000}
         imageHeight="h-[500px]"
       />
@@ -280,71 +263,64 @@ const Benefits = () => {
 const PricingSection = () => {
   const plans = [
     {
-      name: "Básico",
+      name: "Plan Básico – Sistema automático de citas",
       price: "300",
-      yearlyPrice: "240",
-      period: "por mes",
       features: [
-        "Respuesta automática a interesados",
-        "Automatización por palabras clave (ej: 'INFO')",
-        "Gestión de preguntas frecuentes",
-        "Seguimiento a pacientes que no reservan",
-        "Reducción de mensajes repetitivos",
-        "Evita saturación de WhatsApp/Instagram",
+        "Organización completa del calendario",
+        "Definición de horarios y franjas disponibles",
+        "Límite de citas por día",
+        "Recordatorio automático 1 día antes de la cita",
+        "Recordatorio automático 30 minutos antes",
+        "Mensaje automático para reagendar citas",
       ],
-      description: "Menos tiempo respondiendo y más pacientes reservando.",
-      buttonText: "Empezar Ahora",
+      description: "Ideal para clínicas que quieren organizar su agenda y evitar citas perdidas.",
+      result: "Menos citas vacías y una agenda mucho más organizada.",
+      buttonText: "Solicitar información",
       href: CALENDAR_LINK,
       isPopular: false,
     },
     {
-      name: "Intermedio",
+      name: "Plan Intermedio – Chatbot inteligente para pacientes",
       price: "700",
-      yearlyPrice: "560",
-      period: "por mes",
       features: [
-        "Asistente automático humanoide",
-        "Guía completa hasta reserva de cita",
-        "Integración directa con calendario",
-        "Recordatorios automáticos (1, 3, 7 días)",
-        "Sugerencia de tratamientos relacionados",
-        "Upselling inteligente de servicios",
+        "Todo lo incluido en el Plan Básico",
+        "Respuestas automáticas a preguntas frecuentes",
+        "Automatización de mensajes en Instagram y WhatsApp",
+        "Guía automática al paciente hasta reservar su cita",
+        "Seguimiento automático si el paciente no reserva",
+        "Sugerencias automáticas de tratamientos relacionados",
       ],
-      description: "Más reservas y más tratamientos por paciente.",
-      buttonText: "Plan Recomendado",
+      description: "Perfecto para clínicas que quieren automatizar mensajes y convertir más consultas en citas.",
+      result: "Más reservas y menos tiempo respondiendo mensajes repetitivos.",
+      buttonText: "Solicitar información",
       href: CALENDAR_LINK,
       isPopular: true,
     },
     {
-      name: "Premium",
+      name: "Plan Premium – Sistema completo de automatización y fidelización",
       price: "1500",
-      yearlyPrice: "1200",
-      period: "por mes",
       features: [
         "Todo lo incluido en el Plan Intermedio",
-        "Seguimiento post-cita personalizado",
-        "Recordatorios según tratamiento (4-6 meses)",
-        "Encuestas de satisfacción automáticas",
-        "Chatbot avanzado con lenguaje natural",
-        "Guía completa en PDF del sistema",
+        "Seguimiento automático después de cada cita",
+        "Recordatorios inteligentes según el tratamiento realizado",
+        "Formularios automáticos para medir la satisfacción del paciente",
+        "Sugerencias automáticas de nuevos tratamientos",
+        "Chatbot avanzado con respuestas naturales y personalizadas",
+        "Guía completa paso a paso para aprovechar todo el sistema",
       ],
-      description: "Fidelización total y asistente virtual 24/7.",
-      buttonText: "Contactar Ventas",
+      description: "Para clínicas que quieren un sistema completo que capte, gestione y fidelice pacientes automáticamente.",
+      result: "Más pacientes recurrentes, más tratamientos por paciente y una clínica que funciona con sistemas automáticos.",
+      buttonText: "Solicitar información",
       href: CALENDAR_LINK,
       isPopular: false,
     },
   ];
 
   return (
-    <section id="precios" className="bg-slate-50/50 py-24">
-      <div className="potion-container px-6 mb-12 text-center">
-        <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-600 text-xs font-bold uppercase tracking-widest mb-4">
-          Cupos Limitados
-        </div>
-        <p className="text-slate-500 font-medium">Solo aceptamos 2 nuevos clientes por mes para garantizar la máxima calidad en la implementación.</p>
-      </div>
+    <section id="precios" className="bg-slate-50/50 py-16">
       <Pricing 
         plans={plans}
+        showToggle={false}
         title="Planes diseñados para tu éxito"
         description="Elige el sistema que mejor se adapte al volumen y necesidades de tu clínica."
       />
@@ -355,28 +331,23 @@ const PricingSection = () => {
 const FAQSection = () => {
   const faqs = [
     {
-      q: "¿Cuánto tiempo tarda en implementarse el sistema?",
-      a: "Nuestra implementación estándar toma entre 10 y 15 días hábiles. Desde el día 1 empezamos a configurar tus flujos para que veas resultados lo antes posible."
+      q: "¿Cuánto tarda en implementarse?",
+      a: "2-5 días dependiendo del sistema."
     },
     {
-      q: "¿Necesito conocimientos técnicos para usar la IA?",
-      a: "Absolutamente ninguno. Nosotros nos encargamos de toda la parte técnica y te entregamos un sistema 'llave en mano'. Tú solo verás cómo se llena tu agenda."
+      q: "¿Mi equipo necesita formación?",
+      a: "No, el sistema es muy sencillo y te guiamos paso a paso."
     },
     {
-      q: "¿Se integra con mi software de gestión actual?",
-      a: "Sí, nos integramos con la mayoría de CRMs y calendarios del mercado (Google Calendar, Calendly, etc.). Si usas un sistema propietario, podemos desarrollar una integración a medida."
-    },
-    {
-      q: "¿Qué pasa si ya tengo una agencia de marketing?",
-      a: "Perfecto. Nosotros no somos una agencia de marketing tradicional, somos socios tecnológicos. Podemos trabajar en conjunto con tu agencia para potenciar los leads que ellos ya generan."
+      q: "¿Funciona con mi calendario?",
+      a: "Sí, se integra con Google Calendar."
     }
   ];
 
   return (
-    <section className="py-32 px-6 bg-slate-50">
+    <section className="py-16 md:py-20 px-6 bg-slate-50">
       <div className="potion-container">
         <div className="text-center mb-20">
-          <div className="potion-badge">FAQ</div>
           <h2 className="potion-h2">Preguntas Frecuentes</h2>
           <p className="potion-p mx-auto">Resolvemos tus dudas para que des el paso con total confianza.</p>
         </div>
@@ -400,40 +371,44 @@ const FAQSection = () => {
   );
 };
 
-const MissionSection = () => {
+const SolutionSection = () => {
+  const solutionList = [
+    "Recordatorios automáticos de citas",
+    "Agenda organizada con reservas online",
+    "Respuestas automáticas en Instagram y WhatsApp",
+    "Seguimiento de pacientes después del tratamiento"
+  ];
+
   return (
-    <section className="py-32 px-6 overflow-hidden relative">
+    <section id="solucion" className="py-16 md:py-20 px-6 overflow-hidden relative bg-white">
       <div className="potion-container">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="potion-badge">Nuestra Misión</div>
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]">
-              Democratizando la <span className="potion-highlight">Alta Tecnología</span> para negocios locales.
+              <span className="text-blue-600">Automatizar tu clínica</span>
             </h2>
-            <p className="text-xl text-slate-500 leading-relaxed mb-8">
-              En Inyecta Group, creemos que la Inteligencia Artificial no debería ser un privilegio exclusivo de las grandes corporaciones de Silicon Valley. 
+            <p className="text-xl text-slate-600 leading-relaxed mb-12 max-w-2xl mx-auto">
+              Creamos sistemas de automatización diseñados específicamente para clínicas estéticas.
+              Estos sistemas trabajan por tu clínica 24 horas al día:
             </p>
-            <p className="text-xl text-slate-500 leading-relaxed">
-              Nuestra misión es poner el poder de la automatización avanzada en manos de dueños de clínicas y negocios locales, permitiéndoles competir al más alto nivel y recuperar su activo más valioso: <strong>su tiempo</strong>.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="aspect-video bg-slate-900 rounded-[3rem] overflow-hidden shadow-2xl flex items-center justify-center p-12 text-white text-center relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent"></div>
-              <div className="relative z-10">
-                <Sparkles className="w-16 h-16 text-blue-400 mb-6 mx-auto" />
-                <p className="text-2xl font-medium italic">"La tecnología es solo una herramienta. El éxito es lo que tú haces con el tiempo que ella te devuelve."</p>
-              </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-12 text-left">
+              {solutionList.map((item, i) => (
+                <div key={i} className="flex items-center gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 text-lg text-slate-700 font-medium">
+                  <span className="text-blue-600 text-xl font-bold">✔</span>
+                  {item}
+                </div>
+              ))}
             </div>
+
+            <p className="text-2xl font-bold text-slate-900 border-t border-slate-100 pt-12">
+              Tu equipo puede centrarse en lo importante <br />
+              <span className="text-blue-600 text-3xl md:text-4xl">atender pacientes</span>
+            </p>
           </motion.div>
         </div>
       </div>
@@ -443,80 +418,112 @@ const MissionSection = () => {
 
 const PortfolioSection = () => {
   return (
-    <section id="portfolio" className="py-32 bg-white overflow-hidden">
+    <section id="portfolio" className="py-16 md:py-20 bg-white overflow-hidden">
       <div className="potion-container px-6 mb-20 text-center">
         <div className="potion-badge">Visualiza el futuro</div>
-        <h2 className="potion-h2">Tu clínica, <span className="potion-highlight">reimaginada</span></h2>
-        <p className="potion-p mx-auto">Desliza para ver cómo transformamos la identidad y los procesos de nuestros clientes.</p>
+        <h2 className="potion-h2">Multiplica tus <span className="potion-highlight">reservas</span></h2>
+        <p className="potion-p mx-auto">Mira cómo transformamos la operatividad y los ingresos de clínicas como la tuya.</p>
       </div>
       <VerticalImageStack />
     </section>
   );
 };
 
-const About = () => {
-  const points = [
-    "IA Aplicada",
-    "Ventas Automatizadas",
-    "Branding de Lujo",
-    "Negocios Escalables",
-    "Resultados Reales"
+import { Logo } from '../components/ui/Logo';
+
+const ResultsSection = () => {
+  const results = [
+    "Menos citas perdidas",
+    "Más pacientes que reservan",
+    "Menos tiempo en redes sociales",
+    "Más tratamientos por paciente",
+    "Más ingresos mensuales"
   ];
 
   return (
-    <section id="sobre-nosotros" className="py-32 px-6 bg-slate-900 text-white">
+    <section id="resultados" className="py-16 md:py-20 px-6 bg-slate-50">
       <div className="potion-container">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <div className="potion-badge border-white/20 text-white/60">Sobre Inyecta Group</div>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-12 leading-[1.1]">
-              No somos una agencia. Somos tu <span className="text-blue-400">Socio Tecnológico</span>.
+            <div className="potion-badge">RESULTADOS</div>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6">
+              Lo que cambia en tu clínica
             </h2>
-            <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Inyecta Group nació con una visión clara: fusionar la elegancia del branding de lujo con la potencia bruta de la Inteligencia Artificial para crear negocios que no solo se vean bien, sino que funcionen como máquinas de precisión.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              {points.map((p, i) => (
-                <div key={i} className="px-8 py-4 bg-white/5 rounded-2xl border border-white/10 font-bold text-white/80">
-                  {p}
-                </div>
-              ))}
-            </div>
           </motion.div>
+
+          <div className="grid md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {results.map((result, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(37, 99, 235, 0.1)" }}
+                className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm transition-all flex items-center gap-4 group relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 shrink-0 shadow-inner group-hover:bg-green-200 transition-colors">
+                  <Check className="w-6 h-6" />
+                </div>
+                <span className="text-lg font-bold text-slate-800 relative z-10">{result}</span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-import { Logo } from '../components/ui/Logo';
-
 const FinalCTA = () => {
   return (
-    <section className="py-32 px-6">
-      <div className="potion-container">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="bg-blue-600 rounded-[4rem] p-16 md:p-32 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-600/30"
-        >
-          <div className="relative z-10 flex flex-col items-center">
-            <Logo variant="light" className="mb-8 scale-125" />
-            <h2 className="potion-h2 text-white">
-              Transforma tu clínica estética en una marca deseada.
+    <section className="py-16 md:py-20 px-6 bg-white relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-50 rounded-full blur-[120px] opacity-60"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-slate-50 rounded-full blur-[120px] opacity-60"></div>
+      </div>
+      
+      <div className="potion-container relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-8 leading-tight">
+              Descubre cómo <span className="text-blue-600">automatizar</span> tu clínica
             </h2>
-            <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-blue-600 px-12 py-6 rounded-full font-bold text-2xl hover:bg-blue-50 transition-all shadow-xl active:scale-95">
-              Agenda tu Auditoría Gratuita
-            </a>
-          </div>
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-400/20 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2"></div>
-        </motion.div>
+            
+            <p className="text-xl md:text-2xl text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Agenda una auditoría gratuita de 20 minutos y te mostraremos el camino exacto para escalar tu facturación.
+            </p>
+
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <a 
+                href={CALENDAR_LINK} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center justify-center bg-blue-600 text-white px-12 py-6 rounded-2xl font-bold text-xl md:text-2xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20 text-center"
+              >
+                Reservar auditoría gratuita
+              </a>
+            </motion.div>
+            
+            <p className="mt-8 text-slate-400 font-medium">
+              Sin compromiso. Solo valor real para tu negocio.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -527,14 +534,13 @@ export const Home = () => {
     <>
       <Hero />
       <ProblemSection />
-      <MissionSection />
-      <PortfolioSection />
-      <Services />
-      <Benefits />
-      <PricingSection />
+      <SolutionSection />
       <Testimonials />
+      <PortfolioSection />
+      <HowItWorks />
+      <ResultsSection />
+      <PricingSection />
       <FAQSection />
-      <About />
       <FinalCTA />
       <StickyCTA />
     </>

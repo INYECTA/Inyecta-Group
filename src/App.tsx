@@ -5,6 +5,8 @@ import { Navbar } from './components/layout/Navbar';
 import { FooterSection } from './components/layout/FooterSection';
 import { Home } from './pages/Home';
 import { ServicePage } from './pages/ServicePage';
+import { AboutPage } from './pages/AboutPage';
+import { HowItWorksPage } from './pages/HowItWorksPage';
 
 // Component to handle scroll to top on route change
 const ScrollToTop = () => {
@@ -35,6 +37,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/servicios/:id" element={<ServicePage />} />
+            <Route path="/sobre-nosotros" element={<AboutPage />} />
+            <Route path="/como-funciona" element={<HowItWorksPage />} />
           </Routes>
         </main>
         <FooterSection />

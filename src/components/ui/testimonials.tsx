@@ -66,7 +66,7 @@ const thirdColumn = testimonials.slice(6, 9);
 
 const Testimonials = () => {
   return (
-    <section id="testimonios" className="bg-transparent my-32 relative overflow-hidden">
+    <section id="testimonios" className="bg-transparent my-20 relative overflow-hidden">
       <div className="potion-container z-10 mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ const Testimonials = () => {
             Lo que dicen nuestras clínicas
           </h2>
           <p className="potion-p mt-5">
-            Descubre cómo Inyecta Group está transformando el día a día de centros estéticos de alto nivel.
+            Descubre cómo Inyecta Group está transformando el día a día de clínicas de alto nivel.
           </p>
         </motion.div>
 

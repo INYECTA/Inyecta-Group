@@ -26,15 +26,16 @@ export const Navbar = () => {
   const navLinks = isHome ? [
     { name: "Servicios", href: "#servicios" },
     { name: "Portfolio", href: "#portfolio" },
-    { name: "Beneficios", href: "#beneficios" },
+    { name: "Cómo funciona", href: "/como-funciona" },
     { name: "Precios", href: "#precios" },
     { name: "Testimonios", href: "#testimonios" },
-    { name: "Sobre nosotros", href: "#sobre-nosotros" },
+    { name: "Sobre nosotros", href: "/sobre-nosotros" },
   ] : [
     { name: "Inicio", href: "/" },
     { name: "Servicios", href: "/#servicios" },
-    { name: "Portfolio", href: "/#portfolio" },
+    { name: "Cómo funciona", href: "/como-funciona" },
     { name: "Precios", href: "/#precios" },
+    { name: "Sobre nosotros", href: "/sobre-nosotros" },
   ];
 
   return (
