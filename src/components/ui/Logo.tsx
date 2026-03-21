@@ -12,7 +12,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '', variant = 'dark' }) 
   return (
     <div className={`flex items-center gap-2 group/logo ${className}`}>
       <div className="relative inline-block py-1 pr-4">
-        <span className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${colorClass}`}>
+        <span className={`text-xl font-bold tracking-tight transition-colors duration-300 ${colorClass}`}>
           Inyecta Group
         </span>
         <svg 

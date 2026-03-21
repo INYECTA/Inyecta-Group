@@ -6,35 +6,35 @@ import { motion, type PanInfo, AnimatePresence } from "framer-motion"
 const images = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop",
     alt: "Clínica de lujo interior",
     title: "Espacios Exclusivos",
     desc: "Diseñamos la experiencia física de tu marca."
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
     alt: "Inteligencia Artificial",
     title: "IA de Vanguardia",
     desc: "Sistemas inteligentes que trabajan para ti."
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop",
     alt: "Branding Premium",
     title: "Branding Premium",
     desc: "Posicionamiento de alto nivel en el mercado."
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=1000&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1600880210837-0f8fb27472da?q=80&w=1000&auto=format&fit=crop",
     alt: "Profesional médico",
     title: "Enfoque Médico",
     desc: "Especializados en el sector salud y estética."
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1000&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
     alt: "Crecimiento y analítica",
     title: "Crecimiento Real",
     desc: "Escalamos tu facturación con datos."

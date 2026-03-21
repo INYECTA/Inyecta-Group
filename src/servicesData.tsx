@@ -19,7 +19,7 @@ export const SERVICES: Service[] = [
       "Leads con un 3x más de probabilidad de conversión.",
       "Escalabilidad inmediata sin aumentar el equipo humano."
     ],
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: "branding-lujo",
@@ -37,7 +37,7 @@ export const SERVICES: Service[] = [
       "Atracción de clientes con mayor poder adquisitivo.",
       "Diferenciación total frente a la competencia local."
     ],
-    image: "https://images.unsplash.com/photo-1600880210837-3219c7f116ec?q=80&w=1000&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: "automatizacion-ventas",
@@ -55,7 +55,7 @@ export const SERVICES: Service[] = [
       "Incremento del 50% en la tasa de agendamiento.",
       "Eliminación de errores humanos en la gestión de citas."
     ],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: "escalamiento-negocios",
@@ -73,6 +73,6 @@ export const SERVICES: Service[] = [
       "Optimización de márgenes de beneficio.",
       "Estructura de negocio sólida preparada para el crecimiento masivo."
     ],
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop"
   }
 ];

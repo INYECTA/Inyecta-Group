@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -6,12 +6,12 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   
   --color-potion-bg: #FFFFFF;
-  --color-potion-gray: #F8FAFC;
-  --color-potion-border: #E2E8F0;
-  --color-potion-text: #0F172A;
-  --color-potion-muted: #64748B;
-  --color-potion-accent: #0047BB; /* Logo Blue */
-  --color-potion-dynamic: #60A5FA; /* Brighter Blue */
+  --color-potion-gray: #F9FAFB;
+  --color-potion-border: #F3F4F6;
+  --color-potion-text: #000000;
+  --color-potion-muted: #6B7280;
+  --color-potion-accent: #2563EB; /* Modern Blue */
+  --color-potion-dynamic: #3B82F6;
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
@@ -133,38 +133,38 @@
   }
   
   h1, h2, h3, h4 {
-    @apply tracking-tight font-semibold;
+    @apply tracking-tighter font-bold;
   }
 }
 
 /* SendPotion Style Components */
 .potion-section {
-  @apply py-24 md:py-48 px-6;
+  @apply py-24 md:py-32 px-6;
 }
 
 .potion-container {
-  @apply max-w-5xl mx-auto;
+  @apply max-w-7xl mx-auto;
 }
 
 .potion-card {
-  @apply bg-white border border-potion-border rounded-[2.5rem] p-12 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.04)] hover:-translate-y-2;
+  @apply bg-white border border-potion-border rounded-3xl p-8 md:p-12 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.03)] hover:border-slate-200;
 }
 
 .potion-button-primary {
-  @apply bg-potion-text text-white px-10 py-5 rounded-full font-bold text-lg transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-potion-accent hover:shadow-[0_20px_40px_rgba(0,102,255,0.2)] active:scale-95 text-center flex items-center justify-center;
+  @apply bg-potion-text text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 ease-out hover:bg-potion-accent hover:shadow-lg hover:shadow-blue-600/20 active:scale-95 text-center flex items-center justify-center;
 }
 
 .potion-button-secondary {
-  @apply bg-white text-potion-text border border-potion-border px-10 py-5 rounded-full font-bold text-lg transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-potion-gray active:scale-95 text-center flex items-center justify-center;
+  @apply bg-white text-potion-text border border-potion-border px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 ease-out hover:bg-potion-gray active:scale-95 text-center flex items-center justify-center;
 }
 
 .potion-badge {
-  @apply inline-flex items-center px-5 py-2 rounded-full bg-potion-gray border border-potion-border text-potion-muted text-xs font-bold uppercase tracking-widest mb-10;
+  @apply inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-extrabold uppercase tracking-[0.2em] mb-8;
 }
 
 /* Mockup Effects - SendPotion Depth */
 .potion-mockup {
-  @apply bg-white rounded-[2rem] border border-potion-border shadow-[0_50px_100px_rgba(0,0,0,0.06)] overflow-hidden;
+  @apply bg-white rounded-3xl border border-potion-border shadow-[0_40px_80px_rgba(0,0,0,0.05)] overflow-hidden;
 }
 
 .potion-mockup-floating {

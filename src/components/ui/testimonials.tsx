@@ -6,37 +6,37 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     text: "Inyecta Group transformó por completo nuestra gestión de citas. Ahora el 80% de las consultas de Instagram se agendan solas.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1559839734-2b71f1536783?w=150&h=150&fit=crop",
     name: "Dra. Lucía Méndez",
     role: "Directora Médica, Clínica Estética",
   },
   {
     text: "La implementación fue sorprendentemente rápida. El equipo de soporte nos guió en todo momento y el bot es increíblemente natural.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150&h=150&fit=crop",
     name: "Carlos Ruiz",
     role: "Gerente de Operaciones",
   },
   {
     text: "Ya no perdemos leads los fines de semana. El sistema responde al instante y los pacientes están encantados con la rapidez.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=150&h=150&fit=crop",
     name: "Sofía Valdés",
     role: "Coordinadora de Pacientes",
   },
   {
     text: "Es la mejor inversión que hemos hecho este año. La integración con WhatsApp es perfecta y el retorno de inversión fue inmediato.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=150&h=150&fit=crop",
     name: "Dr. Javier López",
     role: "Propietario, Centro de Estética Avanzada",
   },
   {
     text: "Sus funciones robustas y el soporte rápido han transformado nuestro flujo de trabajo, haciéndonos significativamente más eficientes.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop",
     name: "Elena Martínez",
     role: "Project Manager",
   },
   {
     text: "La implementación superó las expectativas. Optimizó procesos, mejorando el rendimiento general del negocio.",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop",
     name: "Aliza Khan",
     role: "Analista de Negocios",
   },

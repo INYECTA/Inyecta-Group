@@ -35,14 +35,16 @@ export const TestimonialsColumn = (props: {
                 <div className="p-10 rounded-3xl border border-potion-border bg-white/50 backdrop-blur-sm shadow-lg shadow-potion-accent/5 max-w-xs w-full" key={i}>
                   <div className="text-potion-text/80 leading-relaxed">{text}</div>
                   <div className="flex items-center gap-2 mt-5">
-                    <img
-                      width={40}
-                      height={40}
-                      src={image}
-                      alt={name}
-                      referrerPolicy="no-referrer"
-                      className="h-10 w-10 rounded-full object-cover border border-potion-border"
-                    />
+                    <div className="h-10 w-10 rounded-full overflow-hidden border border-potion-border bg-slate-100 shrink-0">
+                      <img
+                        width={40}
+                        height={40}
+                        src={image}
+                        alt={name}
+                        referrerPolicy="no-referrer"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
                     <div className="flex flex-col">
                       <div className="font-bold tracking-tight leading-5 text-potion-text">{name}</div>
                       <div className="leading-5 opacity-60 tracking-tight text-potion-muted text-sm">{role}</div>

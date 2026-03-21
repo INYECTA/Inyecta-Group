@@ -33,14 +33,14 @@ export const ServicePage = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="potion-badge mb-6">{service.title}</div>
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8 leading-tight">
-              {service.title} para <span className="potion-highlight">Clínicas Premium</span>
+            <h1 className="text-6xl md:text-8xl font-extrabold text-black mb-8 leading-[0.9] tracking-tighter">
+              {service.title} para <span className="text-blue-600">Clínicas Premium</span>
             </h1>
-            <p className="text-xl text-slate-500 leading-relaxed mb-12">
+            <p className="text-xl md:text-2xl text-slate-500 leading-tight mb-12 tracking-tight">
               {service.desc} Implementamos soluciones de vanguardia diseñadas específicamente para el sector estético y de salud de alto nivel.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="potion-button-primary px-10 py-5 text-xl">
+              <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="potion-button-primary px-12 py-6 text-xl">
                 Agendar Auditoría Gratis
               </a>
             </div>
@@ -52,7 +52,7 @@ export const ServicePage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-600/20 border border-white/60">
+            <div className="aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-600/20 border border-white/60 bg-slate-100">
               <img 
                 src={service.image} 
                 alt={service.title} 
@@ -67,30 +67,31 @@ export const ServicePage = () => {
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-32">
-          <div className="p-12 rounded-[2.5rem] bg-white/40 backdrop-blur-xl border border-white/60 shadow-sm">
-            <h2 className="text-3xl font-bold mb-8">¿Qué incluye este servicio?</h2>
+        <div className="grid md:grid-cols-2 gap-6 mb-32">
+          <div className="p-12 rounded-3xl bg-white border border-slate-100 shadow-sm">
+            <h2 className="text-4xl font-extrabold mb-8 tracking-tighter">¿Qué incluye este servicio?</h2>
             <ul className="space-y-6">
               {service.details.map((detail, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <div className="mt-1 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                  <div className="mt-1 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4" />
                   </div>
-                  <p className="text-lg text-slate-600 font-medium">{detail}</p>
+                  <p className="text-lg text-black font-bold tracking-tight leading-tight">{detail}</p>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="p-12 rounded-[2.5rem] bg-blue-600 text-white shadow-xl shadow-blue-600/20">
-            <h2 className="text-3xl font-bold mb-8">Beneficios Directos</h2>
-            <ul className="space-y-6">
+          <div className="p-12 rounded-3xl bg-black text-white shadow-xl shadow-blue-600/20 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-grid pointer-events-none"></div>
+            <h2 className="text-4xl font-extrabold mb-8 tracking-tighter relative z-10">Beneficios Directos</h2>
+            <ul className="space-y-6 relative z-10">
               {service.benefits.map((benefit, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <div className="mt-1 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center shrink-0">
-                    <Check className="w-4 h-4" />
+                  <div className="mt-1 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4 text-white" />
                   </div>
-                  <p className="text-lg font-bold">{benefit}</p>
+                  <p className="text-lg font-extrabold tracking-tight leading-tight">{benefit}</p>
                 </li>
               ))}
             </ul>
@@ -98,20 +99,20 @@ export const ServicePage = () => {
         </div>
 
         <div className="text-center">
-          <h2 className="text-4xl font-bold mb-12">Explora otros servicios</h2>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <h2 className="text-5xl md:text-7xl font-extrabold mb-12 tracking-tighter leading-[0.9]">Explora otros servicios</h2>
+          <div className="grid sm:grid-cols-3 gap-4">
             {SERVICES.filter(s => s.id !== id).slice(0, 3).map((s, i) => (
               <Link 
                 key={i} 
                 to={`/servicios/${s.id}`}
                 className="p-8 rounded-3xl bg-white border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all text-left group"
               >
-                <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <div className="w-12 h-12 bg-slate-50 text-black rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                   {s.icon}
                 </div>
-                <h3 className="font-bold text-xl mb-2">{s.title}</h3>
-                <p className="text-slate-500 text-sm line-clamp-2 mb-4">{s.desc}</p>
-                <div className="flex items-center gap-2 text-blue-600 font-bold text-sm">
+                <h3 className="font-extrabold text-2xl mb-2 tracking-tighter">{s.title}</h3>
+                <p className="text-slate-500 text-sm line-clamp-2 mb-4 tracking-tight leading-tight">{s.desc}</p>
+                <div className="flex items-center gap-2 text-blue-600 font-extrabold text-sm tracking-tight">
                   Saber más <ChevronRight className="w-4 h-4" />
                 </div>
               </Link>

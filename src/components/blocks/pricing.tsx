@@ -124,7 +124,7 @@ export function Pricing({
               delay: index * 0.1,
             }}
             className={cn(
-              `rounded-[2.5rem] border-[1px] p-8 bg-background relative flex flex-col transition-all duration-500 hover:shadow-2xl hover:-translate-y-1`,
+              `rounded-3xl border-[1px] p-8 bg-background relative flex flex-col transition-all duration-500 hover:shadow-2xl hover:-translate-y-1`,
               plan.isPopular 
                 ? "border-blue-600 border-2 shadow-2xl shadow-blue-600/10 bg-blue-50/30" 
                 : "border-slate-200 shadow-sm hover:border-blue-200",
@@ -134,17 +134,17 @@ export function Pricing({
             {plan.isPopular && (
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 py-1.5 px-4 rounded-full flex items-center shadow-lg shadow-blue-600/30">
                 <Star className="text-white h-3.5 w-3.5 fill-current" />
-                <span className="text-white ml-1.5 text-[10px] font-bold uppercase tracking-[0.2em]">
+                <span className="text-white ml-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em]">
                   Más Recomendado
                 </span>
               </div>
             )}
             <div className="flex-1 flex flex-col items-center text-center">
-              <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">
+              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 {plan.name}
               </p>
               <div className="mb-8 flex items-baseline justify-center gap-x-2">
-                <span className="text-6xl font-bold tracking-tighter text-slate-900">
+                <span className="text-6xl font-extrabold tracking-tighter text-black leading-none">
                   <NumberFlow
                     value={
                       (!showToggle || isMonthly) ? Number(plan.price) : Number(plan.yearlyPrice)
@@ -165,23 +165,23 @@ export function Pricing({
                   />
                 </span>
                 {plan.period && (
-                  <span className="text-sm font-semibold leading-6 tracking-wide text-muted-foreground">
+                  <span className="text-sm font-bold leading-6 tracking-tight text-muted-foreground">
                     / {plan.period}
                   </span>
                 )}
               </div>
 
-              <p className="text-sm text-slate-600 mb-8 font-medium max-w-[250px]">
+              <p className="text-sm text-slate-500 mb-8 font-bold tracking-tight max-w-[250px] leading-tight">
                 {plan.description}
               </p>
 
               <div className="mb-4 w-full">
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Incluye:</p>
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-slate-400 mb-4">Incluye:</p>
                 <ul className="space-y-4 flex-1 text-left">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-slate-600 leading-tight">{feature}</span>
+                      <Check className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-black font-bold tracking-tight leading-tight">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -189,8 +189,8 @@ export function Pricing({
 
               {plan.result && (
                 <div className="mt-auto pt-6 w-full">
-                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Resultado:</p>
-                  <p className="text-sm font-bold text-slate-900 leading-tight mb-6">{plan.result}</p>
+                  <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-slate-400 mb-2">Resultado:</p>
+                  <p className="text-sm font-extrabold text-black leading-tight mb-6 tracking-tight">{plan.result}</p>
                 </div>
               )}
 
@@ -202,10 +202,10 @@ export function Pricing({
                   buttonVariants({
                     variant: plan.isPopular ? "default" : "outline",
                   }),
-                  "w-full py-6 rounded-2xl text-lg font-bold transition-all duration-300 flex items-center justify-center text-center px-4",
+                  "w-full py-6 rounded-xl text-lg font-extrabold transition-all duration-300 flex items-center justify-center text-center px-4 tracking-tight",
                   plan.isPopular 
-                    ? "bg-blue-600 hover:bg-blue-700 shadow-xl shadow-blue-600/20 scale-105" 
-                    : "hover:bg-slate-50 border-slate-200"
+                    ? "bg-black text-white hover:bg-blue-600 shadow-xl shadow-blue-600/20 scale-105" 
+                    : "bg-white text-black hover:bg-slate-50 border-slate-200"
                 )}
               >
                 <span className="truncate">{plan.buttonText}</span>

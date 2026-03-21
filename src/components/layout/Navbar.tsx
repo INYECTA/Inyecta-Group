@@ -21,20 +21,8 @@ export const Navbar = () => {
     setMobileMenuOpen(false);
   }, [location]);
 
-  const isHome = location.pathname === '/';
-
-  const navLinks = isHome ? [
-    { name: "Servicios", href: "#servicios" },
-    { name: "Portfolio", href: "#portfolio" },
+  const navLinks = [
     { name: "Cómo funciona", href: "/como-funciona" },
-    { name: "Precios", href: "#precios" },
-    { name: "Testimonios", href: "#testimonios" },
-    { name: "Sobre nosotros", href: "/sobre-nosotros" },
-  ] : [
-    { name: "Inicio", href: "/" },
-    { name: "Servicios", href: "/#servicios" },
-    { name: "Cómo funciona", href: "/como-funciona" },
-    { name: "Precios", href: "/#precios" },
     { name: "Sobre nosotros", href: "/sobre-nosotros" },
   ];
 
@@ -48,22 +36,18 @@ export const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center gap-4 group cursor-pointer relative z-50">
-            <Logo />
+            <Logo className="scale-90 origin-left" />
           </Link>
           
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-10 text-sm font-bold text-potion-muted tracking-tight">
             {navLinks.map((link) => (
-              link.href.startsWith('#') || link.href.includes('#') ? (
-                <a key={link.name} href={link.href} className="hover:text-potion-accent transition-colors">{link.name}</a>
-              ) : (
-                <Link key={link.name} to={link.href} className="hover:text-potion-accent transition-colors">{link.name}</Link>
-              )
+              <Link key={link.name} to={link.href} className="hover:text-potion-accent transition-colors">{link.name}</Link>
             ))}
           </div>
 
           <div className="flex items-center gap-4 relative z-50">
-            <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:block bg-potion-text text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-potion-accent transition-all shadow-sm hover:shadow-lg">
+            <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:block bg-potion-text text-white px-6 py-3 rounded-xl font-extrabold text-sm hover:bg-potion-accent transition-all shadow-sm hover:shadow-lg whitespace-nowrap tracking-tight">
               Agendar Auditoría
             </a>
             
@@ -114,7 +98,7 @@ export const Navbar = () => {
                 href={CALENDAR_LINK} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="mt-4 bg-potion-accent text-white px-8 py-5 rounded-full font-bold text-xl shadow-xl shadow-blue-600/20"
+                className="mt-4 bg-potion-accent text-white px-8 py-5 rounded-xl font-extrabold text-xl shadow-xl shadow-blue-600/20 tracking-tight"
               >
                 Agendar Auditoría Gratis
               </a>
