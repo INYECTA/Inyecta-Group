@@ -6,10 +6,11 @@ import { Switch } from "@/components/ui/switch";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Check, Star } from "lucide-react";
-import { useState, useRef } from "react";
+import { Check, Star, ChevronRight } from "lucide-react";
+import React, { useState, useRef } from "react";
 import confetti from "canvas-confetti";
 import NumberFlow from "@number-flow/react";
+import { CALENDAR_LINK } from "../../constants";
 
 interface PricingPlan {
   name: string;
@@ -22,6 +23,7 @@ interface PricingPlan {
   href: string;
   isPopular: boolean;
   result?: string;
+  icon?: React.ReactNode;
 }
 
 interface PricingProps {
@@ -124,27 +126,35 @@ export function Pricing({
               delay: index * 0.1,
             }}
             className={cn(
-              `rounded-3xl border-[1px] p-8 bg-background relative flex flex-col transition-all duration-500 hover:shadow-2xl hover:-translate-y-1`,
+              `rounded-[3rem] border-[1px] p-10 md:p-12 bg-white relative flex flex-col transition-all duration-700 hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] group`,
               plan.isPopular 
-                ? "border-blue-600 border-2 shadow-2xl shadow-blue-600/10 bg-blue-50/30" 
-                : "border-slate-200 shadow-sm hover:border-blue-200",
+                ? "border-blue-600 border-2 shadow-2xl shadow-blue-600/10" 
+                : "border-slate-100 shadow-sm hover:border-blue-200",
               index === 0 || index === 2 ? "z-0" : "z-10"
             )}
           >
             {plan.isPopular && (
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 py-1.5 px-4 rounded-full flex items-center shadow-lg shadow-blue-600/30">
-                <Star className="text-white h-3.5 w-3.5 fill-current" />
-                <span className="text-white ml-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em]">
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 py-2.5 px-6 rounded-full flex items-center shadow-xl shadow-blue-600/40">
+                <Star className="text-white h-4 w-4 fill-current" />
+                <span className="text-white ml-2 text-[11px] font-black uppercase tracking-[0.2em]">
                   Más Recomendado
                 </span>
               </div>
             )}
             <div className="flex-1 flex flex-col items-center text-center">
-              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              {plan.icon && (
+                <div className={cn(
+                  "w-20 h-20 rounded-3xl flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3",
+                  plan.isPopular ? "bg-blue-600 text-white shadow-2xl shadow-blue-600/30" : "bg-blue-50 text-blue-600"
+                )}>
+                  {plan.icon}
+                </div>
+              )}
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4">
                 {plan.name}
               </p>
               <div className="mb-8 flex items-baseline justify-center gap-x-2">
-                <span className="text-6xl font-extrabold tracking-tighter text-black leading-none">
+                <span className="text-6xl md:text-7xl font-black tracking-tighter text-black leading-none">
                   <NumberFlow
                     value={
                       (!showToggle || isMonthly) ? Number(plan.price) : Number(plan.yearlyPrice)
@@ -165,23 +175,25 @@ export function Pricing({
                   />
                 </span>
                 {plan.period && (
-                  <span className="text-sm font-bold leading-6 tracking-tight text-muted-foreground">
+                  <span className="text-xl font-bold text-slate-400">
                     / {plan.period}
                   </span>
                 )}
               </div>
 
-              <p className="text-sm text-slate-500 mb-8 font-bold tracking-tight max-w-[250px] leading-tight">
+              <p className="text-lg text-slate-500 font-bold tracking-tight mb-12 leading-tight">
                 {plan.description}
               </p>
 
-              <div className="mb-4 w-full">
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-slate-400 mb-4">Incluye:</p>
-                <ul className="space-y-4 flex-1 text-left">
+              <div className="mb-12 w-full">
+                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Incluye:</p>
+                <ul className="space-y-6 flex-1 text-left">
                   {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-black font-bold tracking-tight leading-tight">{feature}</span>
+                    <li key={idx} className="flex items-center gap-4 text-lg font-bold text-slate-600 tracking-tight">
+                      <div className="w-6 h-6 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                        <Check className="w-4 h-4" />
+                      </div>
+                      {feature}
                     </li>
                   ))}
                 </ul>
@@ -189,26 +201,26 @@ export function Pricing({
 
               {plan.result && (
                 <div className="mt-auto pt-6 w-full">
-                  <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-slate-400 mb-2">Resultado:</p>
-                  <p className="text-sm font-extrabold text-black leading-tight mb-6 tracking-tight">{plan.result}</p>
+                  <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Resultado:</p>
+                  <p className="text-xl font-black text-black leading-tight mb-8 tracking-tighter">{plan.result}</p>
                 </div>
               )}
 
               <hr className="w-full mb-8 border-slate-100" />
 
               <a
-                href={plan.href}
+                href={CALENDAR_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
-                  buttonVariants({
-                    variant: plan.isPopular ? "default" : "outline",
-                  }),
-                  "w-full py-6 rounded-xl text-lg font-extrabold transition-all duration-300 flex items-center justify-center text-center px-4 tracking-tight",
-                  plan.isPopular 
-                    ? "bg-black text-white hover:bg-blue-600 shadow-xl shadow-blue-600/20 scale-105" 
-                    : "bg-white text-black hover:bg-slate-50 border-slate-200"
+                  "w-full py-6 rounded-2xl font-black text-xl transition-all duration-500 flex items-center justify-center gap-3 active:scale-95",
+                  plan.isPopular
+                    ? "bg-blue-600 text-white hover:bg-blue-700 shadow-xl shadow-blue-600/30"
+                    : "bg-slate-100 text-slate-900 hover:bg-slate-200"
                 )}
               >
-                <span className="truncate">{plan.buttonText}</span>
+                {plan.buttonText}
+                <ChevronRight className="w-6 h-6" />
               </a>
             </div>
           </motion.div>

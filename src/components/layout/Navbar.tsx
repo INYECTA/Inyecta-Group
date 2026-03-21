@@ -32,22 +32,25 @@ export const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-500 ${scrolled || mobileMenuOpen ? 'bg-white/90 backdrop-blur-2xl py-4 border-b border-potion-border' : 'bg-transparent py-8'}`}
+        className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-700 ${scrolled || mobileMenuOpen ? 'py-4' : 'py-8'}`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className={`max-w-7xl mx-auto flex items-center justify-between px-6 py-3 rounded-3xl transition-all duration-700 ${scrolled || mobileMenuOpen ? 'bg-white/80 backdrop-blur-2xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.05)]' : 'bg-transparent'}`}>
           <Link to="/" className="flex items-center gap-4 group cursor-pointer relative z-50">
-            <Logo className="scale-90 origin-left" />
+            <Logo className="scale-90 origin-left transition-transform group-hover:scale-95" />
           </Link>
           
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-10 text-sm font-bold text-potion-muted tracking-tight">
+          <div className="hidden md:flex items-center gap-10 text-sm font-extrabold text-slate-500 tracking-tight">
             {navLinks.map((link) => (
-              <Link key={link.name} to={link.href} className="hover:text-potion-accent transition-colors">{link.name}</Link>
+              <Link key={link.name} to={link.href} className="hover:text-blue-600 transition-colors relative group">
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </Link>
             ))}
           </div>
 
           <div className="flex items-center gap-4 relative z-50">
-            <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:block bg-potion-text text-white px-6 py-3 rounded-xl font-extrabold text-sm hover:bg-potion-accent transition-all shadow-sm hover:shadow-lg whitespace-nowrap tracking-tight">
+            <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:flex bg-blue-600 text-white px-8 py-3.5 rounded-2xl font-extrabold text-sm hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 whitespace-nowrap tracking-tight active:scale-95">
               Agendar Auditoría
             </a>
             
