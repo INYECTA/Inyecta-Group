@@ -390,7 +390,7 @@ const SolutionSection = () => {
   ];
 
   return (
-    <section id="solucion" className="py-20 md:py-32 px-4 md:px-6 overflow-hidden relative bg-transparent">
+    <section id="beneficios" className="py-20 md:py-32 px-4 md:px-6 overflow-hidden relative bg-transparent">
       <div className="potion-container">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <div className="potion-badge">Nuestra Solución</div>
@@ -425,7 +425,7 @@ const SolutionSection = () => {
 
 const FinalCTA = () => {
   return (
-    <section className="py-20 md:py-32 px-4 md:px-6 bg-transparent relative overflow-hidden">
+    <section id="auditoria" className="py-20 md:py-32 px-4 md:px-6 bg-transparent relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
         <div className="absolute top-0 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-blue-50 rounded-full blur-[80px] md:blur-[120px] opacity-40"></div>
         <div className="absolute bottom-0 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-slate-50 rounded-full blur-[80px] md:blur-[120px] opacity-40"></div>
@@ -474,21 +474,8 @@ const FinalCTA = () => {
 };
 
 export const Home = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  // Dynamic background color transition
-  const backgroundColor = useTransform(
-    scrollYProgress,
-    [0, 0.2, 0.4, 0.6, 0.8, 1],
-    ["#ffffff", "#f8fafc", "#f1f5f9", "#ffffff", "#f8fafc", "#ffffff"]
-  );
-
   return (
-    <motion.div ref={containerRef} style={{ backgroundColor }} className="transition-colors duration-700">
+    <div className="bg-white">
       <Hero />
       <StatsBar />
       
@@ -503,6 +490,6 @@ export const Home = () => {
       
       <StickyCTA />
       <ClinicChatWidget />
-    </motion.div>
+    </div>
   );
 };

@@ -7,6 +7,9 @@ import { Home } from './pages/Home';
 import { ServicePage } from './pages/ServicePage';
 import { AboutPage } from './pages/AboutPage';
 import { HowItWorksPage } from './pages/HowItWorksPage';
+import { ContactPage } from './pages/ContactPage';
+import { PrivacyPage } from './pages/PrivacyPage';
+import { TermsPage } from './pages/TermsPage';
 
 // Component to handle scroll to top on route change
 const ScrollToTop = () => {
@@ -39,6 +42,9 @@ export default function App() {
             <Route path="/servicios/:id" element={<ServicePage />} />
             <Route path="/sobre-nosotros" element={<AboutPage />} />
             <Route path="/como-funciona" element={<HowItWorksPage />} />
+            <Route path="/contacto" element={<ContactPage />} />
+            <Route path="/privacidad" element={<PrivacyPage />} />
+            <Route path="/terminos" element={<TermsPage />} />
           </Routes>
         </main>
         <FooterSection />

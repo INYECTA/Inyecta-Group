@@ -23,6 +23,9 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: "Cómo funciona", href: "/como-funciona" },
+    { name: "Beneficios", href: "/#beneficios" },
+    { name: "Precios", href: "/#precios" },
+    { name: "Testimonios", href: "/#testimonios" },
     { name: "Sobre nosotros", href: "/sobre-nosotros" },
   ];
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Footer7 } from "../ui/footer-7";
 import { CALENDAR_LINK, SUPPORT_EMAIL } from '../../constants';
-
+import { Instagram } from 'lucide-react';
 import { Logo } from '../ui/Logo';
 
 export const FooterSection = () => {
@@ -18,7 +18,7 @@ export const FooterSection = () => {
     {
       title: "Empresa",
       links: [
-        { name: "Sobre nosotros", href: "/#sobre-nosotros" },
+        { name: "Sobre nosotros", href: "/sobre-nosotros" },
         { name: "Beneficios", href: "/#beneficios" },
         { name: "Precios", href: "/#precios" },
         { name: "Testimonios", href: "/#testimonios" },
@@ -28,10 +28,18 @@ export const FooterSection = () => {
       title: "Recursos",
       links: [
         { name: "Agendar Auditoría", href: CALENDAR_LINK },
-        { name: "Contacto", href: `mailto:${SUPPORT_EMAIL}` },
-        { name: "Privacidad", href: "#" },
-        { name: "Términos", href: "#" },
+        { name: "Contacto", href: "/contacto" },
+        { name: "Privacidad", href: "/privacidad" },
+        { name: "Términos", href: "/terminos" },
       ],
+    },
+  ];
+
+  const socialLinks = [
+    { 
+      icon: <Instagram className="size-5" />, 
+      href: "https://instagram.com/inyectagroup", // Placeholder as requested
+      label: "Instagram" 
     },
   ];
 
@@ -43,10 +51,11 @@ export const FooterSection = () => {
       }}
       description="Automatización premium para clínicas estéticas de alto nivel. Transformamos centros médicos en máquinas de resultados."
       sections={sections}
+      socialLinks={socialLinks}
       copyright={`© ${new Date().getFullYear()} Inyecta Group. Todos los derechos reservados.`}
       legalLinks={[
-        { name: "Términos y Condiciones", href: "#" },
-        { name: "Política de Privacidad", href: "#" },
+        { name: "Términos y Condiciones", href: "/terminos" },
+        { name: "Política de Privacidad", href: "/privacidad" },
       ]}
     />
   );

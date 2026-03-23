@@ -52,8 +52,8 @@ export const AboutPage = () => {
               className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-600/10 bg-slate-100"
             >
               <img 
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop" 
-                alt="Inyecta Group Team" 
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop" 
+                alt="Inyecta Group Professional" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -70,7 +70,7 @@ export const AboutPage = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="aspect-square bg-white/5 rounded-3xl overflow-hidden border border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1600880210837-0f8fb27472da?q=80&w=1000&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" 
                 alt="Filosofía Inyecta Group" 
                 className="w-full h-full object-cover opacity-80"
                 referrerPolicy="no-referrer"

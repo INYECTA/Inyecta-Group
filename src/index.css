@@ -140,6 +140,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply font-sans text-potion-text bg-potion-bg antialiased selection:bg-potion-accent/10 selection:text-potion-accent overflow-x-hidden;
   }
