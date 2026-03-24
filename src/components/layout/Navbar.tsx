@@ -43,7 +43,7 @@ export const Navbar = () => {
           </Link>
           
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-10 text-sm font-extrabold text-slate-500 tracking-tight">
+          <div className="hidden md:flex items-center gap-12 text-[13px] font-bold text-slate-500 tracking-tight">
             {navLinks.map((link) => (
               <Link key={link.name} to={link.href} className="hover:text-blue-600 transition-colors relative group">
                 {link.name}
@@ -52,8 +52,8 @@ export const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex items-center gap-4 relative z-50">
-            <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:flex bg-blue-600 text-white px-8 py-3.5 rounded-2xl font-extrabold text-sm hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 whitespace-nowrap tracking-tight active:scale-95">
+          <div className="flex items-center gap-10 relative z-50">
+            <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:flex bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-[13px] hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 whitespace-nowrap tracking-tight active:scale-95">
               Agendar Auditoría
             </a>
             

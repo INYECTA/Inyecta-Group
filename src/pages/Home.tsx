@@ -100,7 +100,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
-          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold text-black mb-8 md:mb-10 leading-[0.95] md:leading-[0.85] max-w-6xl tracking-tighter"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-black mb-8 md:mb-10 leading-[0.95] md:leading-[0.85] max-w-6xl tracking-tighter"
         >
           Consigue más pacientes <br className="hidden sm:block" /> <span className="potion-text-gradient">sin mover un dedo</span>
         </motion.h1>
@@ -109,7 +109,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 1 }}
-          className="text-lg sm:text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto mb-12 md:mb-16 leading-tight tracking-tight px-4 font-medium"
+          className="text-base sm:text-lg md:text-xl text-slate-500 max-w-3xl mx-auto mb-12 md:mb-16 leading-tight tracking-tight px-4 font-medium"
         >
           Automatizamos tu agenda y tus mensajes para que tu clínica crezca sola mientras tú te centras en tus pacientes.
         </motion.p>
@@ -268,16 +268,20 @@ const PricingSection = () => {
 const FAQSection = () => {
   const faqs = [
     {
-      q: "¿Es difícil de usar?",
-      a: "Para nada. Nosotros nos encargamos de todo y tú solo ves cómo se llena tu agenda."
+      q: "¿Cómo se integra con mi software de gestión actual?",
+      a: "Nuestro sistema es agnóstico y se integra vía API o automatización directa con la mayoría de CRMs y calendarios del mercado, incluyendo Google Calendar y Outlook."
     },
     {
-      q: "¿Cuánto tardáis en montarlo?",
-      a: "En menos de una semana tu clínica ya estará funcionando en automático."
+      q: "¿Qué pasa si un paciente tiene una duda muy específica?",
+      a: "La IA está entrenada con tu base de conocimientos. Si detecta una consulta médica compleja, deriva automáticamente la conversación a un humano notificando a tu equipo al instante."
     },
     {
-      q: "¿Se puede conectar con mi calendario?",
-      a: "Sí, se conecta con Google Calendar y otros sistemas para que no tengas que cambiar nada."
+      q: "¿Es legal el uso de IA para gestionar datos de pacientes?",
+      a: "Absolutamente. Trabajamos bajo estrictos protocolos de seguridad y cumplimiento de la RGPD, asegurando que toda la información se maneje de forma cifrada y privada."
+    },
+    {
+      q: "¿En cuánto tiempo veré resultados tangibles?",
+      a: "La mayoría de nuestras clínicas experimentan un aumento en el agendamiento de citas y una reducción de no-shows desde la primera semana de implementación."
     }
   ];
 
@@ -310,9 +314,9 @@ const FAQSection = () => {
 
 const ProblemSection = () => {
   const problems = [
-    { title: "Muchos mensajes, pocas citas", desc: "Pierdes pacientes porque tardas demasiado en responder por WhatsApp o Instagram." },
-    { title: "Citas que no aparecen", desc: "Los pacientes se olvidan de su cita y te dejan el hueco vacío, perdiendo dinero." },
-    { title: "Caos en la gestión", desc: "Pasas más tiempo organizando el calendario que tratando a tus pacientes." }
+    { title: "Respuesta lenta, ventas perdidas", desc: "El 78% de los pacientes eligen la clínica que responde primero. Si tardas más de 5 minutos, ya has perdido la venta." },
+    { title: "No-shows que desangran tu margen", desc: "Cada hueco vacío por un paciente que olvida su cita es dinero que nunca vuelve. La falta de recordatorios mata tu rentabilidad." },
+    { title: "Gestión manual agotadora", desc: "Pasar horas al teléfono o en WhatsApp coordinando agendas te impide centrarte en lo que realmente importa: tus pacientes." }
   ];
 
   return (
@@ -332,7 +336,7 @@ const ProblemSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter text-black mb-8 leading-[1] md:leading-[0.85]"
+            className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter text-black mb-8 leading-[1] md:leading-[0.85]"
           >
             ¿Tu clínica está <span className="text-red-600">perdiendo</span> dinero?
           </motion.h2>
@@ -341,7 +345,7 @@ const ProblemSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-slate-500 font-bold tracking-tight"
+            className="text-lg md:text-xl text-slate-500 font-bold tracking-tight"
           >
             Si te sientes identificado con esto, necesitas un sistema automático.
           </motion.p>
@@ -360,8 +364,8 @@ const ProblemSection = () => {
               <div className="w-16 h-16 bg-red-50 text-red-600 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                 <X className="w-8 h-8" />
               </div>
-              <h3 className="text-3xl font-extrabold text-black mb-4 tracking-tighter leading-none">{p.title}</h3>
-              <p className="text-lg text-slate-500 font-bold tracking-tight leading-tight">{p.desc}</p>
+              <h3 className="text-2xl font-extrabold text-black mb-4 tracking-tighter leading-none">{p.title}</h3>
+              <p className="text-base text-slate-500 font-bold tracking-tight leading-tight">{p.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -373,18 +377,18 @@ const ProblemSection = () => {
 const SolutionSection = () => {
   const solutionList = [
     { 
-      title: "Agenda Inteligente", 
-      desc: "Recordatorios automáticos que eliminan los huecos vacíos en tu calendario.",
+      title: "Agenda en Piloto Automático", 
+      desc: "Sincronización total y recordatorios estratégicos que reducen el ausentismo hasta en un 90%.",
       icon: <Clock className="w-10 h-10" />
     },
     { 
-      title: "Chatbot 24/7", 
-      desc: "Responde dudas y agenda citas al instante, incluso mientras duermes.",
+      title: "Vendedor Incansable 24/7", 
+      desc: "IA entrenada para calificar leads, resolver dudas y cerrar citas en segundos, sin intervención humana.",
       icon: <Zap className="w-10 h-10" />
     },
     { 
-      title: "Fidelización Real", 
-      desc: "Seguimiento automático después de cada tratamiento para que el paciente vuelva.",
+      title: "Fidelización de Alto Valor", 
+      desc: "Sistemas de seguimiento post-tratamiento que garantizan la recurrencia y aumentan el LTV de cada paciente.",
       icon: <TrendingUp className="w-10 h-10" />
     }
   ];
@@ -394,7 +398,7 @@ const SolutionSection = () => {
       <div className="potion-container">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <div className="potion-badge">Nuestra Solución</div>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 md:mb-8 leading-[1.1] md:leading-[0.9]">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tighter mb-6 md:mb-8 leading-[1.1] md:leading-[0.9]">
             Hacemos que tu clínica <br className="hidden md:block" /> <span className="text-blue-600">funcione sola</span>
           </h2>
         </div>
@@ -413,8 +417,8 @@ const SolutionSection = () => {
               <div className="w-28 h-28 bg-blue-600 text-white rounded-[3rem] flex items-center justify-center mb-12 shadow-2xl shadow-blue-600/40 rotate-3 group-hover:rotate-0 transition-all duration-500">
                 {item.icon}
               </div>
-              <h3 className="text-3xl md:text-5xl font-extrabold text-black mb-6 tracking-tighter leading-none">{item.title}</h3>
-              <p className="text-xl text-slate-500 font-bold tracking-tight leading-tight">{item.desc}</p>
+              <h3 className="text-2xl md:text-4xl font-extrabold text-black mb-6 tracking-tighter leading-none">{item.title}</h3>
+              <p className="text-lg text-slate-500 font-bold tracking-tight leading-tight">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -439,11 +443,11 @@ const FinalCTA = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-8xl font-extrabold tracking-tighter text-black mb-8 md:mb-10 leading-[0.95] md:leading-[0.85]">
+            <h2 className="text-3xl sm:text-4xl md:text-7xl font-extrabold tracking-tighter text-black mb-8 md:mb-10 leading-[0.95] md:leading-[0.85]">
               Descubre cómo <span className="potion-text-gradient">automatizar</span> tu clínica
             </h2>
             
-            <p className="text-xl md:text-3xl text-slate-500 mb-12 md:mb-16 max-w-3xl mx-auto leading-tight tracking-tight px-4 font-medium">
+            <p className="text-lg md:text-2xl text-slate-500 mb-12 md:mb-16 max-w-3xl mx-auto leading-tight tracking-tight px-4 font-medium">
               Agenda una auditoría gratuita de 20 minutos y te mostraremos el camino exacto para escalar tu facturación.
             </p>
 

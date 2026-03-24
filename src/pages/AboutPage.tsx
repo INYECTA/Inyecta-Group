@@ -27,11 +27,11 @@ export const AboutPage = () => {
             >
               <div className="potion-badge mb-8">Sobre Inyecta Group</div>
               <Logo className="mb-12 scale-125 origin-left" />
-              <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[0.9] text-black">
+              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-[0.9] text-black">
                 No somos una agencia. <br />
                 Somos tu <span className="text-blue-600">Socio Tecnológico</span>.
               </h1>
-              <p className="text-xl md:text-2xl text-slate-500 mb-12 leading-tight tracking-tight">
+              <p className="text-lg md:text-xl text-slate-500 mb-12 leading-tight tracking-tight">
                 Inyecta Group nació con una visión clara: fusionar la elegancia del branding de lujo con la potencia bruta de la Inteligencia Artificial.
               </p>
               
@@ -78,10 +78,10 @@ export const AboutPage = () => {
             </div>
             <div className="space-y-10">
               <div className="potion-badge border-white/20 bg-white/5 text-white">NUESTRA FILOSOFÍA</div>
-              <h2 className="text-5xl md:text-7xl font-extrabold leading-[0.9] tracking-tighter">
+              <h2 className="text-4xl md:text-6xl font-extrabold leading-[0.9] tracking-tighter">
                 Tecnología al servicio de la <span className="text-blue-400">experiencia humana</span>.
               </h2>
-              <div className="space-y-6 text-xl text-slate-400 leading-tight tracking-tight">
+              <div className="space-y-6 text-lg text-slate-400 leading-tight tracking-tight">
                 <p>
                   En el sector estético, donde el detalle y la confianza lo son todo, nuestras automatizaciones permiten que los profesionales se enfoquen en lo que mejor saben hacer: cuidar de sus pacientes.
                 </p>
@@ -106,8 +106,8 @@ export const AboutPage = () => {
       <section className="py-24 md:py-32 px-6">
         <div className="potion-container">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-5xl md:text-7xl font-extrabold text-black mb-6 tracking-tighter leading-[0.9]">Nuestros Valores</h2>
-            <p className="text-xl text-slate-500 tracking-tight">Lo que nos impulsa a crear las mejores soluciones para el sector estético.</p>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-black mb-6 tracking-tighter leading-[0.9]">Nuestros Valores</h2>
+            <p className="text-lg text-slate-500 tracking-tight">Lo que nos impulsa a crear las mejores soluciones para el sector estético.</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">

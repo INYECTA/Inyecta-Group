@@ -27,7 +27,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '', variant = 'dark' }) 
           </svg>
         </div>
         <span className={`text-2xl font-black tracking-tighter transition-colors duration-300 ${colorClass}`}>
-          INYECTA<span className="text-blue-600">.</span>
+          INYECTA
         </span>
       </div>
     </div>

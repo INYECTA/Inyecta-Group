@@ -16,10 +16,10 @@ export const ContactPage = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="potion-badge mb-8">Contacto</div>
-              <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9] text-black">
+              <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-[0.9] text-black">
                 Hablemos de tu <span className="text-blue-600">Próximo Nivel</span>.
               </h1>
-              <p className="text-xl text-slate-500 mb-12 leading-tight tracking-tight max-w-lg">
+              <p className="text-lg text-slate-500 mb-12 leading-tight tracking-tight max-w-lg">
                 Estamos aquí para resolver tus dudas y ayudarte a transformar tu clínica en una máquina de resultados.
               </p>
 

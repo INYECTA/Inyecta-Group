@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     text: "Inyecta Group transformó por completo nuestra gestión de citas. Ahora el 80% de las consultas de Instagram se agendan solas.",
-    image: "https://images.unsplash.com/photo-1559839734-2b71f1536783?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=150&h=150&fit=crop",
     name: "Dra. Lucía Méndez",
     role: "Directora Médica, Clínica Estética",
   },
@@ -18,7 +18,7 @@ const testimonials = [
   },
   {
     text: "Ya no perdemos leads los fines de semana. El sistema responde al instante y los pacientes están encantados con la rapidez.",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1559839734-2b71f1536783?w=150&h=150&fit=crop",
     name: "Sofía Valdés",
     role: "Coordinadora de Pacientes",
   },
@@ -32,31 +32,31 @@ const testimonials = [
     text: "Sus funciones robustas y el soporte rápido han transformado nuestro flujo de trabajo, haciéndonos significativamente más eficientes.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop",
     name: "Elena Martínez",
-    role: "Project Manager",
+    role: "Clínica Dental Martínez",
   },
   {
     text: "La implementación superó las expectativas. Optimizó procesos, mejorando el rendimiento general del negocio.",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop",
-    name: "Aliza Khan",
-    role: "Analista de Negocios",
+    name: "Dra. Aliza Khan",
+    role: "Especialista en Medicina Estética",
   },
   {
     text: "Nuestras funciones comerciales mejoraron con un diseño fácil de usar y comentarios positivos de los clientes.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
     name: "Farhan Siddiqui",
-    role: "Director de Marketing",
+    role: "Director de Clínica",
   },
   {
     text: "Entregaron una solución que superó las expectativas, entendiendo nuestras necesidades y mejorando nuestras operaciones.",
-    image: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
     name: "Sana Sheikh",
     role: "Gerente de Ventas",
   },
   {
     text: "Al usar este sistema, nuestra presencia en línea y las conversiones mejoraron significativamente, impulsando el rendimiento del negocio.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
     name: "Hassan Ali",
-    role: "E-commerce Manager",
+    role: "Clínica Dermatológica Ali",
   },
 ];
 

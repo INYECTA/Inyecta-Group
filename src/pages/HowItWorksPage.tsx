@@ -36,8 +36,8 @@ export const HowItWorksPage = () => {
       
       <section className="py-20 px-6">
         <div className="potion-container text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-slate-900 mb-8">Un proceso diseñado para no interrumpir tu día a día</h2>
-          <p className="text-xl text-slate-600 leading-relaxed mb-12">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">Un proceso diseñado para no interrumpir tu día a día</h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-12">
             Sabemos que tu tiempo es valioso. Por eso, nos encargamos de toda la configuración técnica. Tú solo tienes que darnos acceso a las herramientas necesarias y nosotros haremos la magia.
           </p>
           <div className="grid sm:grid-cols-2 gap-8 text-left">
