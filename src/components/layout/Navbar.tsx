@@ -23,11 +23,9 @@ export const Navbar = () => {
   }, [location]);
 
   const navLinks = [
-    { name: "Cómo funciona", href: "/como-funciona" },
-    { name: "Beneficios", href: "/#beneficios" },
-    { name: "Precios", href: "/#precios" },
-    { name: "Testimonios", href: "/#testimonios" },
-    { name: "Sobre nosotros", href: "/sobre-nosotros" },
+    { name: "Inicio", href: "/" },
+    { name: "Auditoría", href: "/#auditoria" },
+    { name: "Casos de éxito", href: "/#testimonios" },
   ];
 
   return (
@@ -78,7 +76,7 @@ export const Navbar = () => {
 
           <div className="flex items-center gap-10 relative z-50">
             <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:flex bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-[13px] hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 whitespace-nowrap tracking-tight active:scale-95">
-              Agendar Auditoría
+              Agendar Auditoría Gratuita
             </a>
             
             {/* Mobile Menu Toggle */}

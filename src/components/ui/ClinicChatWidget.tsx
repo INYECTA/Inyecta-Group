@@ -49,10 +49,10 @@ export const ClinicChatWidget = ({
   const hasInitialized = useRef(false);
 
   const demoMessages: Message[] = [
-    { id: 'd1', text: '¡Hola! Soy Elena, tu asistente inteligente de Inyecta Group. 👋', sender: 'ai' },
-    { id: 'd2', text: '¿Te gustaría ver cómo automatizo la agenda de tu clínica?', sender: 'ai' },
-    { id: 'u1', text: 'Sí, me interesa reducir las citas perdidas.', sender: 'user' },
-    { id: 'd3', text: '¡Perfecto! Mi sistema envía recordatorios automáticos por WhatsApp y confirma asistencias sin que tú hagas nada.', sender: 'ai' },
+    { id: 'd1', text: '¡Hola! Soy Elena, tu asistente de IA de Inyecta Group. 👋', sender: 'ai' },
+    { id: 'd2', text: '¿Te gustaría ver cómo automatizamos tu clínica para que la agenda se llene sola?', sender: 'ai' },
+    { id: 'u1', text: 'Sí, me interesa dejar de perder el tiempo con el móvil.', sender: 'user' },
+    { id: 'd3', text: '¡Perfecto! Instalamos sistemas de IA que atienden pacientes 24/7 y cierran citas por ti.', sender: 'ai' },
     { id: 'd4', text: '¿Quieres que agendemos una auditoría gratuita para ver tu caso? 🚀', sender: 'ai' }
   ];
 
@@ -91,7 +91,7 @@ export const ClinicChatWidget = ({
     let isMounted = true;
     if (!progressive && !hasInitialized.current) {
       hasInitialized.current = true;
-      const welcomeText = '¡Hola! 👋 Soy Elena, tu asistente estratégica de Inyecta Group. Estoy aquí para ayudarte a escalar tu clínica y automatizar tu agenda. ¿Por dónde empezamos?';
+      const welcomeText = '¡Hola! 👋 Soy Elena, de Inyecta Group. Estoy aquí para ayudarte a automatizar tu clínica y que recuperes tu tiempo. ¿Te gustaría saber cómo nuestra IA puede gestionar tu agenda 24/7?';
       
       const typeInitialMessage = async () => {
         setIsTyping(true);
@@ -147,11 +147,11 @@ export const ClinicChatWidget = ({
         contents: [
           {
             role: "user",
-            parts: [{ text: `Eres Elena, una asistente virtual experta y con mucha personalidad de Inyecta Group. Responde de manera profesional, cercana y "cool" a: "${input}". Tu objetivo es demostrar autoridad en el sector de clínicas estéticas y recomendar siempre agendar una auditoría gratuita con nuestro equipo.` }]
+            parts: [{ text: `Eres Elena, una asistente virtual experta de Inyecta Group. Responde de manera directa, profesional y cercana a: "${input}". Tu objetivo es demostrar cómo la automatización con IA resuelve los problemas de gestión y ventas en clínicas estéticas. Recomienda siempre agendar una auditoría gratuita.` }]
           }
         ],
         config: {
-          systemInstruction: "Eres Elena, la cara visible de Inyecta Group. Tu tono es premium, innovador, directo y muy profesional. No usas respuestas genéricas. Eres experta en marketing para clínicas estéticas, automatización de WhatsApp y escalado de negocios. Siempre buscas aportar valor y dirigir a la auditoría gratuita."
+          systemInstruction: "Eres Elena, la cara visible de Inyecta Group. Tu tono es premium, directo y muy profesional. Eres experta en automatización con IA para clínicas estéticas. No hablas de SEO ni de Ads. Te enfocas en cómo la IA ahorra tiempo, gestiona la agenda y cierra ventas 24/7. Siempre diriges a la auditoría gratuita."
         }
       });
 

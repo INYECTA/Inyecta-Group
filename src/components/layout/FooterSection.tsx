@@ -7,30 +7,25 @@ import { Logo } from '../ui/Logo';
 export const FooterSection = () => {
   const sections = [
     {
-      title: "Servicios",
+      title: "Menú",
       links: [
-        { name: "IA para Captación", href: "/servicios/ia-captacion" },
-        { name: "Branding de Alto Nivel", href: "/servicios/branding-lujo" },
-        { name: "Automatización de Ventas", href: "/servicios/automatizacion-ventas" },
-        { name: "Escalamiento de Negocios", href: "/servicios/escalamiento-negocios" },
+        { name: "Inicio", href: "/" },
+        { name: "Auditoría", href: "/#auditoria" },
+        { name: "Casos de éxito", href: "/#testimonios" },
       ],
     },
     {
-      title: "Empresa",
+      title: "Soporte",
       links: [
-        { name: "Sobre nosotros", href: "/sobre-nosotros" },
-        { name: "Beneficios", href: "/#beneficios" },
-        { name: "Precios", href: "/#precios" },
-        { name: "Testimonios", href: "/#testimonios" },
+        { name: "inyectasoporte@gmail.com", href: `mailto:inyectasoporte@gmail.com` },
+        { name: "Ayuda 24/7", href: "/#auditoria" },
       ],
     },
     {
-      title: "Recursos",
+      title: "Legal",
       links: [
-        { name: "Agendar Auditoría", href: CALENDAR_LINK },
-        { name: "Contacto", href: "/contacto" },
-        { name: "Privacidad", href: "/privacidad" },
-        { name: "Términos", href: "/terminos" },
+        { name: "Política de Privacidad", href: "/privacidad" },
+        { name: "Aviso Legal", href: "/terminos" },
       ],
     },
   ];
@@ -38,7 +33,7 @@ export const FooterSection = () => {
   const socialLinks = [
     { 
       icon: <Instagram className="size-5" />, 
-      href: "https://instagram.com/inyectagroup", // Placeholder as requested
+      href: "https://instagram.com/inyectagroup",
       label: "Instagram" 
     },
   ];
@@ -49,13 +44,13 @@ export const FooterSection = () => {
         url: "/",
         component: <Logo />,
       }}
-      description="Automatización premium para clínicas estéticas de alto nivel. Transformamos centros médicos en máquinas de resultados."
+      description="Transformamos clínicas en negocios automáticos. IA real para resultados reales."
       sections={sections}
       socialLinks={socialLinks}
-      copyright={`© ${new Date().getFullYear()} Inyecta Group. Todos los derechos reservados.`}
+      copyright={`© 2024 Inyecta Group.`}
       legalLinks={[
-        { name: "Términos y Condiciones", href: "/terminos" },
-        { name: "Política de Privacidad", href: "/privacidad" },
+        { name: "Privacidad", href: "/privacidad" },
+        { name: "Aviso Legal", href: "/terminos" },
       ]}
     />
   );

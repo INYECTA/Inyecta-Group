@@ -4,74 +4,74 @@ import { Service } from './types';
 
 export const SERVICES: Service[] = [
   {
-    id: "ia-captacion",
-    title: "IA para Captación",
-    desc: "Sistemas de Inteligencia Artificial que encuentran y califican a tus clientes ideales.",
+    id: "seo-clinicas",
+    title: "SEO para Clínicas Estéticas",
+    desc: "Posicionamos tu clínica en Google para que seas la primera opción cuando alguien busque un tratamiento en tu ciudad.",
     icon: <Target className="w-8 h-8" />,
     details: [
-      "Identificación de patrones de comportamiento en clientes potenciales.",
-      "Segmentación ultra-precisa basada en datos demográficos y psicográficos.",
-      "Generación de anuncios dinámicos optimizados por IA.",
-      "Calificación automática de leads antes de llegar a tu equipo de ventas."
+      "Auditoría SEO técnica especializada en el sector médico.",
+      "Optimización de Google Business Profile para captar pacientes locales.",
+      "Estrategia de contenidos basada en tratamientos de alta rentabilidad.",
+      "Linkbuilding de autoridad en portales de salud y estética."
     ],
     benefits: [
-      "Reducción del 40% en el coste por adquisición.",
-      "Leads con un 3x más de probabilidad de conversión.",
-      "Escalabilidad inmediata sin aumentar el equipo humano."
+      "Tráfico orgánico cualificado sin pagar por cada clic.",
+      "Aumento de la visibilidad en búsquedas locales (Google Maps).",
+      "Posicionamiento como referente médico en tu zona geográfica."
     ],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop"
   },
   {
-    id: "branding-lujo",
-    title: "Branding de Alto Nivel",
-    desc: "Posicionamos tu negocio como el referente indiscutible en tu sector.",
-    icon: <Sparkles className="w-8 h-8" />,
-    details: [
-      "Diseño de identidad visual premium y coherente.",
-      "Estrategia de comunicación basada en la exclusividad y el valor.",
-      "Creación de contenido cinematográfico para redes sociales.",
-      "Gestión de reputación online y autoridad de marca."
-    ],
-    benefits: [
-      "Aumento del valor percibido de tus servicios.",
-      "Atracción de clientes con mayor poder adquisitivo.",
-      "Diferenciación total frente a la competencia local."
-    ],
-    image: "https://images.unsplash.com/photo-1507206130118-b5907f817163?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    id: "automatizacion-ventas",
-    title: "Automatización de Ventas",
-    desc: "Bots inteligentes que cierran citas y ventas mientras tú descansas.",
+    id: "publicidad-estetica",
+    title: "Publicidad (Meta & Google Ads)",
+    desc: "Campañas diseñadas para generar citas diarias y maximizar el retorno de tu inversión publicitaria.",
     icon: <Zap className="w-8 h-8" />,
     details: [
-      "Implementación de chatbots con procesamiento de lenguaje natural (NLP).",
-      "Integración con calendarios y sistemas de pago.",
-      "Flujos de seguimiento automatizados por WhatsApp e Email.",
-      "Recuperación de carritos y citas abandonadas en tiempo real."
+      "Estrategias de captación en Facebook e Instagram Ads.",
+      "Campañas de búsqueda en Google Ads para intención de compra directa.",
+      "Retargeting avanzado para recuperar pacientes indecisos.",
+      "Optimización constante de creatividades y copies persuasivos."
     ],
     benefits: [
-      "Atención al cliente 24/7 sin costes de personal.",
-      "Incremento del 50% en la tasa de agendamiento.",
-      "Eliminación de errores humanos en la gestión de citas."
+      "Generación inmediata de leads y citas en tu agenda.",
+      "Control total sobre el presupuesto y el retorno de inversión.",
+      "Segmentación precisa por intereses y tratamientos específicos."
     ],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
   },
   {
-    id: "escalamiento-negocios",
-    title: "Escalamiento de Negocios",
-    desc: "Metodologías probadas para multiplicar la facturación de forma predecible.",
-    icon: <TrendingUp className="w-8 h-8" />,
+    id: "redes-sociales",
+    title: "Gestión de Redes Sociales",
+    desc: "Convertimos tu Instagram en un canal de venta que genera autoridad y confianza en tus potenciales pacientes.",
+    icon: <Sparkles className="w-8 h-8" />,
     details: [
-      "Auditoría completa de procesos y cuellos de botella.",
-      "Diseño de embudos de venta de alta conversión.",
-      "Optimización del Lifetime Value (LTV) del cliente.",
-      "Sistemas de reporte y análisis de datos en tiempo real."
+      "Creación de contenido visual premium y profesional.",
+      "Estrategia de Reels orientada a la educación y venta.",
+      "Gestión de comunidad y respuesta a potenciales pacientes.",
+      "Branding de autoridad para médicos y clínicas."
     ],
     benefits: [
-      "Crecimiento predecible mes a mes.",
-      "Optimización de márgenes de beneficio.",
-      "Estructura de negocio sólida preparada para el crecimiento masivo."
+      "Aumento del compromiso (engagement) con tu audiencia.",
+      "Construcción de una marca sólida y deseable.",
+      "Conversión de seguidores en pacientes reales recurrentes."
+    ],
+    image: "https://images.unsplash.com/photo-1507206130118-b5907f817163?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "diseno-web-medico",
+    title: "Diseño Web para Clínicas",
+    desc: "Creamos páginas web optimizadas para convertir visitas en citas médicas reales.",
+    icon: <TrendingUp className="w-8 h-8" />,
+    details: [
+      "Diseño UX/UI enfocado 100% a la conversión de pacientes.",
+      "Optimización de velocidad de carga (Core Web Vitals).",
+      "Integración con sistemas de reserva y CRM médico.",
+      "Diseño responsive impecable para dispositivos móviles."
+    ],
+    benefits: [
+      "Mejora drástica de la tasa de conversión de tu web.",
+      "Imagen profesional que transmite confianza y seguridad.",
+      "Funcionalidad total para facilitar el agendamiento de citas."
     ],
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop"
   }

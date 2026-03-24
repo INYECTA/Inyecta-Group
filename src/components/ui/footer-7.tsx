@@ -1,5 +1,6 @@
 import React from "react";
 import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Footer7Props {
   logo?: {
@@ -68,6 +69,17 @@ const defaultLegalLinks = [
   { name: "Privacy Policy", href: "#" },
 ];
 
+const SmartLink = ({ href, children, ...props }: { href: string, children: React.ReactNode, [key: string]: any }) => {
+  const isInternal = href.startsWith("/") || href.startsWith("#");
+  const isMailto = href.startsWith("mailto:");
+  
+  if (isInternal && !isMailto) {
+    return <Link to={href} {...props}>{children}</Link>;
+  }
+  
+  return <a href={href} {...props}>{children}</a>;
+};
+
 export const Footer7 = ({
   logo = {
     url: "/",
@@ -86,7 +98,7 @@ export const Footer7 = ({
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
             {/* Logo */}
             <div className="flex items-center gap-2 lg:justify-start">
-              <a href={logo.url}>
+              <SmartLink href={logo.url}>
                 {logo.component ? (
                   logo.component
                 ) : (
@@ -102,7 +114,7 @@ export const Footer7 = ({
                     {logo.title && <h2 className="text-xl font-semibold">{logo.title}</h2>}
                   </>
                 )}
-              </a>
+              </SmartLink>
             </div>
             <p className="max-w-[70%] text-sm text-muted-foreground">
               {description}
@@ -110,7 +122,7 @@ export const Footer7 = ({
             <ul className="flex items-center space-x-6 text-muted-foreground">
               {socialLinks.map((social, idx) => (
                 <li key={idx} className="font-medium hover:text-primary">
-                  <a href={social.href} aria-label={social.label}>
+                  <a href={social.href} aria-label={social.label} target="_blank" rel="noopener noreferrer">
                     {social.icon}
                   </a>
                 </li>
@@ -127,7 +139,7 @@ export const Footer7 = ({
                       key={linkIdx}
                       className="font-medium hover:text-primary"
                     >
-                      <a href={link.href}>{link.name}</a>
+                      <SmartLink href={link.href}>{link.name}</SmartLink>
                     </li>
                   ))}
                 </ul>
@@ -140,7 +152,7 @@ export const Footer7 = ({
           <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
             {legalLinks.map((link, idx) => (
               <li key={idx} className="hover:text-primary">
-                <a href={link.href}> {link.name}</a>
+                <SmartLink href={link.href}> {link.name}</SmartLink>
               </li>
             ))}
           </ul>

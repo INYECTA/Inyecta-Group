@@ -7,7 +7,7 @@ export const AboutPage = () => {
   const points = [
     { icon: <Zap className="w-6 h-6" />, text: "IA Aplicada" },
     { icon: <TrendingUp className="w-6 h-6" />, text: "Ventas Automatizadas" },
-    { icon: <Target className="w-6 h-6" />, text: "Branding de Lujo" },
+    { icon: <Target className="w-6 h-6" />, text: "Agenda Llena" },
     { icon: <Users className="w-6 h-6" />, text: "Negocios Escalables" },
     { icon: <CheckCircle2 className="w-6 h-6" />, text: "Resultados Reales" }
   ];
@@ -28,11 +28,11 @@ export const AboutPage = () => {
               <div className="potion-badge mb-8">Sobre Inyecta Group</div>
               <Logo className="mb-12 scale-125 origin-left" />
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-[0.9] text-black">
-                No somos una agencia. <br />
-                Somos tu <span className="text-blue-600">Socio Tecnológico</span>.
+                Solo para <br />
+                <span className="text-blue-600">Clínicas Estéticas</span>.
               </h1>
               <p className="text-lg md:text-xl text-slate-500 mb-12 leading-tight tracking-tight">
-                Inyecta Group nació con una visión clara: fusionar la elegancia del branding de lujo con la potencia bruta de la Inteligencia Artificial.
+                Sabemos lo que es que un paciente te deje plantado a última hora o que te pregunten mil veces el precio de un relleno de labios por Instagram. En Inyecta Group solo trabajamos con clínicas como la tuya, por eso sabemos exactamente qué necesitas para dormir tranquilo.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-4">
@@ -79,11 +79,11 @@ export const AboutPage = () => {
             <div className="space-y-10">
               <div className="potion-badge border-white/20 bg-white/5 text-white">NUESTRA FILOSOFÍA</div>
               <h2 className="text-4xl md:text-6xl font-extrabold leading-[0.9] tracking-tighter">
-                Tecnología al servicio de la <span className="text-blue-400">experiencia humana</span>.
+                Automatización total para <span className="text-blue-400">clínicas estéticas</span>.
               </h2>
               <div className="space-y-6 text-lg text-slate-400 leading-tight tracking-tight">
                 <p>
-                  En el sector estético, donde el detalle y la confianza lo son todo, nuestras automatizaciones permiten que los profesionales se enfoquen en lo que mejor saben hacer: cuidar de sus pacientes.
+                  Entendemos los desafíos únicos de tu clínica. Desde la gestión de citas hasta la atención 24/7, nuestros sistemas están diseñados para que recuperes tu vida y multipliques tu facturación.
                 </p>
               </div>
               
