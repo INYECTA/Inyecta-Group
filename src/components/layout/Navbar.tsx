@@ -37,8 +37,13 @@ export const Navbar = () => {
         transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-700 ${scrolled || mobileMenuOpen ? 'py-4' : 'py-8'}`}
       >
-        <div className={`max-w-7xl mx-auto flex items-center justify-between px-6 py-3 rounded-3xl transition-all duration-700 ${scrolled || mobileMenuOpen ? 'bg-white/80 backdrop-blur-2xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.05)]' : 'bg-transparent'}`}>
-          <Link to="/" className="flex items-center gap-4 group cursor-pointer relative z-50">
+        <div className={`max-w-7xl mx-auto flex items-center justify-between px-6 py-3 rounded-3xl transition-all duration-700 relative z-50 ${scrolled || mobileMenuOpen ? 'bg-white/80 backdrop-blur-2xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.05)]' : 'bg-transparent'}`}>
+          <Link 
+            to="/" 
+            className="flex items-center gap-4 group cursor-pointer relative z-[60]"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Ir al inicio"
+          >
             <Logo className="scale-90 origin-left transition-transform group-hover:scale-95" />
           </Link>
           
