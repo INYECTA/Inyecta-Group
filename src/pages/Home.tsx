@@ -140,33 +140,33 @@ const Hero = () => {
 
       {/* Floating Decorative Elements */}
       <motion.div
-        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+        animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[15%] left-4 md:left-10 hidden lg:block p-6 potion-glass rounded-3xl rotate-[-12deg] z-20"
+        className="absolute top-[12%] -left-4 sm:left-[2%] xl:left-[8%] p-4 sm:p-6 potion-glass rounded-2xl sm:rounded-3xl rotate-[-12deg] z-0 opacity-20 sm:opacity-40 xl:opacity-100 transition-all scale-75 sm:scale-90 xl:scale-100"
       >
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
-            <Check className="w-6 h-6" />
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
+            <Check className="w-5 h-5 sm:w-6 sm:h-6" />
           </div>
           <div className="text-left">
-            <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Cita Confirmada</div>
-            <div className="text-sm font-extrabold text-black">WhatsApp Enviado</div>
+            <div className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Cita Confirmada</div>
+            <div className="text-xs sm:text-sm font-extrabold text-black leading-none">WhatsApp Enviado</div>
           </div>
         </div>
       </motion.div>
 
       <motion.div
-        animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+        animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-1/4 right-10 hidden lg:block p-6 potion-glass rounded-3xl rotate-[8deg]"
+        className="absolute bottom-[15%] -right-4 sm:right-[2%] xl:right-[8%] p-4 sm:p-6 potion-glass rounded-2xl sm:rounded-3xl rotate-[8deg] z-0 opacity-20 sm:opacity-40 xl:opacity-100 transition-all scale-75 sm:scale-90 xl:scale-100"
       >
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
-            <TrendingUp className="w-6 h-6" />
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+            <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6" />
           </div>
           <div className="text-left">
-            <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Facturación</div>
-            <div className="text-sm font-extrabold text-black">+35% este mes</div>
+            <div className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Facturación</div>
+            <div className="text-xs sm:text-sm font-extrabold text-black leading-none">+35% este mes</div>
           </div>
         </div>
       </motion.div>
