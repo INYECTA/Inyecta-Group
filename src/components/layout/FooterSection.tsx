@@ -44,7 +44,7 @@ export const FooterSection = () => {
         url: "/",
         component: <Logo />,
       }}
-      description="Transformamos clínicas en negocios automáticos. IA real para resultados reales."
+      description="Transformamos clínicas estéticas en negocios automáticos con IA."
       sections={sections}
       socialLinks={socialLinks}
       copyright={`© 2024 Inyecta Group.`}

@@ -96,7 +96,7 @@ const Hero = () => {
           className="potion-badge mb-6"
         >
           <Sparkles className="w-3 h-3 mr-2 inline" />
-          Automatización Premium para Clínicas
+          Sistemas de IA para Clínicas de Medicina Estética
         </motion.div>
 
         <motion.h1
@@ -105,7 +105,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-black mb-8 md:mb-10 leading-[0.95] md:leading-[0.85] max-w-6xl tracking-tighter"
         >
-          Gestiona tu clínica <span className="potion-text-gradient">sin que el teléfono te quite la vida</span>
+          Llenamos la agenda de tu clínica <span className="potion-text-gradient">mientras tú estás en cabina</span>
         </motion.h1>
 
         <motion.p
@@ -114,7 +114,7 @@ const Hero = () => {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="text-base sm:text-lg md:text-xl text-slate-500 max-w-3xl mx-auto mb-12 md:mb-16 leading-tight tracking-tight px-4 font-medium"
         >
-          Instalamos sistemas de IA que atienden a tus pacientes, organizan tu agenda y cierran citas por ti 24/7. Tú solo ocúpate de lo que pasa dentro de cabina; nosotros nos encargamos de que el resto funcione solo.
+          Instalamos sistemas de IA que captan, filtran y agendan pacientes reales las 24 horas del día. Deja de perder ventas por no contestar un WhatsApp y recupera el control de tu tiempo y tu negocio.
         </motion.p>
 
         <motion.div
@@ -209,13 +209,13 @@ const PricingSection = () => {
       name: "Gestión y Orden",
       price: "300",
       features: [
-        "Elimina el trabajo administrativo",
-        "IA organiza la agenda sola",
-        "Ideal para clínicas que quieren orden",
-        "Soporte técnico incluido",
+        "Recupera 20 horas al mes",
+        "Agenda 100% organizada",
+        "Cero errores humanos",
+        "Soporte técnico prioritario",
       ],
-      description: "Olvídate de los errores en la agenda y de contestar 50 veces al día lo mismo. Implementamos una IA que organiza tus citas y responde dudas frecuentes. Deja de ser administrativo y vuelve a ser médico.",
-      result: "Para clínicas que tienen pacientes, pero cuya gestión manual es un caos.",
+      description: "Consigue el orden que tu clínica necesita. Automatizamos la gestión de citas para que dejes de perder tiempo en tareas administrativas y vuelvas a ser el dueño.",
+      result: "Ideal para profesionalizar la operativa y recuperar tu tiempo.",
       buttonText: "Agendar Auditoría Gratuita",
       href: CALENDAR_LINK,
       isPopular: false,
@@ -225,30 +225,29 @@ const PricingSection = () => {
       name: "Atención y Cierre 24/7",
       price: "700",
       features: [
-        "Experto en ventas (IA)",
-        "Contesta Instagram y WhatsApp al segundo",
-        "Incluso de madrugada",
-        "Recupera pacientes perdidos",
+        "Cero fugas en Instagram/WhatsApp",
+        "Atención inmediata 24/7",
+        "Cierre de citas automático",
+        "Recuperación de leads",
       ],
-      description: "Instalamos un \"Vendedor Experto\" en tu Instagram y WhatsApp. Una IA que entiende al paciente, explica tus servicios y reserva la cita al instante. Recupera la inversión con los pacientes que antes se te escapaban.",
-      result: "Para clínicas que quieren dejar de perder ventas por no estar pegadas al móvil.",
+      description: "Consigue que cada mensaje se convierta en una cita. Nuestra IA vende por ti mientras tú operas, asegurando que ningún paciente se escape a la competencia.",
+      result: "Maximiza tu conversión y capta cada lead sin mover un dedo.",
       buttonText: "Agendar Auditoría Gratuita",
       href: CALENDAR_LINK,
       isPopular: true,
       icon: <TrendingUp className="w-10 h-10" />
     },
     {
-      name: "Crecimiento y Fidelización Total",
+      name: "Escala Total",
       price: "1500",
       features: [
-        "Secretaria de élite que no duerme",
-        "Atrae pacientes y les vende",
-        "Les da cita automáticamente",
-        "Hace que los pacientes vuelvan",
-        "Enfocada en subir la facturación",
+        "Crecimiento automático",
+        "Fidelización de alto nivel",
+        "Delegación total de agenda",
+        "Maximización de facturación",
       ],
-      description: "Es como tener una secretaria de élite 24/7. Este sistema no solo agenda, sino que persigue a pacientes antiguos para que vuelvan y fideliza a los nuevos. Un sistema autónomo diseñado para maximizar tu facturación.",
-      result: "La solución definitiva para delegar el 100% de la captación y enfocarte en escalar.",
+      description: "Consigue la libertad total. Un sistema de alto rendimiento que atrae, vende y fideliza pacientes de forma autónoma para que tú solo te enfoques en escalar.",
+      result: "La solución definitiva para escalar tu facturación al siguiente nivel.",
       buttonText: "Agendar Auditoría Gratuita",
       href: CALENDAR_LINK,
       isPopular: false,
@@ -258,11 +257,14 @@ const PricingSection = () => {
 
   return (
     <section id="precios" className="bg-transparent py-24 md:py-40">
+      <div className="potion-container mb-12 text-center">
+        <div className="potion-badge">SECCIÓN C: Nuestros Servicios</div>
+      </div>
       <Pricing 
         plans={plans}
         showToggle={false}
-        title="Planes diseñados para tu éxito"
-        description="Elige el sistema que mejor se adapte al volumen y necesidades de tu clínica."
+        title="Sistemas diseñados para escalar tu clínica"
+        description="Elige el nivel de automatización que tu negocio necesita hoy para dejar de perder pacientes."
       />
     </section>
   );
@@ -271,20 +273,20 @@ const PricingSection = () => {
 const FAQSection = () => {
   const faqs = [
     {
-      q: "¿Cómo sé que esto funciona?",
-      a: "Solo trabajamos con clínicas estéticas. Sabemos lo que funciona y lo que no. Si no te llenamos la agenda, no nos sirve de nada."
+      q: "¿Cómo sé que esto funciona en mi clínica?",
+      a: "Solo trabajamos con medicina estética. Conocemos tus tratamientos, tus márgenes y tus pacientes. Si no llenamos tu agenda, nuestro sistema no tiene sentido."
     },
     {
-      q: "¿Tengo que firmar un contrato largo?",
-      a: "No. Trabajamos mes a mes. Si no estás contento con los pacientes que te traemos, puedes irte cuando quieras. Sin líos."
+      q: "¿Tengo que estar pendiente de la IA?",
+      a: "Al contrario. El objetivo es que te olvides del móvil. La IA está entrenada para actuar como tu mejor secretaria, cerrando citas mientras tú operas."
     },
     {
-      q: "¿Qué tratamientos vamos a vender?",
-      a: "Los que más dinero te dejen. Rellenos, labios, hilos... lo que tú quieras potenciar en tu clínica."
+      q: "¿Es difícil de implementar?",
+      a: "Nosotros nos encargamos de todo. En menos de 15 días tienes el sistema funcionando y captando pacientes. Tú no tienes que configurar nada."
     },
     {
-      q: "¿Cuándo empezaré a ver citas nuevas?",
-      a: "Normalmente, en la primera semana ya verás cómo el teléfono empieza a dar citas solo."
+      q: "¿Cuándo empezaré a ver resultados?",
+      a: "La mayoría de las clínicas ven cómo su agenda empieza a llenarse sola desde la primera semana de activación del sistema."
     }
   ];
 
@@ -317,9 +319,9 @@ const FAQSection = () => {
 
 const ProblemSection = () => {
   const problems = [
-    { title: "¿Sigues perdiendo pacientes porque tardas más de 10 minutos en responder un WhatsApp?", desc: "La gente no espera, se va a la clínica de al lado." },
-    { title: "¿Tu agenda es un rompecabezas de huecos vacíos y citas mal anotadas?", desc: "Deja de perder el tiempo en tareas que una máquina hace mejor que un humano." },
-    { title: "¿Estás cansado de ser esclavo de Instagram a las 11 de la noche?", desc: "Mereces desconectar sabiendo que tu negocio sigue vendiendo sin ti." }
+    { title: "Esclavo del móvil", desc: "Vives pegado a WhatsApp respondiendo las mismas dudas a deshoras. Si no contestas en 5 minutos, el paciente se va a la competencia." },
+    { title: "Fugas de dinero", desc: "Pierdes citas cada día porque tu recepción está saturada o porque nadie atiende Instagram el fin de semana." },
+    { title: "Caos administrativo", desc: "Tu agenda es un rompecabezas manual. Errores en citas, huecos vacíos y falta de previsión en tu facturación." }
   ];
 
   return (
@@ -332,7 +334,7 @@ const ProblemSection = () => {
             viewport={{ once: true }}
             className="potion-badge bg-red-50 text-red-600 border-red-100"
           >
-            El Problema
+            SECCIÓN A: El Problema
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -341,7 +343,7 @@ const ProblemSection = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter text-black mb-8 leading-[1] md:leading-[0.85]"
           >
-            ¿Tu clínica está <span className="text-red-600">perdiendo</span> pacientes cada día?
+            ¿Tu clínica es un negocio o <span className="text-red-600">una cárcel</span> de WhatsApp?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -350,7 +352,7 @@ const ProblemSection = () => {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-slate-500 font-bold tracking-tight"
           >
-            Si tu agenda tiene huecos vacíos y no sabes de dónde vendrá tu próximo paciente, tienes un problema de captación.
+            Cada mensaje sin responder es un tratamiento que no cobras. El caos administrativo te está quitando la vida y el dinero.
           </motion.p>
         </div>
 
@@ -380,18 +382,18 @@ const ProblemSection = () => {
 const SolutionSection = () => {
   const solutionList = [
     { 
-      title: "IA de Gestión de Agenda", 
-      desc: "Sincronización total que organiza tus citas sin que tú o tu equipo tengáis que mover un dedo.",
-      icon: <Clock className="w-10 h-10" />
+      title: "1. Auditoría de fugas", 
+      desc: "Analizamos dónde estás perdiendo pacientes y dinero hoy mismo. Detectamos los puntos ciegos de tu atención al cliente.",
+      icon: <Target className="w-10 h-10" />
     },
     { 
-      title: "Experto en Ventas 24/7", 
-      desc: "Nuestra IA atiende Instagram y WhatsApp al segundo, calificando leads y cerrando citas incluso de madrugada.",
+      title: "2. Integración IA 24/7", 
+      desc: "Instalamos tu sistema de IA personalizado que atiende, filtra y agenda citas en WhatsApp e Instagram sin descanso.",
       icon: <Zap className="w-10 h-10" />
     },
     { 
-      title: "Automatización de Escala", 
-      desc: "Sistemas que atraen pacientes, les venden tus tratamientos y garantizan que vuelvan a tu clínica.",
+      title: "3. Escala de facturación", 
+      desc: "Con la agenda llena y la atención automatizada, tu única preocupación será operar y ver cómo crecen tus ingresos.",
       icon: <TrendingUp className="w-10 h-10" />
     },
   ];
@@ -400,9 +402,9 @@ const SolutionSection = () => {
     <section id="beneficios" className="py-20 md:py-32 px-4 md:px-6 overflow-hidden relative bg-transparent">
       <div className="potion-container">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <div className="potion-badge">Especialistas en automatización</div>
+          <div className="potion-badge">SECCIÓN B: La Solución</div>
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tighter mb-6 md:mb-8 leading-[1.1] md:leading-[0.9]">
-            Sistemas de IA para clínicas estéticas <br className="hidden md:block" /> <span className="text-blue-600">que trabajan por ti</span>
+            El Método Inyecta: <br className="hidden md:block" /> <span className="text-blue-600">Tu clínica en piloto automático</span>
           </h2>
         </div>
 
@@ -447,11 +449,11 @@ const FinalCTA = () => {
             className="text-center"
           >
             <h2 className="text-3xl sm:text-4xl md:text-7xl font-extrabold tracking-tighter text-black mb-8 md:mb-10 leading-[0.95] md:leading-[0.85]">
-              Recupera tu tiempo y <span className="potion-text-gradient">multiplica tus ingresos</span>
+              Deja de ser el administrativo de tu clínica y <span className="potion-text-gradient">vuelve a ser el dueño</span>
             </h2>
             
             <p className="text-lg md:text-2xl text-slate-500 mb-12 md:mb-16 max-w-3xl mx-auto leading-tight tracking-tight px-4 font-medium">
-              Agenda una Auditoría Gratuita de Automatización y te mostraremos cómo tu clínica puede funcionar sola con IA.
+              Reserva tu Auditoría Gratuita de Automatización y te mostraremos exactamente cómo llenar tu agenda sin tocar el teléfono.
             </p>
 
             <motion.div
@@ -480,6 +482,38 @@ const FinalCTA = () => {
   );
 };
 
+const ResultsSection = () => {
+  const results = [
+    { title: "Atención en <10 segundos", desc: "Tus pacientes nunca más esperarán. Respuestas instantáneas que cierran citas al momento." },
+    { title: "Agenda organizada", desc: "Sincronización perfecta. Olvídate de los huecos vacíos y los solapamientos de citas." },
+    { title: "Crecimiento automático", desc: "Un sistema que trabaja 24/7 captando y fidelizando pacientes mientras tú te enfocas en operar." }
+  ];
+
+  return (
+    <section className="py-24 md:py-40 px-4 md:px-6 bg-black text-white relative overflow-hidden">
+      <div className="potion-container relative z-10">
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="potion-badge bg-blue-600 text-white border-blue-500 mb-6">SECCIÓN D: Resultados y Confianza</div>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-[1] md:leading-[0.85]">
+            Lo que puedes esperar
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {results.map((r, i) => (
+            <div key={i} className="p-10 rounded-[3rem] border border-white/10 bg-white/5 backdrop-blur-xl">
+              <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                <Check className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-extrabold mb-4 tracking-tighter">{r.title}</h3>
+              <p className="text-slate-400 font-bold tracking-tight leading-tight">{r.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export const Home = () => {
   return (
     <div className="bg-white">
@@ -489,8 +523,9 @@ export const Home = () => {
       <div className="relative">
         <ProblemSection />
         <SolutionSection />
-        <Testimonials />
         <PricingSection />
+        <ResultsSection />
+        <Testimonials />
         <FAQSection />
         <FinalCTA />
       </div>
