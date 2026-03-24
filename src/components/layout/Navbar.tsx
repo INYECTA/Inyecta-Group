@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { CALENDAR_LINK } from '../../constants';
 import { Logo } from '../ui/Logo';
@@ -9,6 +9,7 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -37,15 +38,33 @@ export const Navbar = () => {
         transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-700 ${scrolled || mobileMenuOpen ? 'py-4' : 'py-8'}`}
       >
-        <div className={`max-w-7xl mx-auto flex items-center justify-between px-6 py-3 rounded-3xl transition-all duration-700 relative z-50 ${scrolled || mobileMenuOpen ? 'bg-white/80 backdrop-blur-2xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.05)]' : 'bg-transparent'}`}>
-          <Link 
-            to="/" 
-            className="flex items-center gap-4 group cursor-pointer relative z-[60]"
-            onClick={() => setMobileMenuOpen(false)}
+        <div className={`max-w-7xl mx-auto flex items-center justify-between px-6 py-3 rounded-3xl transition-all duration-700 relative z-50 ${scrolled || mobileMenuOpen ? 'bg-white/80 backdrop-blur-md md:backdrop-blur-2xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.05)]' : 'bg-transparent'}`}>
+          <div 
+            role="button"
+            tabIndex={0}
+            onClick={() => {
+              setMobileMenuOpen(false);
+              if (location.pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else {
+                navigate('/');
+              }
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                setMobileMenuOpen(false);
+                if (location.pathname === '/') {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                  navigate('/');
+                }
+              }
+            }}
+            className="flex items-center gap-4 group cursor-pointer relative z-[100] focus:outline-none pointer-events-auto"
             aria-label="Ir al inicio"
           >
-            <Logo className="scale-90 origin-left transition-transform group-hover:scale-95" />
-          </Link>
+            <Logo className="scale-90 origin-left transition-transform group-hover:scale-95 pointer-events-none" />
+          </div>
           
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-12 text-[13px] font-bold text-slate-500 tracking-tight">

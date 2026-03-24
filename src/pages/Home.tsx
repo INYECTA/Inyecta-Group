@@ -76,20 +76,23 @@ const Hero = () => {
         <motion.div 
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[-20%] right-[-10%] w-[100%] md:w-[60%] h-[60%] bg-blue-100/30 rounded-full blur-[120px]" 
+          className="absolute top-[-20%] right-[-10%] w-[100%] md:w-[60%] h-[60%] bg-blue-100/30 rounded-full blur-[120px] hidden md:block" 
         />
         <motion.div 
           animate={{ rotate: -360 }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[-20%] left-[-10%] w-[100%] md:w-[60%] h-[60%] bg-slate-100/30 rounded-full blur-[120px]" 
+          className="absolute bottom-[-20%] left-[-10%] w-[100%] md:w-[60%] h-[60%] bg-slate-100/30 rounded-full blur-[120px] hidden md:block" 
         />
+        {/* Static background for mobile to save performance */}
+        <div className="absolute top-[-10%] right-[-10%] w-[80%] h-[40%] bg-blue-100/20 rounded-full blur-[80px] md:hidden" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[80%] h-[40%] bg-slate-100/20 rounded-full blur-[80px] md:hidden" />
       </div>
 
       <div className="potion-container relative z-10 text-center flex flex-col items-center px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           className="potion-badge mb-6"
         >
           <Sparkles className="w-3 h-3 mr-2 inline" />
@@ -99,7 +102,7 @@ const Hero = () => {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-black mb-8 md:mb-10 leading-[0.95] md:leading-[0.85] max-w-6xl tracking-tighter"
         >
           Consigue más pacientes <br className="hidden sm:block" /> <span className="potion-text-gradient">sin mover un dedo</span>
@@ -108,7 +111,7 @@ const Hero = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
           className="text-base sm:text-lg md:text-xl text-slate-500 max-w-3xl mx-auto mb-12 md:mb-16 leading-tight tracking-tight px-4 font-medium"
         >
           Automatizamos tu agenda y tus mensajes para que tu clínica crezca sola mientras tú te centras en tus pacientes.
@@ -117,7 +120,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20 md:mb-24 w-full max-w-md md:max-w-2xl"
         >
           <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="potion-button-primary w-full sm:w-auto px-12 md:px-16 py-6 md:py-8 text-xl md:text-2xl shadow-2xl shadow-blue-600/30">
@@ -359,7 +362,7 @@ const ProblemSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2 }}
-              className="p-10 rounded-[3rem] border border-slate-100 bg-white/40 backdrop-blur-xl hover:bg-white hover:shadow-2xl hover:shadow-red-500/5 transition-all duration-700 group"
+              className="p-10 rounded-[3rem] border border-slate-100 bg-white md:bg-white/40 md:backdrop-blur-xl hover:bg-white hover:shadow-2xl hover:shadow-red-500/5 transition-all duration-700 group"
             >
               <div className="w-16 h-16 bg-red-50 text-red-600 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                 <X className="w-8 h-8" />
@@ -412,7 +415,7 @@ const SolutionSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.8 }}
               whileHover={{ y: -15, scale: 1.02 }}
-              className="potion-card p-12 md:p-16 flex flex-col items-center text-center bg-white/80 backdrop-blur-md border-slate-100 shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 group"
+              className="potion-card p-12 md:p-16 flex flex-col items-center text-center bg-white md:bg-white/80 md:backdrop-blur-md border-slate-100 shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 group"
             >
               <div className="w-28 h-28 bg-blue-600 text-white rounded-[3rem] flex items-center justify-center mb-12 shadow-2xl shadow-blue-600/40 rotate-3 group-hover:rotate-0 transition-all duration-500">
                 {item.icon}
