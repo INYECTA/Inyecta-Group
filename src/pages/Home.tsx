@@ -142,7 +142,7 @@ const Hero = () => {
       <motion.div
         animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[10%] left-4 sm:left-[2%] xl:left-[8%] p-3 sm:p-6 potion-glass rounded-2xl sm:rounded-3xl rotate-[-12deg] z-0 opacity-100 sm:opacity-40 xl:opacity-100 transition-all scale-75 sm:scale-90 xl:scale-100"
+        className="absolute top-[5%] left-2 sm:left-[2%] xl:left-[8%] p-2 sm:p-6 potion-glass rounded-2xl sm:rounded-3xl rotate-[-12deg] z-[-1] opacity-100 sm:opacity-40 xl:opacity-100 transition-all scale-[0.65] sm:scale-90 xl:scale-100 pointer-events-none"
       >
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-green-500/20">
@@ -160,7 +160,7 @@ const Hero = () => {
       <motion.div
         animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-[10%] right-4 sm:right-[2%] xl:right-[8%] p-3 sm:p-6 potion-glass rounded-2xl sm:rounded-3xl rotate-[8deg] z-0 opacity-100 sm:opacity-40 xl:opacity-100 transition-all scale-75 sm:scale-90 xl:scale-100"
+        className="absolute bottom-[5%] right-2 sm:right-[2%] xl:right-[8%] p-2 sm:p-6 potion-glass rounded-2xl sm:rounded-3xl rotate-[8deg] z-[-1] opacity-100 sm:opacity-40 xl:opacity-100 transition-all scale-[0.65] sm:scale-90 xl:scale-100 pointer-events-none"
       >
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
