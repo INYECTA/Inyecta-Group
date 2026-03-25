@@ -93,7 +93,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="potion-badge mb-6"
+          className="potion-badge mb-8"
         >
           <Sparkles className="w-3 h-3 mr-2 inline" />
           Sistemas de IA para Clínicas de Medicina Estética
@@ -142,7 +142,7 @@ const Hero = () => {
       <motion.div
         animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[5%] left-2 sm:left-[2%] xl:left-[8%] p-2 sm:p-6 potion-glass rounded-2xl sm:rounded-3xl rotate-[-12deg] z-[-1] opacity-100 sm:opacity-40 xl:opacity-100 transition-all scale-[0.65] sm:scale-90 xl:scale-100 pointer-events-none"
+        className="absolute top-[18%] md:top-[16%] left-[4%] md:left-[12%] p-3 sm:p-5 potion-glass rounded-2xl sm:rounded-3xl rotate-[-12deg] z-0 opacity-70 transition-all scale-75 sm:scale-90 xl:scale-100 shadow-xl pointer-events-none"
       >
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-green-500/20">
@@ -160,7 +160,7 @@ const Hero = () => {
       <motion.div
         animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-[5%] right-2 sm:right-[2%] xl:right-[8%] p-2 sm:p-6 potion-glass rounded-2xl sm:rounded-3xl rotate-[8deg] z-[-1] opacity-100 sm:opacity-40 xl:opacity-100 transition-all scale-[0.65] sm:scale-90 xl:scale-100 pointer-events-none"
+        className="absolute bottom-[5%] right-2 sm:right-[2%] xl:right-[8%] p-2 sm:p-6 potion-glass rounded-2xl sm:rounded-3xl rotate-[8deg] z-10 opacity-100 sm:opacity-40 xl:opacity-100 transition-all scale-[0.65] sm:scale-90 xl:scale-100"
       >
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
