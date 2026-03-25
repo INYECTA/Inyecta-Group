@@ -37,31 +37,51 @@ const TrustBadges = () => {
 
 const StickyCTA = () => {
   const [visible, setVisible] = React.useState(false);
+  const [dismissed, setDismissed] = React.useState(false);
 
   React.useEffect(() => {
-    const handleScroll = () => setVisible(window.scrollY > 800);
+    const handleScroll = () => {
+      if (!dismissed) {
+        setVisible(window.scrollY > 600);
+      }
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [dismissed]);
 
   return (
     <AnimatePresence>
-      {visible && (
+      {visible && !dismissed && (
         <motion.div
-          initial={{ y: 100 }}
+          initial={{ y: "100%" }}
           animate={{ y: 0 }}
-          exit={{ y: 100 }}
-          className="fixed bottom-6 left-6 right-6 z-40 md:hidden"
+          exit={{ y: "100%" }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed bottom-0 left-0 right-0 z-[100] md:hidden"
         >
-          <a 
-            href={CALENDAR_LINK} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="flex items-center justify-center gap-3 bg-potion-accent text-white px-6 py-5 rounded-xl font-extrabold text-lg shadow-2xl shadow-blue-600/40 active:scale-95 tracking-tight"
-          >
-            <Zap className="w-5 h-5" />
-            Agendar Auditoría Gratis
-          </a>
+          <div className="bg-white/95 backdrop-blur-xl border-t border-slate-100 px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] shadow-[0_-10px_40px_rgba(0,0,0,0.08)] flex items-center justify-between gap-4">
+            <div className="flex-1 min-w-0">
+              <p className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-0.5">Auditoría Gratuita</p>
+              <p className="text-sm font-extrabold text-black tracking-tight truncate">Lleva tu clínica al siguiente nivel</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <a 
+                href={CALENDAR_LINK} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-blue-600/20 active:scale-95 whitespace-nowrap"
+              >
+                Agendar
+              </a>
+              <button 
+                onClick={() => setDismissed(true)}
+                className="p-1.5 text-slate-400 hover:text-black transition-colors"
+                aria-label="Cerrar"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
@@ -70,7 +90,7 @@ const StickyCTA = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-transparent">
+    <section className="relative min-h-[90vh] md:min-h-screen flex flex-col items-center justify-center pt-28 pb-12 md:pt-32 md:pb-20 overflow-hidden bg-transparent">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <motion.div 
@@ -103,7 +123,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-black mb-8 md:mb-10 leading-[0.95] md:leading-[0.85] max-w-6xl tracking-tighter"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-black mb-6 md:mb-10 leading-[1.1] md:leading-[0.85] max-w-6xl tracking-tighter"
         >
           Llenamos la agenda de tu clínica <span className="potion-text-gradient">mientras tú estás en cabina</span>
         </motion.h1>
@@ -112,7 +132,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-base sm:text-lg md:text-xl text-slate-500 max-w-3xl mx-auto mb-12 md:mb-16 leading-tight tracking-tight px-4 font-medium"
+          className="text-base sm:text-lg md:text-xl text-slate-500 max-w-3xl mx-auto mb-8 md:mb-16 leading-snug md:leading-tight tracking-tight px-4 font-medium"
         >
           Instalamos sistemas de IA que captan, filtran y agendan pacientes reales las 24 horas del día. Deja de perder ventas por no contestar un WhatsApp y recupera el control de tu tiempo y tu negocio.
         </motion.p>
@@ -121,7 +141,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20 md:mb-24 w-full max-w-md md:max-w-2xl"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12 md:mb-24 w-full max-w-md md:max-w-2xl"
         >
           <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="potion-button-primary w-full sm:w-auto px-12 md:px-16 py-6 md:py-8 text-xl md:text-2xl shadow-2xl shadow-blue-600/30">
             Agendar Auditoría Gratuita
@@ -142,7 +162,7 @@ const Hero = () => {
       <motion.div
         animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[18%] md:top-[16%] left-[4%] md:left-[12%] p-3 sm:p-5 potion-glass rounded-2xl sm:rounded-3xl rotate-[-12deg] z-0 opacity-70 transition-all scale-75 sm:scale-90 xl:scale-100 shadow-xl pointer-events-none"
+        className="absolute top-[12%] md:top-[16%] left-[2%] md:left-[12%] p-3 sm:p-5 potion-glass rounded-2xl sm:rounded-3xl rotate-[-12deg] z-0 opacity-60 md:opacity-70 transition-all scale-[0.6] sm:scale-90 xl:scale-100 shadow-xl pointer-events-none"
       >
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-green-500/20">
@@ -160,7 +180,7 @@ const Hero = () => {
       <motion.div
         animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-[5%] right-2 sm:right-[2%] xl:right-[8%] p-2 sm:p-6 potion-glass rounded-2xl sm:rounded-3xl rotate-[8deg] z-10 opacity-100 sm:opacity-40 xl:opacity-100 transition-all scale-[0.65] sm:scale-90 xl:scale-100"
+        className="absolute bottom-[2%] md:bottom-[5%] right-[2%] md:right-[8%] p-2 sm:p-6 potion-glass rounded-2xl sm:rounded-3xl rotate-[8deg] z-0 opacity-80 sm:opacity-40 xl:opacity-100 transition-all scale-[0.55] sm:scale-90 xl:scale-100 pointer-events-none"
       >
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
