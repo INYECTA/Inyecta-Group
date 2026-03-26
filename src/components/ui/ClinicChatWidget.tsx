@@ -49,11 +49,11 @@ export const ClinicChatWidget = ({
   const hasInitialized = useRef(false);
 
   const demoMessages: Message[] = [
-    { id: 'd1', text: '¡Hola! Soy Elena, tu asistente de IA de Inyecta Group. 👋', sender: 'ai' },
-    { id: 'd2', text: '¿Te gustaría ver cómo automatizamos tu clínica para que la agenda se llene sola?', sender: 'ai' },
-    { id: 'u1', text: 'Sí, me interesa dejar de perder el tiempo con el móvil.', sender: 'user' },
-    { id: 'd3', text: '¡Perfecto! Instalamos sistemas de IA que atienden pacientes 24/7 y cierran citas por ti.', sender: 'ai' },
-    { id: 'd4', text: '¿Quieres que agendemos una auditoría gratuita para ver tu caso? 🚀', sender: 'ai' }
+    { id: 'd1', text: '¡Hola! Soy Elena. Estoy aquí para que dejes de quemar dinero en leads que nunca llegan a tu camilla. 👋', sender: 'ai' },
+    { id: 'd2', text: '¿Sabías que si no respondes en menos de 5 minutos, el 70% de tus pacientes se van a la clínica de al lado?', sender: 'ai' },
+    { id: 'u1', text: 'Sí, es imposible estar pendiente de todo mientras opero.', sender: 'user' },
+    { id: 'd3', text: 'Exacto. Nuestra IA inyecta rentabilidad en tu agenda cerrando citas 24/7 por ti para que nunca tengas huecos vacíos.', sender: 'ai' },
+    { id: 'd4', text: '¿Quieres ver cómo recuperaríamos tus citas perdidas con una auditoría gratuita? 🚀', sender: 'ai' }
   ];
 
   useEffect(() => {
@@ -91,7 +91,7 @@ export const ClinicChatWidget = ({
     let isMounted = true;
     if (!progressive && !hasInitialized.current) {
       hasInitialized.current = true;
-      const welcomeText = '¡Hola! 👋 Soy Elena, de Inyecta Group. Estoy aquí para ayudarte a automatizar tu clínica y que recuperes tu tiempo. ¿Te gustaría saber cómo nuestra IA puede gestionar tu agenda 24/7?';
+      const welcomeText = '¡Hola! 👋 Soy Elena. Estoy aquí para que dejes de perder dinero por no contestar mensajes. ¿Te gustaría saber cómo nuestra IA puede inyectar pacientes de alto valor en tu agenda 24/7 mientras tú estás en cabina?';
       
       const typeInitialMessage = async () => {
         setIsTyping(true);
@@ -151,7 +151,7 @@ export const ClinicChatWidget = ({
           }
         ],
         config: {
-          systemInstruction: "Eres Elena, la cara visible de Inyecta Group. Tu tono es premium, directo y muy profesional. Eres experta en automatización con IA para clínicas estéticas. No hablas de SEO ni de Ads. Te enfocas en cómo la IA ahorra tiempo, gestiona la agenda y cierra ventas 24/7. Siempre diriges a la auditoría gratuita."
+          systemInstruction: "Eres Elena, la cara visible de Inyecta Group. Tu tono es premium, directo y agresivo en la venta de beneficios. Eres experta en Respuesta Directa y automatización con IA para clínicas estéticas. Tu objetivo es que el cliente sienta el dolor de cada euro perdido por no responder a tiempo. Te enfocas en la rentabilidad de cabina, el ROI y en cómo la IA cierra citas reales 24/7. Siempre diriges a la auditoría gratuita como la única solución para dejar de quemar dinero."
         }
       });
 
