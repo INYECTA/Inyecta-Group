@@ -15,9 +15,17 @@ export const FooterSection = () => {
       ],
     },
     {
+      title: "Compañía",
+      links: [
+        { name: "Sobre nosotros", href: "/sobre-nosotros" },
+        { name: "Cómo funciona", href: "/como-funciona" },
+        { name: "Contacto", href: "/contacto" },
+      ],
+    },
+    {
       title: "Soporte",
       links: [
-        { name: "inyectasoporte@gmail.com", href: `mailto:inyectasoporte@gmail.com` },
+        { name: SUPPORT_EMAIL, href: `mailto:${SUPPORT_EMAIL}` },
         { name: "Ayuda 24/7", href: "/#auditoria" },
       ],
     },
