@@ -123,9 +123,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-black mb-6 md:mb-10 leading-[1.1] md:leading-[0.85] max-w-6xl tracking-tighter"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-black mb-6 md:mb-10 leading-[1.1] md:leading-[1] max-w-5xl tracking-tighter"
         >
-          Deja de perder pacientes <span className="potion-text-gradient">por no contestar a tiempo</span>
+          Inyectamos pacientes en tu agenda <span className="potion-text-gradient">automatizando las ventas</span> de tu clínica
         </motion.h1>
 
         <motion.p
@@ -134,7 +134,7 @@ const Hero = () => {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="text-base sm:text-lg md:text-xl text-slate-500 max-w-3xl mx-auto mb-8 md:mb-16 leading-snug md:leading-tight tracking-tight px-4 font-medium"
         >
-          Instalamos una IA en tu Instagram y WhatsApp que agenda pacientes 24/7 mientras tú trabajas.
+          Automatizamos tu agenda, cualificamos a tus leads y escalamos tu facturación sin que muevas un dedo.
         </motion.p>
 
         <motion.div
@@ -360,7 +360,7 @@ const ProblemSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter text-black mb-8 leading-[1] md:leading-[0.85]"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter text-black mb-8 leading-[1.1] md:leading-[1]"
           >
             ¿Cuántos miles de euros estás dejando sobre la mesa por culpa de una <span className="text-red-600">bandeja de entrada saturada</span>?
           </motion.h2>
@@ -401,18 +401,18 @@ const ProblemSection = () => {
 const SolutionSection = () => {
   const solutionList = [
     { 
-      title: "Paso 1: Auditoría rápida", 
-      desc: "Detectamos las fugas de dinero en tu proceso actual.",
+      title: "Auditoría de Fugas de Venta", 
+      desc: "Identificamos exactamente dónde estás perdiendo dinero en tu proceso de atención actual.",
       icon: <Target className="w-10 h-10" />
     },
     { 
-      title: "Paso 2: Inyección de IA", 
-      desc: "Implementamos el sistema inteligente que agenda por ti.",
+      title: "Sistema de Captación Predecible 24/7", 
+      desc: "Un agente digital cualificado que nunca duerme, atiende DMs y agenda citas mientras tú operas.",
       icon: <Zap className="w-10 h-10" />
     },
     { 
-      title: "Paso 3: Agenda Llena", 
-      desc: "Disfruta de una clínica rentable y predecible.",
+      title: "Filtro de Cualificación Premium", 
+      desc: "Cribamos a los curiosos para que solo los pacientes con alto potencial de compra lleguen a tu calendario.",
       icon: <TrendingUp className="w-10 h-10" />
     },
   ];
@@ -422,7 +422,7 @@ const SolutionSection = () => {
       <div className="potion-container">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <div className="potion-badge">El Método Inyecta</div>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tighter mb-6 md:mb-8 leading-[1.1] md:leading-[0.9]">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6 md:mb-8 leading-[1.1] md:leading-[1]">
             Tu clínica en <br className="hidden md:block" /> <span className="text-blue-600">3 Pasos</span>
           </h2>
         </div>
@@ -533,6 +533,59 @@ const ResultsSection = () => {
   );
 };
 
+const ComparisonSection = () => {
+  return (
+    <section className="py-20 md:py-32 px-4 md:px-6 bg-white overflow-hidden relative">
+      <div className="potion-container">
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+          <div className="potion-badge">Transformación Radical</div>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6 md:mb-8 leading-[1.1] md:leading-[1]">
+            Antes vs Después
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          {/* Antes */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="p-10 md:p-16 rounded-[3rem] border border-red-100 bg-red-50/30 flex flex-col items-center text-center"
+          >
+            <h3 className="text-2xl md:text-4xl font-extrabold text-red-600 mb-8 tracking-tighter uppercase">EL CAOS ACTUAL</h3>
+            <ul className="space-y-6">
+              {['DMs colapsados', 'Respuestas tardías', 'Pacientes perdidos'].map((item, i) => (
+                <li key={i} className="flex items-center justify-center gap-3 text-lg md:text-xl text-red-700 font-bold tracking-tight">
+                  <X className="w-6 h-6 flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Después */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="p-10 md:p-16 rounded-[3rem] border border-green-100 bg-green-50/30 flex flex-col items-center text-center"
+          >
+            <h3 className="text-2xl md:text-4xl font-extrabold text-green-600 mb-8 tracking-tighter uppercase">EL EFECTO INYECTA</h3>
+            <ul className="space-y-6">
+              {['Agenda llena', 'Respuestas instantáneas', 'Facturación garantizada'].map((item, i) => (
+                <li key={i} className="flex items-center justify-center gap-3 text-lg md:text-xl text-green-700 font-bold tracking-tight">
+                  <Check className="w-6 h-6 flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export const Home = () => {
   return (
     <div className="bg-white">
@@ -542,6 +595,7 @@ export const Home = () => {
       <div className="relative">
         <ProblemSection />
         <SolutionSection />
+        <ComparisonSection />
         <PricingSection />
         <ResultsSection />
         <Testimonials />
