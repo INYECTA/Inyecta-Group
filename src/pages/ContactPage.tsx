@@ -2,10 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, ChevronRight } from 'lucide-react';
 import { SUPPORT_EMAIL, CALENDAR_LINK } from '../constants';
+import { SEO } from '../components/SEO';
 
 export const ContactPage = () => {
   return (
     <div className="pt-32 pb-24 bg-white min-h-screen">
+      <SEO 
+        title="Contacto | Inyecta Group"
+        description="¿Listo para escalar tu clínica estética? Contacta con nosotros para una auditoría gratuita de captación de pacientes y automatización con IA."
+      />
       <div className="potion-container px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Logo } from '../components/ui/Logo';
 import { CheckCircle2, Users, Target, Zap, TrendingUp } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const AboutPage = () => {
   const points = [
@@ -14,6 +15,10 @@ export const AboutPage = () => {
 
   return (
     <div className="pt-24 pb-16 bg-white min-h-screen">
+      <SEO 
+        title="Sobre Nosotros | Expertos en Marketing para Clínicas"
+        description="Conoce Inyecta Group. Somos especialistas en automatización con IA y marketing estratégico exclusivo para clínicas estéticas y el sector salud premium."
+      />
       {/* Hero Section - Luxury Editorial Style */}
       <section id="sobre-nosotros" className="relative py-20 px-6 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50 -z-10 hidden lg:block" />

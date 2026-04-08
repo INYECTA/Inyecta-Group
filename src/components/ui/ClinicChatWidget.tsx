@@ -13,21 +13,21 @@ interface Message {
 const CLINIC_AVATAR = "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=500&auto=format&fit=crop";
 
 const TypingIndicator = () => (
-  <div className="flex gap-1.5 px-1 py-1">
+  <div className="flex gap-1.5 px-2 py-2">
     <motion.div
-      animate={{ scale: [1, 1.2, 1], opacity: [0.4, 1, 0.4] }}
-      transition={{ duration: 1, repeat: Infinity, times: [0, 0.5, 1] }}
-      className="w-1.5 h-1.5 bg-slate-400 rounded-full"
+      animate={{ y: [0, -5, 0] }}
+      transition={{ duration: 0.6, repeat: Infinity, ease: "easeInOut" }}
+      className="w-1.5 h-1.5 bg-blue-400 rounded-full"
     />
     <motion.div
-      animate={{ scale: [1, 1.2, 1], opacity: [0.4, 1, 0.4] }}
-      transition={{ duration: 1, repeat: Infinity, times: [0, 0.5, 1], delay: 0.2 }}
-      className="w-1.5 h-1.5 bg-slate-400 rounded-full"
+      animate={{ y: [0, -5, 0] }}
+      transition={{ duration: 0.6, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+      className="w-1.5 h-1.5 bg-blue-400 rounded-full"
     />
     <motion.div
-      animate={{ scale: [1, 1.2, 1], opacity: [0.4, 1, 0.4] }}
-      transition={{ duration: 1, repeat: Infinity, times: [0, 0.5, 1], delay: 0.4 }}
-      className="w-1.5 h-1.5 bg-slate-400 rounded-full"
+      animate={{ y: [0, -5, 0] }}
+      transition={{ duration: 0.6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+      className="w-1.5 h-1.5 bg-blue-400 rounded-full"
     />
   </div>
 );
@@ -49,11 +49,11 @@ export const ClinicChatWidget = ({
   const hasInitialized = useRef(false);
 
   const demoMessages: Message[] = [
-    { id: 'd1', text: '¡Hola! Soy Elena. Estoy aquí para que dejes de quemar dinero en leads que nunca llegan a tu camilla. 👋', sender: 'ai' },
-    { id: 'd2', text: '¿Sabías que si no respondes en menos de 5 minutos, el 70% de tus pacientes se van a la clínica de al lado?', sender: 'ai' },
-    { id: 'u1', text: 'Sí, es imposible estar pendiente de todo mientras opero.', sender: 'user' },
-    { id: 'd3', text: 'Exacto. Nuestra IA inyecta rentabilidad en tu agenda cerrando citas 24/7 por ti para que nunca tengas huecos vacíos.', sender: 'ai' },
-    { id: 'd4', text: '¿Quieres ver cómo recuperaríamos tus citas perdidas con una auditoría gratuita? 🚀', sender: 'ai' }
+    { id: 'd1', text: '¡Hola! Soy Elena de Inyecta Group. 👋 Estoy aquí para ayudarte a que tu clínica deje de perder pacientes por falta de respuesta.', sender: 'ai' },
+    { id: 'd2', text: '¿Sabías que el 70% de los leads se pierden si no contestas en los primeros 5 minutos?', sender: 'ai' },
+    { id: 'u1', text: 'Es verdad, a veces no damos abasto con tanto WhatsApp.', sender: 'user' },
+    { id: 'd3', text: 'Te entiendo perfectamente. Por eso nuestra IA agenda citas por ti 24/7, para que tú solo te preocupes de lo que mejor haces: tus tratamientos.', sender: 'ai' },
+    { id: 'd4', text: '¿Te gustaría que analizáramos tu caso en una auditoría gratuita? 🚀', sender: 'ai' }
   ];
 
   useEffect(() => {
@@ -65,21 +65,19 @@ export const ClinicChatWidget = ({
           
           if (nextMsg.sender === 'ai') {
             setIsTyping(true);
-            // Simulate thinking/typing time
-            const typingTime = Math.max(1000, nextMsg.text.length * 20); 
+            const typingTime = Math.max(1500, nextMsg.text.length * 15); 
             setTimeout(() => {
               setMessages(prev => [...prev, nextMsg]);
               setIsTyping(false);
               currentIdx++;
-              setTimeout(showNextMessage, 1500);
+              setTimeout(showNextMessage, 2000);
             }, typingTime);
           } else {
-            // User message appears faster
             setTimeout(() => {
               setMessages(prev => [...prev, nextMsg]);
               currentIdx++;
-              setTimeout(showNextMessage, 1000);
-            }, 800);
+              setTimeout(showNextMessage, 1200);
+            }, 1000);
           }
         }
       };
@@ -91,11 +89,11 @@ export const ClinicChatWidget = ({
     let isMounted = true;
     if (!progressive && !hasInitialized.current) {
       hasInitialized.current = true;
-      const welcomeText = '¡Hola! 👋 Soy Elena. Estoy aquí para que dejes de perder dinero por no contestar mensajes. ¿Te gustaría saber cómo nuestra IA puede inyectar pacientes de alto valor en tu agenda 24/7 mientras tú estás en cabina?';
+      const welcomeText = '¡Hola! 👋 Soy Elena. Estoy aquí para ayudarte a escalar tu clínica. ¿Sabías que la mayoría de clínicas pierden el 40% de sus ventas por no responder a tiempo? Nuestra IA soluciona eso agendando citas por ti 24/7. ¿Cómo puedo ayudarte hoy?';
       
       const typeInitialMessage = async () => {
         setIsTyping(true);
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        await new Promise(resolve => setTimeout(resolve, 2000));
         if (!isMounted) return;
         setIsTyping(false);
         
@@ -103,12 +101,13 @@ export const ClinicChatWidget = ({
         setMessages([initialMsg]);
         
         let currentText = '';
-        for (let i = 0; i < welcomeText.length; i++) {
+        const words = welcomeText.split(' ');
+        for (let i = 0; i < words.length; i++) {
           if (!isMounted) break;
-          currentText += welcomeText[i];
+          currentText += words[i] + ' ';
           const textToSet = currentText;
           setMessages(prev => prev.map(msg => msg.id === '1' ? { ...msg, text: textToSet } : msg));
-          await new Promise(resolve => setTimeout(resolve, 20));
+          await new Promise(resolve => setTimeout(resolve, 40 + Math.random() * 40));
         }
       };
       
@@ -137,26 +136,33 @@ export const ClinicChatWidget = ({
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     
-    // Small delay before bot starts "typing"
-    setTimeout(() => setIsTyping(true), 400);
+    setTimeout(() => setIsTyping(true), 600);
 
     try {
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
-      const model = ai.models.generateContent({
+      const response = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
         contents: [
           {
             role: "user",
-            parts: [{ text: `Eres Elena, una asistente virtual experta de Inyecta Group. Responde de manera directa, profesional y cercana a: "${input}". Tu objetivo es demostrar cómo la automatización con IA resuelve los problemas de gestión y ventas en clínicas estéticas. Recomienda siempre agendar una auditoría gratuita.` }]
+            parts: [{ text: input }]
           }
         ],
         config: {
-          systemInstruction: "Eres Elena, la cara visible de Inyecta Group. Tu tono es premium, directo y agresivo en la venta de beneficios. Eres experta en Respuesta Directa y automatización con IA para clínicas estéticas. Tu objetivo es que el cliente sienta el dolor de cada euro perdido por no responder a tiempo. Te enfocas en la rentabilidad de cabina, el ROI y en cómo la IA cierra citas reales 24/7. Siempre diriges a la auditoría gratuita como la única solución para dejar de quemar dinero."
+          systemInstruction: `Eres Elena, una consultora experta de Inyecta Group. Tu objetivo es ayudar a dueños de clínicas estéticas a entender cómo la IA y la automatización pueden escalar su negocio. 
+          
+          REGLAS DE PERSONALIDAD:
+          1. Habla de forma humana, cercana pero muy profesional. No parezcas un robot.
+          2. Usa un lenguaje que entiendan (leads, agenda, facturación, ROI, rentabilidad de cabina).
+          3. Sé empática con su falta de tiempo: "Sé que estar operando y atendiendo el WhatsApp a la vez es imposible".
+          4. Tu meta final es que agenden una AUDITORÍA GRATUITA. Es el siguiente paso lógico.
+          5. Sé directa: si no responden en 5 minutos, pierden al paciente. La IA es la solución.
+          6. No des respuestas excesivamente largas. Sé concisa y valiosa.
+          7. Si preguntan precios, di que depende de la escala de la clínica y que en la auditoría gratuita les daremos un presupuesto a medida.`
         }
       });
 
-      const response = await model;
-      const aiText = response.text || "Lo siento, ¿podrías repetir eso?";
+      const aiText = response.text || "Lo siento, he tenido un pequeño problema de conexión. ¿Podrías repetirme eso?";
 
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -164,7 +170,6 @@ export const ClinicChatWidget = ({
         sender: 'ai'
       };
 
-      // Remove typing indicator and add empty message bubble
       setIsTyping(false);
       setMessages(prev => [...prev, aiMessage]);
 
@@ -174,34 +179,35 @@ export const ClinicChatWidget = ({
         currentText += words[i] + ' ';
         const updatedText = currentText;
         setMessages(prev => prev.map(msg => msg.id === aiMessage.id ? { ...msg, text: updatedText } : msg));
-        await new Promise(resolve => setTimeout(resolve, 30));
+        await new Promise(resolve => setTimeout(resolve, 30 + Math.random() * 30));
       }
 
     } catch (error) {
-      setMessages(prev => [...prev, { id: Date.now().toString(), text: "Error de conexión.", sender: 'ai' }]);
+      console.error("Chat Error:", error);
+      setMessages(prev => [...prev, { id: Date.now().toString(), text: "Vaya, parece que Elena está atendiendo a muchos clientes ahora mismo. ¿Podrías intentarlo de nuevo en un momento?", sender: 'ai' }]);
       setIsTyping(false);
     }
   };
 
   const chatContent = (
-    <div ref={containerRef} className={`flex flex-col h-full ${embedded || progressive ? '' : 'bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden'}`}>
+    <div ref={containerRef} className={`flex flex-col h-full ${embedded || progressive ? '' : 'bg-white rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-slate-100 overflow-hidden'}`}>
       {/* Header for non-progressive/embedded */}
       {!embedded && !progressive && (
-        <div className="bg-white p-5 flex items-center justify-between border-b border-slate-100">
+        <div className="bg-white p-6 flex items-center justify-between border-b border-slate-50">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-600/20">
-              <img src={CLINIC_AVATAR} alt="Elena" className="w-full h-full object-cover" />
+            <div className="relative">
+              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-blue-600/10">
+                <img src={CLINIC_AVATAR} alt="Elena" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white rounded-full" />
             </div>
             <div>
-              <h3 className="text-slate-900 font-bold text-sm">Elena</h3>
-              <div className="flex items-center gap-1.5">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-slate-400 text-xs font-medium">En línea</span>
-              </div>
+              <h3 className="text-slate-900 font-black text-base tracking-tight">Elena</h3>
+              <span className="text-slate-400 text-xs font-bold uppercase tracking-widest">Inyecta Group</span>
             </div>
           </div>
-          <button onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors">
-            <X className="w-5 h-5" />
+          <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-slate-50 rounded-full transition-colors">
+            <X className="w-6 h-6 text-slate-400" />
           </button>
         </div>
       )}
@@ -216,12 +222,12 @@ export const ClinicChatWidget = ({
             className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {msg.sender === 'ai' && (
-              <div className="w-8 h-8 rounded-full overflow-hidden mr-3 shrink-0 border border-slate-100 shadow-sm">
+              <div className="w-8 h-8 rounded-full overflow-hidden mr-3 shrink-0 border border-slate-100 shadow-sm mt-1">
                 <img src={CLINIC_AVATAR} alt="Elena" className="w-full h-full object-cover" />
               </div>
             )}
             <div
-              className={`max-w-[85%] p-4 rounded-2xl text-[15px] leading-relaxed shadow-sm ${
+              className={`max-w-[85%] p-4 rounded-2xl text-[15px] font-medium leading-relaxed shadow-sm ${
                 msg.sender === 'user'
                   ? 'bg-blue-600 text-white rounded-tr-none'
                   : 'bg-slate-50 text-slate-700 border border-slate-100 rounded-tl-none'
@@ -246,21 +252,21 @@ export const ClinicChatWidget = ({
 
       {/* Footer / Input */}
       {!progressive && (
-        <div className="p-5 bg-white border-t border-slate-100 flex gap-3">
+        <div className="p-6 bg-white border-t border-slate-50 flex gap-3">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSend()}
             placeholder="Escribe un mensaje..."
-            className="flex-1 bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/10 transition-all"
+            className="flex-1 bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all placeholder:text-slate-400"
           />
           <button
             onClick={handleSend}
             disabled={!input.trim() || isTyping}
-            className="bg-blue-600 text-white p-3 rounded-2xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+            className="bg-blue-600 text-white p-4 rounded-2xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
           >
-            <Send className="w-5 h-5" />
+            <Send className="w-6 h-6" />
           </button>
         </div>
       )}
@@ -269,14 +275,14 @@ export const ClinicChatWidget = ({
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="p-6 bg-white border-t border-slate-100"
+          className="p-6 bg-white border-t border-slate-50"
         >
           <a 
             href={CALENDAR_LINK} 
             target="_blank" 
-            className="flex items-center justify-center gap-2 bg-blue-600 text-white py-4 rounded-2xl font-bold text-sm hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20"
+            className="flex items-center justify-center gap-3 bg-blue-600 text-white py-5 rounded-2xl font-black text-base hover:bg-blue-700 transition-all shadow-2xl shadow-blue-600/30"
           >
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-5 h-5" />
             Agendar auditoría gratuita
           </a>
         </motion.div>
@@ -305,12 +311,13 @@ export const ClinicChatWidget = ({
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[9999] bg-[#25D366] text-white p-4 md:p-5 rounded-3xl shadow-2xl shadow-green-500/40 flex items-center justify-center"
+        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[9999] bg-blue-600 text-white p-5 md:p-6 rounded-[2rem] shadow-2xl shadow-blue-600/40 flex items-center justify-center"
       >
-        {isOpen ? <X className="w-7 h-7" /> : (
-          <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
+        {isOpen ? <X className="w-8 h-8" /> : (
+          <div className="relative">
+            <MessageCircle className="w-8 h-8" />
+            <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 border-2 border-blue-600 rounded-full" />
+          </div>
         )}
       </motion.button>
 
@@ -320,7 +327,7 @@ export const ClinicChatWidget = ({
             initial={{ opacity: 0, y: 40, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.9 }}
-            className="fixed bottom-28 right-8 z-[9999] w-[400px] max-w-[90vw] h-[600px] flex flex-col"
+            className="fixed bottom-28 right-8 z-[9999] w-[420px] max-w-[90vw] h-[650px] flex flex-col"
           >
             {chatContent}
           </motion.div>

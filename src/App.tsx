@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { DynamicBackground } from './components/DynamicBackground';
 import { Navbar } from './components/layout/Navbar';
 import { FooterSection } from './components/layout/FooterSection';
@@ -31,24 +32,26 @@ const ScrollToTop = () => {
 
 export default function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="relative selection:bg-potion-accent/10 selection:text-potion-accent min-h-screen">
-        <DynamicBackground />
-        <Navbar />
-        <main className="relative z-10">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/servicios/:id" element={<ServicePage />} />
-            <Route path="/sobre-nosotros" element={<AboutPage />} />
-            <Route path="/como-funciona" element={<HowItWorksPage />} />
-            <Route path="/contacto" element={<ContactPage />} />
-            <Route path="/privacidad" element={<PrivacyPage />} />
-            <Route path="/terminos" element={<TermsPage />} />
-          </Routes>
-        </main>
-        <FooterSection />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="relative selection:bg-potion-accent/10 selection:text-potion-accent min-h-screen">
+          <DynamicBackground />
+          <Navbar />
+          <main className="relative z-10">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/servicios/:id" element={<ServicePage />} />
+              <Route path="/sobre-nosotros" element={<AboutPage />} />
+              <Route path="/como-funciona" element={<HowItWorksPage />} />
+              <Route path="/contacto" element={<ContactPage />} />
+              <Route path="/privacidad" element={<PrivacyPage />} />
+              <Route path="/terminos" element={<TermsPage />} />
+            </Routes>
+          </main>
+          <FooterSection />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }

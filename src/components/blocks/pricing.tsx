@@ -154,26 +154,32 @@ export function Pricing({
                 {plan.name}
               </p>
               <div className="mb-8 flex items-baseline justify-center gap-x-2">
-                <span className="text-6xl md:text-7xl font-black tracking-tighter text-black leading-none">
-                  <NumberFlow
-                    value={
-                      (!showToggle || isMonthly) ? Number(plan.price) : Number(plan.yearlyPrice)
-                    }
-                    format={{
-                      style: "currency",
-                      currency: "EUR",
-                      minimumFractionDigits: 0,
-                      maximumFractionDigits: 0,
-                    }}
-                    formatter={(value) => `${value}€`}
-                    transformTiming={{
-                      duration: 500,
-                      easing: "ease-out",
-                    }}
-                    willChange
-                    className="font-variant-numeric: tabular-nums"
-                  />
-                </span>
+                {isNaN(Number(plan.price)) ? (
+                  <span className="text-4xl md:text-5xl font-black tracking-tighter text-black leading-none">
+                    {plan.price}
+                  </span>
+                ) : (
+                  <span className="text-6xl md:text-7xl font-black tracking-tighter text-black leading-none">
+                    <NumberFlow
+                      value={
+                        (!showToggle || isMonthly) ? Number(plan.price) : Number(plan.yearlyPrice)
+                      }
+                      format={{
+                        style: "currency",
+                        currency: "EUR",
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      }}
+                      formatter={(value) => `${value}€`}
+                      transformTiming={{
+                        duration: 500,
+                        easing: "ease-out",
+                      }}
+                      willChange
+                      className="font-variant-numeric: tabular-nums"
+                    />
+                  </span>
+                )}
                 {plan.period && (
                   <span className="text-xl font-bold text-slate-400">
                     / {plan.period}

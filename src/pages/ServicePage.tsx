@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Check, ArrowLeft, ChevronRight } from 'lucide-react';
 import { SERVICES } from '../servicesData';
 import { CALENDAR_LINK } from '../constants';
+import { SEO } from '../components/SEO';
 
 export const ServicePage = () => {
   const { id } = useParams<{ id: string }>();
@@ -21,6 +22,10 @@ export const ServicePage = () => {
 
   return (
     <div className="pt-32 pb-20 px-6">
+      <SEO 
+        title={`${service.title} para Clínicas`}
+        description={`${service.desc} Especialistas en ${service.title.toLowerCase()} para el sector de la medicina estética y salud premium.`}
+      />
       <div className="max-w-7xl mx-auto">
         <Link to="/" className="inline-flex items-center gap-2 text-potion-muted hover:text-potion-text transition-colors mb-12 font-bold">
           <ArrowLeft className="w-5 h-5" /> Volver al inicio

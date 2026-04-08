@@ -1,9 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SEO } from '../components/SEO';
 
 export const TermsPage = () => {
   return (
     <div className="pt-32 pb-24 bg-white min-h-screen">
+      <SEO 
+        title="Aviso Legal y Términos"
+        description="Términos y condiciones de uso de los servicios de Inyecta Group."
+      />
       <div className="potion-container px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div

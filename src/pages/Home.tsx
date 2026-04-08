@@ -11,10 +11,11 @@ import {
   X,
   Sparkles
 } from 'lucide-react';
-import Testimonials from "../components/ui/testimonials";
+import Testimonials from "../components/ui/testimonial-v2";
 import { Pricing } from "../components/blocks/pricing";
 import { CALENDAR_LINK } from '../constants';
 import { ClinicChatWidget } from '../components/ui/ClinicChatWidget';
+import { SEO } from '../components/SEO';
 
 const TrustBadges = () => {
   const badges = [
@@ -589,6 +590,10 @@ const ComparisonSection = () => {
 export const Home = () => {
   return (
     <div className="bg-white">
+      <SEO 
+        title="Marketing para Clínicas Estéticas | Captación de Pacientes con IA"
+        description="Inyectamos pacientes en tu agenda automatizando las ventas de tu clínica estética. Especialistas en marketing médico, IA y captación predecible 24/7."
+      />
       <Hero />
       <StatsBar />
       

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FeatureSteps } from '../components/ui/feature-section';
+import { SEO } from '../components/SEO';
 
 export const HowItWorksPage = () => {
   const steps = [
@@ -25,6 +26,10 @@ export const HowItWorksPage = () => {
 
   return (
     <div className="pt-24 pb-16">
+      <SEO 
+        title="Cómo Funciona | Automatización de Clínicas en 3 Pasos"
+        description="Descubre nuestro método de 3 pasos para automatizar tu clínica: Auditoría, Instalación de IA y Agenda Llena. Sin complicaciones técnicas para ti."
+      />
       <section id="como-funciona" className="py-16 px-6 bg-slate-50/50 rounded-[4rem] mx-6">
         <FeatureSteps 
           features={steps}

@@ -1,9 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SEO } from '../components/SEO';
 
 export const PrivacyPage = () => {
   return (
     <div className="pt-32 pb-24 bg-white min-h-screen">
+      <SEO 
+        title="Política de Privacidad"
+        description="Información sobre cómo Inyecta Group protege y trata tus datos personales."
+      />
       <div className="potion-container px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
