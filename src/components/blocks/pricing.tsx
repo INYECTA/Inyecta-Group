@@ -126,38 +126,47 @@ export function Pricing({
               delay: index * 0.1,
             }}
             className={cn(
-              `rounded-[3rem] border-[1px] p-10 md:p-12 bg-white relative flex flex-col transition-all duration-700 hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] group`,
+              `rounded-[3rem] border-[1px] p-10 md:p-12 bg-white relative flex flex-col transition-all duration-700 hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] group overflow-hidden`,
               plan.isPopular 
                 ? "border-blue-600 border-2 shadow-2xl shadow-blue-600/10" 
                 : "border-slate-100 shadow-sm hover:border-blue-200",
               index === 0 || index === 2 ? "z-0" : "z-10"
             )}
           >
+            {/* Decorative background element */}
+            <div className={cn(
+              "absolute -top-24 -right-24 w-64 h-64 rounded-full blur-[100px] opacity-10 transition-opacity group-hover:opacity-20",
+              plan.isPopular ? "bg-blue-600" : "bg-slate-400"
+            )} />
+
             {plan.isPopular && (
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 py-2.5 px-6 rounded-full flex items-center shadow-xl shadow-blue-600/40">
-                <Star className="text-white h-4 w-4 fill-current" />
-                <span className="text-white ml-2 text-[11px] font-black uppercase tracking-[0.2em]">
-                  Más Recomendado
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 py-3 px-8 rounded-full flex items-center shadow-2xl shadow-blue-600/40 z-20">
+                <Star className="text-white h-4 w-4 fill-current animate-pulse" />
+                <span className="text-white ml-2 text-[12px] font-black uppercase tracking-[0.2em]">
+                  SISTEMA RECOMENDADO
                 </span>
               </div>
             )}
-            <div className="flex-1 flex flex-col items-center text-center">
+            <div className="flex-1 flex flex-col items-center text-center relative z-10">
               {plan.icon && (
                 <div className={cn(
-                  "w-20 h-20 rounded-3xl flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3",
-                  plan.isPopular ? "bg-blue-600 text-white shadow-2xl shadow-blue-600/30" : "bg-blue-50 text-blue-600"
+                  "w-20 h-20 rounded-3xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg",
+                  plan.isPopular ? "bg-blue-600 text-white shadow-blue-600/30" : "bg-blue-50 text-blue-600 shadow-blue-500/5"
                 )}>
                   {plan.icon}
                 </div>
               )}
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-slate-400/60 mb-4">
                 {plan.name}
               </p>
-              <div className="mb-8 flex items-baseline justify-center gap-x-2">
+              <div className="mb-10 flex flex-col items-center justify-center gap-2">
                 {isNaN(Number(plan.price)) ? (
-                  <span className="text-4xl md:text-5xl font-black tracking-tighter text-black leading-none">
-                    {plan.price}
-                  </span>
+                  <div className="flex flex-col items-center px-4">
+                    <span className="text-2xl md:text-3xl font-black tracking-tight text-black leading-[1.1]">
+                      {plan.price}
+                    </span>
+                    <div className="h-1 w-16 bg-blue-600 mt-4 rounded-full opacity-40" />
+                  </div>
                 ) : (
                   <span className="text-6xl md:text-7xl font-black tracking-tighter text-black leading-none">
                     <NumberFlow
@@ -170,7 +179,7 @@ export function Pricing({
                         minimumFractionDigits: 0,
                         maximumFractionDigits: 0,
                       }}
-                      formatter={(value) => `${value}€`}
+                      formatter={(value) => `${value}`}
                       transformTiming={{
                         duration: 500,
                         easing: "ease-out",

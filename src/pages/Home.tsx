@@ -229,46 +229,46 @@ const StatsBar = () => {
 const PricingSection = () => {
   const plans = [
     {
-      name: "Pack Agenda Imparable",
-      price: "300",
+      name: "Consultar Propuesta",
+      price: "Sistema de Respuesta Inmediata",
       features: [
-        "IA básica de agendamiento.",
-        "Instalación en 48h.",
-        "Se paga con tu primer paciente.",
+        "Atención instantánea en WhatsApp e Instagram",
+        "Cualificación básica de interesados 24/7",
+        "Instalación técnica en menos de 48h",
       ],
-      description: "Detén la pérdida de dinero por mensajes no contestados.",
-      result: "Retorno de inversión inmediato.",
-      buttonText: "Reservar mi Auditoría",
+      description: "Detén la fuga de pacientes. Nuestra IA atiende cada mensaje en segundos para que nadie se vaya a la competencia.",
+      result: "Cero mensajes ignorados.",
+      buttonText: "Agendar Llamada de Diagnóstico",
       href: CALENDAR_LINK,
       isPopular: false,
       icon: <Clock className="w-10 h-10" />
     },
     {
-      name: "Clínica en Piloto Automático",
-      price: "700",
+      name: "Consultar Propuesta",
+      price: "Infraestructura de Crecimiento",
       features: [
-        "Todo el Plan 1 + Filtro de pacientes por tratamiento.",
-        "Recordatorios automáticos para que no te fallen.",
-        "Libera 10 horas semanales de gestión.",
+        "Triaje médico automatizado (Filtro de calidad)",
+        "Sincronización total con tu calendario médico",
+        "Recordatorios automáticos anti-ausentismo",
       ],
-      description: "Nuestra IA califica a los pacientes y asegura tu camilla.",
-      result: "Llenamos tus huecos vacíos sin esfuerzo.",
-      buttonText: "Reservar mi Auditoría",
+      description: "Automatización total del flujo de ventas. Filtramos a los curiosos y agendamos solo pacientes reales y decididos.",
+      result: "Agenda optimizada y sin huecos.",
+      buttonText: "Agendar Llamada de Diagnóstico",
       href: CALENDAR_LINK,
       isPopular: true,
       icon: <TrendingUp className="w-10 h-10" />
     },
     {
-      name: "Dominio Estético Total",
-      price: "1500",
+      name: "Consultar Propuesta",
+      price: "Ecosistema de Dominio Local",
       features: [
-        "IA avanzada con tus protocolos médicos.",
-        "Escala total de citas.",
-        "Soporte prioritario.",
+        "Entrenamiento con tus protocolos médicos propios",
+        "Estrategia de captación agresiva y predecible",
+        "Soporte estratégico y optimización de ROI",
       ],
-      description: "IA personalizada para dominar el mercado local.",
-      result: "Lidera tu ciudad y escala facturación.",
-      buttonText: "Reservar mi Auditoría",
+      description: "La solución definitiva para clínicas que quieren liderar. IA personalizada que actúa como tu mejor consultora de ventas.",
+      result: "Liderazgo absoluto en tu ciudad.",
+      buttonText: "Agendar Llamada de Diagnóstico",
       href: CALENDAR_LINK,
       isPopular: false,
       icon: <ShieldCheck className="w-10 h-10" />
@@ -278,13 +278,19 @@ const PricingSection = () => {
   return (
     <section id="precios" className="bg-transparent py-24 md:py-40">
       <div className="potion-container mb-12 text-center">
-        <div className="potion-badge">SECCIÓN C: Nuestros Servicios</div>
+        <div className="potion-badge">Nuestros Sistemas</div>
+        <h2 className="text-3xl md:text-6xl font-extrabold tracking-tighter text-black mt-6 mb-4">
+          Inversión de Configuración
+        </h2>
+        <p className="text-lg text-slate-500 font-medium max-w-2xl mx-auto">
+          Diseñamos la infraestructura que tu clínica necesita para dejar de perder pacientes y empezar a escalar.
+        </p>
       </div>
       <Pricing 
         plans={plans}
         showToggle={false}
-        title="Sistemas diseñados para escalar tu clínica"
-        description="Elige el nivel de automatización que tu negocio necesita hoy para dejar de perder pacientes."
+        title=""
+        description=""
       />
     </section>
   );
@@ -341,7 +347,7 @@ const ProblemSection = () => {
   const problems = [
     { title: "Pérdida de Pacientes", desc: "Cada minuto que un lead espera en WhatsApp, es un paciente que se va a la competencia." },
     { title: "Saturación de Equipo", desc: "Tu equipo no puede estar en cabina y atendiendo el móvil a la vez." },
-    { title: "Falta de Foco", desc: "Inyecta Group automatiza tu **Agenda** para que tú solo te preocupes de pinchar." }
+    { title: "Falta de Foco", desc: "Inyecta Group automatiza tu Agenda para que tú solo te preocupes de pinchar." }
   ];
 
   return (
@@ -536,50 +542,98 @@ const ResultsSection = () => {
 
 const ComparisonSection = () => {
   return (
-    <section className="py-20 md:py-32 px-4 md:px-6 bg-white overflow-hidden relative">
+    <section className="py-20 md:py-40 px-4 md:px-6 bg-transparent overflow-hidden relative">
       <div className="potion-container">
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-32">
           <div className="potion-badge">Transformación Radical</div>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6 md:mb-8 leading-[1.1] md:leading-[1]">
-            Antes vs Después
+          <h2 className="text-3xl sm:text-4xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-[0.9] md:leading-[0.8]">
+            El Nuevo Estándar <br /> <span className="text-blue-600">Operativo</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
           {/* Antes */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="p-10 md:p-16 rounded-[3rem] border border-red-100 bg-red-50/30 flex flex-col items-center text-center"
+            className="p-10 md:p-20 rounded-[4rem] border border-red-100 bg-red-50/20 flex flex-col relative overflow-hidden group"
           >
-            <h3 className="text-2xl md:text-4xl font-extrabold text-red-600 mb-8 tracking-tighter uppercase">EL CAOS ACTUAL</h3>
-            <ul className="space-y-6">
-              {['DMs colapsados', 'Respuestas tardías', 'Pacientes perdidos'].map((item, i) => (
-                <li key={i} className="flex items-center justify-center gap-3 text-lg md:text-xl text-red-700 font-bold tracking-tight">
-                  <X className="w-6 h-6 flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+              <X className="w-32 h-32 text-red-600" />
+            </div>
+            
+            <div className="flex items-center gap-4 mb-12">
+              <div className="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center shadow-lg shadow-red-600/10">
+                <X className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black text-red-600 tracking-tighter uppercase">EL CAOS ACTUAL</h3>
+            </div>
+
+            <div className="space-y-12">
+              <div className="relative pl-8 border-l-2 border-red-200">
+                <h4 className="text-xl font-black text-red-900 mb-2 tracking-tight">Fuga de Beneficios</h4>
+                <p className="text-lg text-red-700/70 font-bold leading-snug">
+                  El 70% de tus consultas mueren en el olvido por falta de respuesta inmediata.
+                </p>
+              </div>
+
+              <div className="relative pl-8 border-l-2 border-red-200">
+                <h4 className="text-xl font-black text-red-900 mb-2 tracking-tight">Saturación Operativa</h4>
+                <p className="text-lg text-red-700/70 font-bold leading-snug">
+                  Tu equipo pierde el 60% del día respondiendo dudas básicas en lugar de atender pacientes.
+                </p>
+              </div>
+
+              <div className="relative pl-8 border-l-2 border-red-200">
+                <h4 className="text-xl font-black text-red-900 mb-2 tracking-tight">Agenda de Baja Calidad</h4>
+                <p className="text-lg text-red-700/70 font-bold leading-snug">
+                  Huecos vacíos y "No-Shows" constantes por falta de un filtro de cualificación previo.
+                </p>
+              </div>
+            </div>
           </motion.div>
 
           {/* Después */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="p-10 md:p-16 rounded-[3rem] border border-green-100 bg-green-50/30 flex flex-col items-center text-center"
+            className="p-10 md:p-20 rounded-[4rem] border border-blue-100 bg-blue-50/20 flex flex-col relative overflow-hidden group"
           >
-            <h3 className="text-2xl md:text-4xl font-extrabold text-green-600 mb-8 tracking-tighter uppercase">EL EFECTO INYECTA</h3>
-            <ul className="space-y-6">
-              {['Agenda llena', 'Respuestas instantáneas', 'Facturación garantizada'].map((item, i) => (
-                <li key={i} className="flex items-center justify-center gap-3 text-lg md:text-xl text-green-700 font-bold tracking-tight">
-                  <Check className="w-6 h-6 flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+              <Check className="w-32 h-32 text-blue-600" />
+            </div>
+
+            <div className="flex items-center gap-4 mb-12">
+              <div className="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-blue-600/20">
+                <Check className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black text-blue-600 tracking-tighter uppercase">EL EFECTO INYECTA</h3>
+            </div>
+
+            <div className="space-y-12">
+              <div className="relative pl-8 border-l-2 border-blue-300">
+                <h4 className="text-xl font-black text-blue-900 mb-2 tracking-tight">Cierre Automatizado 24/7</h4>
+                <p className="text-lg text-blue-700/70 font-bold leading-snug">
+                  Respuestas en menos de 5 segundos. Captura de datos y agendamiento sin intervención humana.
+                </p>
+              </div>
+
+              <div className="relative pl-8 border-l-2 border-blue-300">
+                <h4 className="text-xl font-black text-blue-900 mb-2 tracking-tight">Filtrado Médico de Élite</h4>
+                <p className="text-lg text-blue-700/70 font-bold leading-snug">
+                  Solo recibes pacientes decididos y aptos. Tu agenda se sincroniza y confirma sola.
+                </p>
+              </div>
+
+              <div className="relative pl-8 border-l-2 border-blue-300">
+                <h4 className="text-xl font-black text-blue-900 mb-2 tracking-tight">Rentabilidad de Cabina</h4>
+                <p className="text-lg text-blue-700/70 font-bold leading-snug">
+                  Optimización total del tiempo médico y posicionamiento premium en tu ciudad.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
