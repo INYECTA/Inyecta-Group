@@ -55,7 +55,11 @@ export const FooterSection = () => {
       description="Transformamos clínicas estéticas en negocios automáticos con IA."
       sections={sections}
       socialLinks={socialLinks}
-      copyright={`© 2024 Inyecta Group.`}
+      copyright={
+        <span>
+          © 2024 <span translate="no">Inyecta Group</span>.
+        </span>
+      }
       legalLinks={[
         { name: "Privacidad", href: "/privacidad" },
         { name: "Aviso Legal", href: "/terminos" },

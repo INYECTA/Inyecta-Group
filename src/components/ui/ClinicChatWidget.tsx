@@ -203,7 +203,7 @@ export const ClinicChatWidget = ({
             </div>
             <div>
               <h3 className="text-slate-900 font-black text-base tracking-tight">Elena</h3>
-              <span className="text-slate-400 text-xs font-bold uppercase tracking-widest">Inyecta Group</span>
+              <span className="text-slate-400 text-xs font-bold uppercase tracking-widest" translate="no">Inyecta Group</span>
             </div>
           </div>
           <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-slate-50 rounded-full transition-colors">

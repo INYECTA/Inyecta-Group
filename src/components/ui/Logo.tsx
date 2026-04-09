@@ -26,7 +26,10 @@ export const Logo: React.FC<LogoProps> = ({ className = '', variant = 'dark' }) 
             <path d="M4 20l16-16" />
           </svg>
         </div>
-        <span className={`text-2xl font-black tracking-tighter transition-colors duration-300 ${colorClass}`}>
+        <span 
+          className={`text-2xl font-black tracking-tighter transition-colors duration-300 ${colorClass}`}
+          translate="no"
+        >
           Inyecta Group
         </span>
       </div>
