@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     text: "Inyecta Group transformó por completo nuestra gestión de citas. Ahora el 80% de las consultas de Instagram se agendan solas.",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?q=80&w=150&h=150&auto=format&fit=crop",
     name: "Dra. Lucía Méndez",
     role: "Directora Médica, Clínica Estética",
   },
@@ -18,7 +18,7 @@ const testimonials = [
   },
   {
     text: "Ya no perdemos leads los fines de semana. El sistema responde al instante y los pacientes están encantados con la rapidez.",
-    image: "https://images.unsplash.com/photo-1559839734-2b71f1536783?w=150&h=150&fit=crop",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=150&h=150&auto=format&fit=crop",
     name: "Sofía Valdés",
     role: "Coordinadora de Pacientes",
   },

@@ -14,7 +14,7 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     text: "Inyecta Group transformó por completo nuestra gestión de citas. Ahora el 80% de las consultas de Instagram se agendan solas.",
-    image: "https://images.unsplash.com/photo-1559839734-2b71f1536783?q=80&w=150&h=150&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?q=80&w=150&h=150&auto=format&fit=crop",
     name: "Dra. Lucía Méndez",
     role: "Directora Médica, Clínica Estética",
   },
