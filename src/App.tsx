@@ -9,6 +9,7 @@ import { ServicePage } from './pages/ServicePage';
 import { AboutPage } from './pages/AboutPage';
 import { HowItWorksPage } from './pages/HowItWorksPage';
 import { ContactPage } from './pages/ContactPage';
+import { SchedulingPage } from './pages/SchedulingPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
 
@@ -45,6 +46,7 @@ export default function App() {
               <Route path="/sobre-nosotros" element={<AboutPage />} />
               <Route path="/como-funciona" element={<HowItWorksPage />} />
               <Route path="/contacto" element={<ContactPage />} />
+              <Route path="/agendar" element={<SchedulingPage />} />
               <Route path="/privacidad" element={<PrivacyPage />} />
               <Route path="/terminos" element={<TermsPage />} />
             </Routes>

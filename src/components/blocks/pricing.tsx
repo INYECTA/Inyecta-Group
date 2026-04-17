@@ -164,13 +164,13 @@ export function Pricing({
               <div className="mb-10 flex flex-col items-center justify-center gap-2 w-full">
                 {isNaN(Number(plan.price)) ? (
                   <div className="flex flex-col items-center w-full max-w-full overflow-hidden">
-                    <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black tracking-tight text-black leading-[1.2] break-words w-full px-1 hyphens-auto">
+                    <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-black leading-[1.2] break-words w-full px-1">
                       {plan.price}
                     </span>
-                    <div className="h-1 w-12 bg-blue-600 mt-4 rounded-full opacity-30" />
+                    <div className="h-0.5 w-8 bg-blue-600 mt-3 rounded-full opacity-20" />
                   </div>
                 ) : (
-                  <span className="text-6xl md:text-7xl font-black tracking-tighter text-black leading-none">
+                  <span className="text-5xl md:text-6xl font-black tracking-tighter text-black leading-none">
                     <NumberFlow
                       value={
                         (!showToggle || isMonthly) ? Number(plan.price) : Number(plan.yearlyPrice)
@@ -198,17 +198,17 @@ export function Pricing({
                 )}
               </div>
 
-              <p className="text-lg text-slate-500 font-bold tracking-tight mb-12 leading-tight">
+              <p className="text-base text-slate-500 font-bold tracking-tight mb-10 leading-tight">
                 {plan.description}
               </p>
 
-              <div className="mb-12 w-full">
+              <div className="mb-10 w-full">
                 <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Incluye:</p>
-                <ul className="space-y-6 flex-1 text-left">
+                <ul className="space-y-4 flex-1 text-left">
                   {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-4 text-lg font-bold text-slate-600 tracking-tight">
-                      <div className="w-6 h-6 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center shrink-0">
-                        <Check className="w-4 h-4" />
+                    <li key={idx} className="flex items-center gap-3 text-base font-bold text-slate-600 tracking-tight">
+                      <div className="w-5 h-5 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                        <Check className="w-3.5 h-3.5" />
                       </div>
                       {feature}
                     </li>
@@ -218,8 +218,8 @@ export function Pricing({
 
               {plan.result && (
                 <div className="mt-auto pt-6 w-full">
-                  <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Resultado:</p>
-                  <p className="text-xl font-black text-black leading-tight mb-8 tracking-tighter">{plan.result}</p>
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-3">Resultado:</p>
+                  <p className="text-lg font-black text-black leading-tight mb-6 tracking-tighter">{plan.result}</p>
                 </div>
               )}
 
@@ -230,7 +230,7 @@ export function Pricing({
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "w-full py-6 rounded-2xl font-black text-xl transition-all duration-500 flex items-center justify-center gap-3 active:scale-95",
+                  "w-full py-5 rounded-2xl font-black text-lg transition-all duration-500 flex items-center justify-center gap-3 active:scale-95",
                   plan.isPopular
                     ? "bg-blue-600 text-white hover:bg-blue-700 shadow-xl shadow-blue-600/30"
                     : "bg-slate-100 text-slate-900 hover:bg-slate-200"

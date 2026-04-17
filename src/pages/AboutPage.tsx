@@ -1,135 +1,205 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Logo } from '../components/ui/Logo';
-import { CheckCircle2, Users, Target, Zap, TrendingUp } from 'lucide-react';
+import { CheckCircle2, MessageSquare, Calendar, Zap, ArrowRight, UserCheck } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { SCHEDULE_PATH } from '../constants';
 
 export const AboutPage = () => {
-  const points = [
-    { icon: <Zap className="w-6 h-6" />, text: "IA Aplicada" },
-    { icon: <TrendingUp className="w-6 h-6" />, text: "Ventas Automatizadas" },
-    { icon: <Target className="w-6 h-6" />, text: "Agenda Llena" },
-    { icon: <Users className="w-6 h-6" />, text: "Negocios Escalables" },
-    { icon: <CheckCircle2 className="w-6 h-6" />, text: "Resultados Reales" }
-  ];
-
   return (
-    <div className="pt-24 pb-16 bg-white min-h-screen">
+    <div className="pt-24 pb-16 bg-white min-h-screen font-sans">
       <SEO 
-        title="Sobre Nosotros | Expertos en Marketing para Clínicas"
-        description="Conoce Inyecta Group. Somos especialistas en automatización con IA y marketing estratégico exclusivo para clínicas estéticas y el sector salud premium."
+        title="Quiénes Somos | Inyecta Group"
+        description="Conoce la historia de Inyecta Group. Especialistas en automatización de Instagram para clínicas estéticas en España. Ayudamos a doctoras a llenar su agenda sin perder tiempo en mensajes."
       />
-      {/* Hero Section - Luxury Editorial Style */}
-      <section id="sobre-nosotros" className="relative py-20 px-6 overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50 -z-10 hidden lg:block" />
+
+      {/* Hero Section - The Hook */}
+      <section className="relative pt-20 pb-16 px-6 overflow-hidden">
+        <div className="potion-container">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <div className="potion-badge mb-8 mx-auto invisible sm:visible">ESPECIALISTAS EN EL SECTOR ESTÉTICO</div>
+            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-[0.9] text-black">
+              No somos una agencia de marketing más. <br />
+              <span className="text-blue-600">Automatizamos tu éxito.</span>
+            </h1>
+            <p className="text-lg md:text-2xl text-slate-500 mb-12 leading-tight tracking-tight max-w-2xl mx-auto">
+              Inyecta Group nació con una misión clara: que ninguna clínica estética en España vuelva a perder a un paciente por no responder a tiempo un mensaje de Instagram.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Story Section - Pablo's Journey */}
+      <section className="py-24 px-6 bg-slate-50">
         <div className="potion-container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="max-w-2xl"
             >
-              <div className="potion-badge mb-8">Sobre Inyecta Group</div>
-              <Logo className="mb-12 scale-125 origin-left" />
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-[0.9] text-black">
-                Solo para <br />
-                <span className="text-blue-600">Clínicas Estéticas</span>.
-              </h1>
-              <p className="text-lg md:text-xl text-slate-500 mb-12 leading-tight tracking-tight">
-                Sabemos lo que es que un paciente te deje plantado a última hora o que te pregunten mil veces el precio de un relleno de labios por Instagram. En Inyecta Group solo trabajamos con clínicas como la tuya, por eso sabemos exactamente qué necesitas para dormir tranquilo.
-              </p>
-              
-              <div className="grid sm:grid-cols-2 gap-4">
-                {points.map((p, i) => (
-                  <div key={i} className="flex items-center gap-3 p-5 bg-slate-50 rounded-2xl border border-slate-100 font-bold text-black tracking-tight">
-                    <span className="text-blue-600">{p.icon}</span>
-                    {p.text}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-600/10 bg-slate-100"
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop" 
-                alt="Inyecta Group Professional" 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy Section - Clean & Trustworthy */}
-      <section className="py-24 md:py-32 px-6 bg-black text-white rounded-[3rem] mx-6 my-12 shadow-2xl overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-grid pointer-events-none"></div>
-        <div className="potion-container relative z-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="aspect-square bg-white/5 rounded-3xl overflow-hidden border border-white/10">
-              <img 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" 
-                alt="Filosofía Inyecta Group" 
-                className="w-full h-full object-cover opacity-80"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="space-y-10">
-              <div className="potion-badge border-white/20 bg-white/5 text-white">NUESTRA FILOSOFÍA</div>
-              <h2 className="text-4xl md:text-6xl font-extrabold leading-[0.9] tracking-tighter">
-                Automatización total para <span className="text-blue-400">clínicas estéticas</span>.
+              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter mb-8 text-black leading-none">
+                Por qué creé Inyecta Group
               </h2>
-              <div className="space-y-6 text-lg text-slate-400 leading-tight tracking-tight">
+              <div className="space-y-6 text-lg text-slate-600 leading-relaxed font-medium">
                 <p>
-                  Entendemos los desafíos únicos de tu clínica. Desde la gestión de citas hasta la atención 24/7, nuestros sistemas están diseñados para que recuperes tu vida y multipliques tu facturación.
+                  Soy <strong>Pablo Llopis</strong>, y fundé Inyecta Group en Valencia tras observar un problema recurrente en el sector médico-estético. 
+                </p>
+                <p>
+                  Hablaba con doctoras y dueñas de clínicas que invertían miles de euros en publicidad, pero sus equipos estaban desbordados respondiendo "¿precio?", "¿dónde estáis?" o "¿tenéis hueco?" por mensaje directo.
+                </p>
+                <p>
+                  El resultado siempre era el mismo: pacientes que se enfriaban, agenda con huecos libres y una sensación constante de estar perdiendo dinero a pesar de trabajar 12 horas al día.
+                </p>
+                <p>
+                  <strong>Ahí decidí cambiar las reglas.</strong> En lugar de ofrecer "likes" o diseños bonitos, decidí especializarme en lo que realmente importa: instalar sistemas que responden, cualifican y agendan citas en automático mientras la doctora está en consulta.
                 </p>
               </div>
-              
-              <div className="pt-8 flex flex-col sm:flex-row gap-12">
-                <div className="flex flex-col">
-                  <span className="text-6xl font-extrabold text-white tracking-tighter">+100</span>
-                  <span className="text-xs text-slate-500 uppercase tracking-[0.2em] font-extrabold">Clínicas Optimizadas</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-6xl font-extrabold text-white tracking-tighter">24/7</span>
-                  <span className="text-xs text-slate-500 uppercase tracking-[0.2em] font-extrabold">Atención Automatizada</span>
-                </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl bg-slate-200"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000&auto=format&fit=crop" 
+                alt="Pablo Llopis - Fundador de Inyecta Group" 
+                className="w-full h-full object-cover transition-all duration-700"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute bottom-6 left-6 right-6 p-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl">
+                <p className="text-black font-extrabold text-xl tracking-tight leading-none mb-1">Pablo Llopis</p>
+                <p className="text-blue-600 font-bold text-sm uppercase tracking-widest">CEO y Fundador de Inyecta Group</p>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Specialization */}
+      <section className="py-24 md:py-32 px-6">
+        <div className="potion-container">
+          <div className="grid md:grid-cols-2 gap-20">
+            <div className="space-y-8">
+              <div className="flex items-center gap-3 text-blue-600">
+                <Zap className="w-8 h-8 fill-current" />
+                <h3 className="text-2xl font-black uppercase tracking-widest">Nuestra Misión</h3>
+              </div>
+              <p className="text-3xl md:text-4xl font-extrabold text-black tracking-tighter leading-tight">
+                Devolverte el tiempo y el control de tu clínica mediante tecnología que trabaja para ti, no al revés.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              <div className="flex items-center gap-3 text-blue-600">
+                <UserCheck className="w-8 h-8" />
+                <h3 className="text-2xl font-black uppercase tracking-widest">Por qué solo clínicas</h3>
+              </div>
+              <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                No hacemos marketing para restaurantes, inmobiliarias ni gimnasios. <strong>Solo trabajamos con clínicas estéticas.</strong> 
+                Esta obsesión por un solo nicho nos permite conocer exactamente qué objeciones tiene tu paciente, qué tratamientos son los más rentables y cómo configurar un chatbot que suene humano, profesional y convincente.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-24 md:py-32 px-6">
+      {/* How we work - 3 Steps */}
+      <section className="py-24 md:py-32 px-6 bg-black text-white rounded-[3.5rem] mx-6">
         <div className="potion-container">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-black mb-6 tracking-tighter leading-[0.9]">Nuestros Valores</h2>
-            <p className="text-lg text-slate-500 tracking-tight">Lo que nos impulsa a crear las mejores soluciones para el sector estético.</p>
+          <div className="mb-20">
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-4 leading-none">Cómo trabajamos</h2>
+            <p className="text-slate-400 text-xl font-medium tracking-tight">Simple, directo y sin complicaciones técnicas para ti.</p>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
+
+          <div className="grid md:grid-cols-3 gap-12">
             {[
-              { title: "Exclusividad", desc: "Diseñamos para marcas que no aceptan lo genérico." },
-              { title: "Precisión", desc: "Cada automatización es una pieza de ingeniería exacta." },
-              { title: "Resultados", desc: "No vendemos software, vendemos crecimiento medible." }
-            ].map((v, i) => (
-              <div key={i} className="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-all group">
-                <div className="w-12 h-12 bg-black rounded-2xl mb-6 flex items-center justify-center text-white font-extrabold text-xl">
-                  0{i+1}
+              {
+                step: "01",
+                icon: <MessageSquare className="w-8 h-8" />,
+                title: "Estrategia de Respuesta",
+                desc: "Analizamos tus tratamientos estrella y diseñamos el flujo de conversación que mejor convierte."
+              },
+              {
+                step: "02",
+                icon: <Zap className="w-8 h-8" />,
+                title: "Instalación Técnica",
+                desc: "Configuramos tu Instagram para que responda 24/7 de forma inteligente y humana."
+              },
+              {
+                step: "03",
+                icon: <Calendar className="w-8 h-8" />,
+                title: "Agenda Automatizada",
+                desc: "Recibes las notificaciones de citas confirmadas directamente. Nosotros nos encargamos de los leads."
+              }
+            ].map((item, i) => (
+              <div key={i} className="space-y-6 group">
+                <div className="text-5xl font-black text-white/20 group-hover:text-blue-500 transition-colors">{item.step}</div>
+                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-blue-400 border border-white/10 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                  {item.icon}
                 </div>
-                <h3 className="text-3xl font-extrabold text-black mb-4 tracking-tighter">{v.title}</h3>
-                <p className="text-slate-500 leading-tight tracking-tight">{v.desc}</p>
+                <h4 className="text-2xl font-extrabold tracking-tight">{item.title}</h4>
+                <p className="text-slate-400 leading-snug">{item.desc}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Proof/Stats */}
+      <section className="py-24 md:py-32 px-6">
+        <div className="potion-container">
+          <div className="bg-blue-600 rounded-[2.5rem] p-12 md:p-20 text-white shadow-2xl shadow-blue-600/20">
+            <div className="grid md:grid-cols-3 gap-12 text-center">
+              <div>
+                <div className="text-5xl md:text-7xl font-black tracking-tighter mb-2">+45</div>
+                <div className="text-blue-100 font-bold uppercase tracking-widest text-sm">Clínicas en España</div>
+              </div>
+              <div>
+                <div className="text-5xl md:text-7xl font-black tracking-tighter mb-2">12.000+</div>
+                <div className="text-blue-100 font-bold uppercase tracking-widest text-sm">Mensajes Automatizados</div>
+              </div>
+              <div>
+                <div className="text-5xl md:text-7xl font-black tracking-tighter mb-2">98%</div>
+                <div className="text-blue-100 font-bold uppercase tracking-widest text-sm">Tasa de Respuesta</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-24 md:py-32 px-6">
+        <div className="potion-container text-center">
+          <h2 className="text-4xl md:text-7xl font-extrabold text-black mb-10 tracking-tighter leading-none">
+            ¿Hablamos de tu agenda?
+          </h2>
+          <p className="text-xl text-slate-500 mb-12 max-w-2xl mx-auto tracking-tight font-medium">
+            Si estás cansada de ver cómo los pacientes se van a la competencia por no responder a tiempo, es hora de que el sistema trabaje por ti.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Link 
+              to={SCHEDULE_PATH} 
+              className="potion-button-primary px-12 py-8 text-xl group"
+            >
+              Reservar Llamada de Diagnóstico
+              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+          <p className="mt-8 text-slate-400 font-bold flex items-center justify-center gap-2">
+            <CheckCircle2 className="w-5 h-5 text-green-500" />
+            Sin compromiso. Solo soluciones reales.
+          </p>
         </div>
       </section>
     </div>

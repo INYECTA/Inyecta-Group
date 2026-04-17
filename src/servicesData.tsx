@@ -9,7 +9,7 @@ export const SERVICES: Service[] = [
     desc: "Posicionamos tu clínica en Google para que seas la primera opción cuando alguien busque un tratamiento en tu ciudad.",
     icon: <Target className="w-8 h-8" />,
     details: [
-      "Auditoría SEO técnica especializada en el sector médico.",
+      "Análisis SEO técnico especializado en el sector médico.",
       "Optimización de Google Business Profile para captar pacientes locales.",
       "Estrategia de contenidos basada en tratamientos de alta rentabilidad.",
       "Linkbuilding de autoridad en portales de salud y estética."

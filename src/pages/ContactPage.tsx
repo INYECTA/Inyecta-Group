@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, ChevronRight } from 'lucide-react';
-import { SUPPORT_EMAIL, CALENDAR_LINK } from '../constants';
+import { Link } from 'react-router-dom';
+import { SUPPORT_EMAIL, SCHEDULE_PATH } from '../constants';
 import { SEO } from '../components/SEO';
 
 export const ContactPage = () => {
@@ -9,7 +10,7 @@ export const ContactPage = () => {
     <div className="pt-32 pb-24 bg-white min-h-screen">
       <SEO 
         title="Contacto | Inyecta Group"
-        description="¿Listo para escalar tu clínica estética? Contacta con nosotros para una auditoría gratuita de captación de pacientes y automatización con IA."
+        description="¿Listo para escalar tu clínica estética? Contacta con nosotros para una llamada de diagnóstico gratuita y automatización con IA."
       />
       <div className="potion-container px-6">
         <div className="max-w-5xl mx-auto">
@@ -55,23 +56,21 @@ export const ContactPage = () => {
                   </div>
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-1">Ubicación</p>
-                    <p className="text-xl font-bold text-black">Madrid, España</p>
+                    <p className="text-xl font-bold text-black">Valencia, España</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-16 p-8 bg-blue-50 rounded-[2.5rem] border border-blue-100">
-                <h3 className="text-2xl font-black text-blue-900 mb-4 tracking-tight">¿Prefieres una auditoría directa?</h3>
+                <h3 className="text-2xl font-black text-blue-900 mb-4 tracking-tight">¿Prefieres una llamada directa?</h3>
                 <p className="text-blue-700/80 font-bold mb-8 leading-tight">Analizamos tu clínica gratis y te damos un plan de acción en 30 minutos.</p>
-                <a 
-                  href={CALENDAR_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link 
+                  to={SCHEDULE_PATH}
                   className="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20 active:scale-95"
                 >
-                  Agendar Auditoría
+                  Reservar Llamada
                   <ChevronRight className="w-5 h-5" />
-                </a>
+                </Link>
               </div>
             </motion.div>
 

@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   Zap, 
   Target, 
@@ -13,7 +14,7 @@ import {
 } from 'lucide-react';
 import Testimonials from "../components/ui/testimonial-v2";
 import { Pricing } from "../components/blocks/pricing";
-import { CALENDAR_LINK } from '../constants';
+import { CALENDAR_LINK, SCHEDULE_PATH } from '../constants';
 import { ClinicChatWidget } from '../components/ui/ClinicChatWidget';
 import { SEO } from '../components/SEO';
 
@@ -66,14 +67,12 @@ const StickyCTA = () => {
               <p className="text-sm font-extrabold text-black tracking-tight truncate">Deja de perder pacientes ahora</p>
             </div>
             <div className="flex items-center gap-3">
-              <a 
-                href={CALENDAR_LINK} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <Link 
+                to={SCHEDULE_PATH} 
                 className="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-blue-600/20 active:scale-95 whitespace-nowrap"
               >
-                Ver Auditoría
-              </a>
+                Ver Llamada
+              </Link>
               <button 
                 onClick={() => setDismissed(true)}
                 className="p-1.5 text-slate-400 hover:text-black transition-colors"
@@ -124,7 +123,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-black mb-6 md:mb-10 leading-[1.1] md:leading-[1] max-w-5xl tracking-tighter"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-black mb-6 md:mb-8 leading-[1.1] md:leading-[1] max-w-4xl tracking-tighter"
         >
           Inyectamos pacientes en tu agenda <span className="potion-text-gradient">automatizando las ventas</span> de tu clínica
         </motion.h1>
@@ -133,7 +132,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-base sm:text-lg md:text-xl text-slate-500 max-w-3xl mx-auto mb-8 md:mb-16 leading-snug md:leading-tight tracking-tight px-4 font-medium"
+          className="text-base sm:text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-8 md:mb-12 leading-snug md:leading-tight tracking-tight px-4 font-medium"
         >
           Automatizamos tu agenda, cualificamos a tus leads y escalamos tu facturación sin que muevas un dedo.
         </motion.p>
@@ -144,10 +143,10 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12 md:mb-24 w-full max-w-md md:max-w-2xl"
         >
-          <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="potion-button-primary w-full sm:w-auto px-12 md:px-16 py-6 md:py-8 text-xl md:text-2xl shadow-2xl shadow-blue-600/30">
-            Reservar mi Auditoría
+          <Link to={SCHEDULE_PATH} className="potion-button-primary w-full sm:w-auto px-12 md:px-16 py-6 md:py-8 text-xl md:text-2xl shadow-2xl shadow-blue-600/30">
+            Reservar mi Llamada
             <ChevronRight className="ml-2 w-6 h-6" />
-          </a>
+          </Link>
         </motion.div>
 
         <motion.div
@@ -239,7 +238,7 @@ const PricingSection = () => {
       description: "Detén la fuga de pacientes. Nuestra IA atiende cada mensaje en segundos para que nadie se vaya a la competencia.",
       result: "Cero mensajes ignorados.",
       buttonText: "Agendar Llamada de Diagnóstico",
-      href: CALENDAR_LINK,
+      href: SCHEDULE_PATH,
       isPopular: false,
       icon: <Clock className="w-10 h-10" />
     },
@@ -254,7 +253,7 @@ const PricingSection = () => {
       description: "Automatización total del flujo de ventas. Filtramos a los curiosos y agendamos solo pacientes reales y decididos.",
       result: "Agenda optimizada y sin huecos.",
       buttonText: "Agendar Llamada de Diagnóstico",
-      href: CALENDAR_LINK,
+      href: SCHEDULE_PATH,
       isPopular: true,
       icon: <TrendingUp className="w-10 h-10" />
     },
@@ -269,7 +268,7 @@ const PricingSection = () => {
       description: "La solución definitiva para clínicas que quieren liderar. IA personalizada que actúa como tu mejor consultora de ventas.",
       result: "Liderazgo absoluto en tu ciudad.",
       buttonText: "Agendar Llamada de Diagnóstico",
-      href: CALENDAR_LINK,
+      href: SCHEDULE_PATH,
       isPopular: false,
       icon: <ShieldCheck className="w-10 h-10" />
     },
@@ -353,7 +352,7 @@ const ProblemSection = () => {
   return (
     <section className="py-24 md:py-40 px-4 md:px-6 bg-transparent relative">
       <div className="potion-container">
-        <div className="text-center max-w-4xl mx-auto mb-20 md:mb-28">
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -367,7 +366,7 @@ const ProblemSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter text-black mb-8 leading-[1.1] md:leading-[1]"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter text-black mb-6 md:mb-8 leading-[1.1] md:leading-[1]"
           >
             ¿Cuántos miles de euros estás dejando sobre la mesa por culpa de una <span className="text-red-600">bandeja de entrada saturada</span>?
           </motion.h2>
@@ -376,7 +375,7 @@ const ProblemSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-slate-500 font-bold tracking-tight"
+            className="text-base md:text-lg text-slate-500 font-bold tracking-tight"
           >
             Un paciente de medicina estética no espera. Si no respondes en segundos, estás quemando dinero en publicidad para regalárselo a la clínica de al lado.
           </motion.p>
@@ -408,7 +407,7 @@ const ProblemSection = () => {
 const SolutionSection = () => {
   const solutionList = [
     { 
-      title: "Auditoría de Fugas de Venta", 
+      title: "Análisis de Fugas de Venta", 
       desc: "Identificamos exactamente dónde estás perdiendo dinero en tu proceso de atención actual.",
       icon: <Target className="w-10 h-10" />
     },
@@ -427,9 +426,9 @@ const SolutionSection = () => {
   return (
     <section id="beneficios" className="py-20 md:py-32 px-4 md:px-6 overflow-hidden relative bg-transparent">
       <div className="potion-container">
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <div className="potion-badge">El Método Inyecta</div>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6 md:mb-8 leading-[1.1] md:leading-[1]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter mb-4 md:mb-6 leading-[1.1] md:leading-[1]">
             Tu clínica en <br className="hidden md:block" /> <span className="text-blue-600">3 Pasos</span>
           </h2>
         </div>
@@ -460,7 +459,7 @@ const SolutionSection = () => {
 
 const FinalCTA = () => {
   return (
-    <section id="auditoria" className="py-20 md:py-32 px-4 md:px-6 bg-transparent relative overflow-hidden">
+    <section id="contacto-directo" className="py-20 md:py-32 px-4 md:px-6 bg-transparent relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
         <div className="absolute top-0 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-blue-50 rounded-full blur-[80px] md:blur-[120px] opacity-40"></div>
         <div className="absolute bottom-0 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-slate-50 rounded-full blur-[80px] md:blur-[120px] opacity-40"></div>
@@ -487,15 +486,13 @@ const FinalCTA = () => {
               whileTap={{ scale: 0.95 }}
               className="px-4"
             >
-              <a 
-                href={CALENDAR_LINK} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <Link 
+                to={SCHEDULE_PATH} 
                 className="potion-button-primary inline-flex w-full sm:w-auto px-12 md:px-20 py-6 md:py-10 text-xl md:text-3xl shadow-2xl shadow-blue-600/40"
               >
-                Reservar mi Auditoría
+                Reservar mi Llamada
                 <ChevronRight className="ml-3 w-8 h-8" />
-              </a>
+              </Link>
             </motion.div>
             
             <p className="mt-8 text-slate-400 font-extrabold text-xs uppercase tracking-[0.2em]">
@@ -544,9 +541,9 @@ const ComparisonSection = () => {
   return (
     <section className="py-20 md:py-40 px-4 md:px-6 bg-transparent overflow-hidden relative">
       <div className="potion-container">
-        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-32">
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
           <div className="potion-badge">Transformación Radical</div>
-          <h2 className="text-3xl sm:text-4xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-[0.9] md:leading-[0.8]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6 leading-[0.9] md:leading-[0.8]">
             El Nuevo Estándar <br /> <span className="text-blue-600">Operativo</span>
           </h2>
         </div>

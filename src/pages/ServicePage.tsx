@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Check, ArrowLeft, ChevronRight } from 'lucide-react';
 import { SERVICES } from '../servicesData';
-import { CALENDAR_LINK } from '../constants';
+import { SCHEDULE_PATH } from '../constants';
 import { SEO } from '../components/SEO';
 
 export const ServicePage = () => {
@@ -45,9 +45,9 @@ export const ServicePage = () => {
               {service.desc} Implementamos soluciones de vanguardia diseñadas específicamente para el sector estético y de salud de alto nivel.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="potion-button-primary px-12 py-6 text-xl">
-                Agendar Auditoría Gratis
-              </a>
+              <Link to={SCHEDULE_PATH} className="potion-button-primary px-12 py-6 text-xl">
+                Reservar Llamada Gratis
+              </Link>
             </div>
           </motion.div>
 

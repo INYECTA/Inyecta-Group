@@ -6,7 +6,7 @@ export const HowItWorksPage = () => {
   const steps = [
     {
       step: '1',
-      title: 'Auditoría de tu Clínica',
+      title: 'Análisis de tu Clínica',
       content: 'Miramos qué está fallando en tu clínica y por qué se te escapan los pacientes. Sin palabras raras, solo la verdad.',
       image: 'https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=1000&auto=format&fit=crop'
     },
@@ -28,7 +28,7 @@ export const HowItWorksPage = () => {
     <div className="pt-24 pb-16">
       <SEO 
         title="Cómo Funciona | Automatización de Clínicas en 3 Pasos"
-        description="Descubre nuestro método de 3 pasos para automatizar tu clínica: Auditoría, Instalación de IA y Agenda Llena. Sin complicaciones técnicas para ti."
+        description="Descubre nuestro método de 3 pasos para automatizar tu clínica: Análisis, Instalación de IA y Agenda Llena. Sin complicaciones técnicas para ti."
       />
       <section id="como-funciona" className="py-16 px-6 bg-slate-50/50 rounded-[4rem] mx-6">
         <FeatureSteps 

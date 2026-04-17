@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Send, MessageCircle, X, User, Bot, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { GoogleGenAI } from "@google/genai";
-import { CALENDAR_LINK } from '../../constants';
+import { SCHEDULE_PATH } from '../../constants';
 
 interface Message {
   id: string;
@@ -53,7 +54,7 @@ export const ClinicChatWidget = ({
     { id: 'd2', text: '¿Sabías que el 70% de los leads se pierden si no contestas en los primeros 5 minutos?', sender: 'ai' },
     { id: 'u1', text: 'Es verdad, a veces no damos abasto con tanto WhatsApp.', sender: 'user' },
     { id: 'd3', text: 'Te entiendo perfectamente. Por eso nuestra IA agenda citas por ti 24/7, para que tú solo te preocupes de lo que mejor haces: tus tratamientos.', sender: 'ai' },
-    { id: 'd4', text: '¿Te gustaría que analizáramos tu caso en una auditoría gratuita? 🚀', sender: 'ai' }
+    { id: 'd4', text: '¿Te gustaría que analizáramos tu caso en una llamada gratuita? 🚀', sender: 'ai' }
   ];
 
   useEffect(() => {
@@ -155,10 +156,10 @@ export const ClinicChatWidget = ({
           1. Habla de forma humana, cercana pero muy profesional. No parezcas un robot.
           2. Usa un lenguaje que entiendan (leads, agenda, facturación, ROI, rentabilidad de cabina).
           3. Sé empática con su falta de tiempo: "Sé que estar operando y atendiendo el WhatsApp a la vez es imposible".
-          4. Tu meta final es que agenden una AUDITORÍA GRATUITA. Es el siguiente paso lógico.
+          4. Tu meta final es que agenden una LLAMADA GRATUITA. Es el siguiente paso lógico.
           5. Sé directa: si no responden en 5 minutos, pierden al paciente. La IA es la solución.
           6. No des respuestas excesivamente largas. Sé concisa y valiosa.
-          7. Si preguntan precios, di que depende de la escala de la clínica y que en la auditoría gratuita les daremos un presupuesto a medida.`
+          7. Si preguntan precios, di que depende de la escala de la clínica y que en la llamada gratuita les daremos un presupuesto a medida.`
         }
       });
 
@@ -277,14 +278,13 @@ export const ClinicChatWidget = ({
           animate={{ opacity: 1, y: 0 }}
           className="p-6 bg-white border-t border-slate-50"
         >
-          <a 
-            href={CALENDAR_LINK} 
-            target="_blank" 
+          <Link 
+            to={SCHEDULE_PATH} 
             className="flex items-center justify-center gap-3 bg-blue-600 text-white py-5 rounded-2xl font-black text-base hover:bg-blue-700 transition-all shadow-2xl shadow-blue-600/30"
           >
             <Sparkles className="w-5 h-5" />
-            Agendar auditoría gratuita
-          </a>
+            Agendar llamada gratuita
+          </Link>
         </motion.div>
       )}
     </div>
