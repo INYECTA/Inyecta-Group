@@ -12,6 +12,7 @@ import { ContactPage } from './pages/ContactPage';
 import { SchedulingPage } from './pages/SchedulingPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
+import { CookiesPage } from './pages/CookiesPage';
 
 // Component to handle scroll to top on route change
 const ScrollToTop = () => {
@@ -49,6 +50,7 @@ export default function App() {
               <Route path="/agendar" element={<SchedulingPage />} />
               <Route path="/privacidad" element={<PrivacyPage />} />
               <Route path="/terminos" element={<TermsPage />} />
+              <Route path="/cookies" element={<CookiesPage />} />
             </Routes>
           </main>
           <FooterSection />

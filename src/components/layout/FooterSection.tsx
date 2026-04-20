@@ -62,6 +62,7 @@ export const FooterSection = () => {
       }
       legalLinks={[
         { name: "Privacidad", href: "/privacidad" },
+        { name: "Cookies", href: "/cookies" },
         { name: "Aviso Legal", href: "/terminos" },
       ]}
     />
